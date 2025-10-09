@@ -1,0 +1,687 @@
+/* ============================
+   📘 CUADERNO DE APRENDIZAJE
+=============================== */
+
+/* ======= CONTENEDOR PRINCIPAL ======= */
+.cuaderno {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3.5rem 2rem 4rem;
+  text-align: center;
+}
+
+/* ======= TÍTULO E INTRODUCCIÓN ======= */
+.cuaderno h1 {
+  font-size: 2.4rem;
+  color: var(--text-color);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cuaderno h1::before {
+  content: "📓";
+  font-size: 1.8rem;
+}
+
+.cuaderno .intro {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+/* ============================
+   📂 SECCIONES DE SEMANAS
+=============================== */
+.semana {
+  margin-bottom: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  background: var(--card-bg);
+  text-align: left;
+}
+
+/* ===== CABECERA DE CADA SEMANA ===== */
+.semana-header {
+  width: 100%;
+  background: #e9f2ff; /* tono azul claro */
+  color: #004aad; /* azul oscuro legible */
+  padding: 1.2rem 1.5rem;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* separa texto e ícono */
+}
+
+/* Ícono de flecha */
+.semana-header::after {
+  content: "▾";
+  font-size: 1.3rem;
+  color: inherit;
+  transition: transform 0.3s ease;
+}
+
+/* Cuando se abre, rota la flecha */
+.semana-header.active::after {
+  transform: rotate(180deg);
+}
+
+/* Hover */
+.semana-header:hover {
+  background: #d8e9ff;
+  transform: scale(1.01);
+}
+
+/* ============================
+   🗂 TARJETAS (Editable)
+=============================== */
+.card {
+  background: #fff;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Texto editable */
+.editable {
+  border: 1px dashed transparent;
+  min-height: 100px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  transition: background 0.3s ease, border 0.3s ease;
+}
+
+.editable:focus {
+  border: 1px dashed var(--accent-color);
+  background: rgba(0, 119, 255, 0.05);
+  outline: none;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================
+   ⚫️ FOOTER (Pie de página)
+=============================== */
+.footer {
+  background: linear-gradient(180deg, #f9f9f9, #f1f1f1);
+  padding: 40px 20px;
+  text-align: center;
+  color: #444;
+  border-top: 2px solid #e0e0e0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer strong {
+  color: #000;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077ff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0055cc;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  color: #0077ff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #0055cc;
+  transform: scale(1.1);
+}
+
+/* ============================
+   📘 CONTENIDO ABUNDANTE
+=============================== */
+.contenido-semana {
+  line-height: 1.8;
+  font-size: 1.05rem;
+  color: var(--text-color);
+  padding: 2rem;
+  background: var(--card-bg);
+}
+
+.contenido-semana h2 {
+  color: #004aad;
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #cfe2ff;
+  padding-bottom: 0.4rem;
+}
+
+.contenido-semana h3 {
+  color: #0062cc;
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.contenido-semana p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.contenido-semana ul {
+  margin: 0.5rem 0 1.5rem 2rem;
+  list-style: disc;
+}
+
+.contenido-semana li {
+  margin-bottom: 0.4rem;
+}
+
+.contenido-semana pre {
+  background: #f7f9fb;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.contenido-semana code {
+  background: #e9eefb;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-family: "Courier New", monospace;
+}
+
+/* ==============================
+   📚 SUB-ACORDEONES POR SECCIÓN
+================================= */
+
+.sub-semana {
+  margin: 1rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: var(--bg-alt);
+}
+
+.sub-header {
+  width: 100%;
+  background: #f0f6ff;
+  color: #004aad;
+  font-weight: 600;
+  text-align: left;
+  border: none;
+  cursor: pointer;
+  padding: 1rem 1.2rem;
+  font-size: 1.05rem;
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub-header:hover {
+  background: #e2edff;
+}
+
+.sub-header::after {
+  content: "▼";
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.sub-header.active::after {
+  transform: rotate(180deg);
+}
+
+.sub-content {
+  display: none;
+  padding: 1.2rem 1.5rem;
+  background: var(--card-bg);
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 1rem;
+  animation: fadeIn 0.4s ease;
+}
+
+.sub-content.open {
+  display: block;
+}
+
+.sub-content h4 {
+  color: #0062cc;
+  margin-top: 1rem;
+}
+
+.sub-content pre {
+  background: #f7f9fb;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+.sub-content code {
+  background: #e9eefb;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-family: "Courier New", monospace;
+}
+
+/* ==========================
+   🧩 Estilo: Definiciones
+========================== */
+
+.definiciones {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 1.5rem 2rem;
+}
+
+.definiciones p {
+  margin-bottom: 1rem;
+  text-indent: 1.5rem; /* Sangría de párrafos */
+}
+
+.definiciones h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #004aad;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.definiciones ul.indent {
+  margin-left: 2rem;
+  margin-bottom: 1.2rem;
+}
+
+.definiciones li {
+  margin-bottom: 0.4rem;
+}
+
+/* ==========================
+   💻 Estilo: Laboratorios
+========================== */
+
+.laboratorio {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 1.5rem 2rem;
+}
+
+.laboratorio h3 {
+  color: #004aad;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.laboratorio h4 {
+  margin-top: 1.8rem;
+  margin-bottom: 0.6rem;
+  color: #0056b3;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.laboratorio p {
+  margin-bottom: 1rem;
+  text-indent: 1.5rem;
+}
+
+.laboratorio ul.indent {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.laboratorio pre {
+  background: #f7f9fb;
+  border-left: 4px solid #007bff;
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  margin: 1rem 0;
+}
+
+.laboratorio code {
+  background: #e9eefb;
+  border-radius: 4px;
+  padding: 0.2rem 0.4rem;
+  font-family: "Courier New", monospace;
+}
+
+.laboratorio hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #d0d7de, transparent);
+  margin: 1.5rem 0;
+}
+
+/* ==========================
+   ✨ Estilo: Reflexión Final
+========================== */
+
+.reflexion {
+  font-size: 1.08rem;
+  line-height: 1.9;
+  text-align: justify;
+  padding: 1.8rem 2rem;
+  background: #fdfdfd;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.reflexion p {
+  margin-bottom: 1.2rem;
+  text-indent: 1.8rem;
+  color: #333;
+}
+
+.reflexion strong {
+  color: #004aad;
+}
+
+.reflexion em {
+  color: #555;
+  font-style: italic;
+}
+
+.reflexion .conclusion {
+  margin-top: 2rem;
+  font-weight: 600;
+  border-top: 2px solid #dce6f7;
+  padding-top: 1rem;
+  color: #003366;
+}
+
+/* ============================
+   📖 ESTILO: BIBLIOGRAFÍA
+=============================== */
+.bibliografia {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 1.8rem 2rem;
+  background: #fdfdfd;
+  border-radius: 12px;
+}
+
+.bibliografia .referencias {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+
+.bibliografia .referencias li {
+  margin-bottom: 1rem;
+  text-indent: -1.2rem; /* sangría colgante */
+  padding-left: 1.2rem;
+}
+
+.bibliografia em {
+  font-style: italic;
+  color: #004aad;
+}
+
+.bibliografia a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.bibliografia a:hover {
+  text-decoration: underline;
+}
+
+/* ============================
+   🌙 MODO OSCURO
+=============================== */
+body.dark-mode .bibliografia {
+  background: #1e1e1e;
+  color: #ddd;
+}
+
+body.dark-mode .bibliografia em {
+  color: #7fb8ff;
+}
+
+body.dark-mode .bibliografia a {
+  color: #7fb8ff;
+}
+
+body.dark-mode .reflexion {
+  background: #1d1d1d;
+  color: #ddd;
+  box-shadow: 0 3px 10px rgba(255,255,255,0.05);
+}
+
+body.dark-mode .reflexion strong {
+  color: #80bfff;
+}
+
+body.dark-mode .reflexion em {
+  color: #ccc;
+}
+
+body.dark-mode .reflexion .conclusion {
+  border-top: 2px solid #333;
+  color: #b3d1ff;
+}
+
+body.dark-mode .laboratorio h3,
+body.dark-mode .laboratorio h4 {
+  color: #7fb8ff;
+}
+
+body.dark-mode .laboratorio p,
+body.dark-mode .laboratorio ul {
+  color: #ddd;
+}
+
+body.dark-mode .laboratorio pre {
+  background: #1e1e1e;
+  border-left-color: #3a8fff;
+}
+
+body.dark-mode .laboratorio code {
+  background: #333;
+  color: #a9d3ff;
+}
+
+body.dark-mode .definiciones h4 {
+  color: #80bfff;
+}
+
+body.dark-mode .definiciones p {
+  color: #ddd;
+}
+
+body.dark-mode .definiciones ul {
+  color: #ccc;
+}
+
+body.dark-mode .sub-header {
+  background: #202a3a;
+  color: #9fc5ff;
+}
+
+body.dark-mode .sub-header:hover {
+  background: #27384e;
+}
+
+body.dark-mode .sub-content {
+  background: #1e1e1e;
+  color: #ddd;
+}
+
+body.dark-mode .sub-content pre {
+  background: #2a2a2a;
+}
+
+body.dark-mode .sub-content code {
+  background: #333;
+  color: #a9d3ff;
+}
+
+body.dark-mode .contenido-semana {
+  color: #ddd;
+}
+
+body.dark-mode .contenido-semana h2 {
+  color: #7fb8ff;
+  border-color: #2a4b77;
+}
+
+body.dark-mode .contenido-semana h3 {
+  color: #80bfff;
+}
+
+body.dark-mode .contenido-semana pre {
+  background: #222;
+}
+
+body.dark-mode .contenido-semana code {
+  background: #333;
+  color: #a9d3ff;
+}
+
+body.dark-mode .cuaderno {
+  background: #121212;
+}
+
+body.dark-mode .semana {
+  background: #181818;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .card {
+  background: #1f1f1f;
+  color: #eee;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .editable:focus {
+  background: #333;
+}
+
+body.dark-mode .semana-header {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark-mode .semana-header:hover {
+  background: #2a2a2a;
+}
+
+body.dark-mode .semana-content {
+  background: #1a1a1a;
+  color: #ddd;
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(180deg, #1e1e1e, #121212);
+  color: #ddd;
+  border-top: 2px solid #333;
+}
+
+body.dark-mode .footer strong {
+  color: #fff;
+}
+
+body.dark-mode .footer-links a {
+  color: #66aaff;
+}
+
+body.dark-mode .footer-socials a {
+  color: #66aaff;
+}
+
+/* ====== CORRECCIÓN VISUAL PARA TEXTO EXTENSO ====== */
+
+/* Hace que todo el contenido dentro del acordeón se expanda completamente */
+.semana-content {
+  display: none;
+  background: var(--card-bg);
+  padding: 1rem 1.5rem;
+  animation: fadeIn 0.4s ease;
+  max-height: none !important;  /* ✅ elimina el límite de altura */
+  overflow: visible !important; /* ✅ permite mostrar todo el texto */
+}
+
+/* Asegura que los sub-acordeones también expandan correctamente */
+.sub-content {
+  display: none;
+  padding: 1.5rem 2rem;
+  background: var(--bg-alt);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  overflow: visible !important; /* ✅ muestra todo el contenido */
+  max-height: none !important;
+}
+
+/* Mejora el comportamiento al abrir (para que no se corte el texto) */
+.sub-semana.open .sub-content {
+  display: block;
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Y si estás usando botones para abrir, añade un margen mayor entre ellos */
+.sub-semana {
+  margin-bottom: 1.8rem;
+}

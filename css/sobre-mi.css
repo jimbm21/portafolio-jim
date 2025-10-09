@@ -1,0 +1,491 @@
+/* =====================================================
+   🎨 SOBRE MÍ - ESTILOS COMPLETOS
+   Autor: Jim Balvín
+   ===================================================== */
+
+/* =======================
+   🔹 SECCIÓN PRESENTACIÓN
+========================== */
+.presentacion {
+  padding: 100px 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  background: #ffffff;
+  transition: background 0.3s ease;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.presentacion-contenido {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.presentacion-texto {
+  flex: 1 1 500px;
+  max-width: 600px;
+  text-align: left;
+}
+
+.presentacion-texto h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.presentacion-texto h1 span {
+  color: #0077ff;
+}
+
+.presentacion-texto p {
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+.presentacion-foto {
+  flex: 0 0 320px;
+  display: flex;
+  justify-content: center;
+}
+
+.presentacion-foto img {
+  width: 280px;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.presentacion-foto img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Animaciones ===== */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 1.5s ease forwards;
+}
+
+.slide-up.delay {
+  animation-delay: 0.3s;
+}
+
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  animation: zoomIn 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =======================
+   🔹 MISIÓN Y VALORES
+========================== */
+.mision-valores {
+  padding: 80px 10%;
+  background: #f8f8f8;
+  text-align: center;
+  transition: background 0.3s;
+}
+
+.titulo-seccion {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  color: #0077ff;
+}
+
+.descripcion-seccion {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.valor-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.valor-card h3 {
+  font-size: 1.4rem;
+  color: #0077ff;
+  margin-bottom: 10px;
+}
+
+.valor-card p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* =======================
+   🔹 FORMACIÓN
+========================== */
+.formacion {
+  padding: 80px 10%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.timeline {
+  margin-top: 50px;
+  position: relative;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 25px;
+  width: 3px;
+  height: 100%;
+  background: #0077ff;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.timeline-icon {
+  min-width: 50px;
+  height: 50px;
+  background: #0077ff;
+  color: #fff;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: left;
+}
+
+.timeline-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #0077ff;
+}
+
+.timeline-content .fecha {
+  font-size: 0.9rem;
+  color: gray;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* =======================
+   🔹 HABILIDADES TÉCNICAS
+========================== */
+.habilidades {
+  padding: 80px 10%;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.skills-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.skill {
+  text-align: left;
+}
+
+.skill span {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.progress-bar {
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 25px;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #0077ff, #00c6ff);
+  text-align: right;
+  padding-right: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 10px;
+  animation: growBar 2s ease forwards;
+}
+
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+}
+
+/* =======================
+   🔹 EXPERIENCIA / PROYECTOS
+========================== */
+.experiencia {
+  padding: 80px 10%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.proyectos-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card-proyecto {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-proyecto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-proyecto h3 {
+  font-size: 1.2rem;
+  color: #0077ff;
+  margin-bottom: 12px;
+}
+
+.card-proyecto p {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* =======================
+   🔹 INTERESES Y PASIONES
+========================== */
+.intereses {
+  padding: 80px 10%;
+  background: #f8f8f8;
+  text-align: center;
+}
+
+.intereses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.interes-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interes-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.interes-card i {
+  font-size: 2rem;
+  color: #0077ff;
+  margin-bottom: 0.8rem;
+}
+
+/* =======================
+   🔹 FOOTER (pie de página)
+========================== */
+.footer {
+  background: linear-gradient(180deg, #f9f9f9, #f1f1f1);
+  padding: 40px 20px;
+  text-align: center;
+  color: #444;
+  border-top: 2px solid #e0e0e0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer strong {
+  color: #000;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077ff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0055cc;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  color: #0077ff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #0055cc;
+  transform: scale(1.1);
+}
+
+/* =======================
+   🌙 MODO OSCURO
+========================== */
+body.dark-mode .presentacion,
+body.dark-mode .formacion,
+body.dark-mode .experiencia {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+body.dark-mode .mision-valores,
+body.dark-mode .habilidades,
+body.dark-mode .intereses {
+  background: #121212;
+  color: #f1f1f1;
+}
+
+body.dark-mode .valor-card,
+body.dark-mode .card-proyecto,
+body.dark-mode .timeline-content,
+body.dark-mode .interes-card {
+  background: #1f1f1f;
+  color: #ddd;
+}
+
+body.dark-mode .progress-bar {
+  background: #333;
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(180deg, #1e1e1e, #121212);
+  color: #ddd;
+  border-top: 2px solid #333;
+}
+
+body.dark-mode .footer strong {
+  color: #fff;
+}
+
+body.dark-mode .footer-links a {
+  color: #66aaff;
+}
+
+body.dark-mode .footer-socials a {
+  color: #66aaff;
+}
+
+/* =======================
+   📱 RESPONSIVE
+========================== */
+@media (max-width: 992px) {
+  .presentacion {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 40px;
+    padding: 60px 5%;
+  }
+
+  .presentacion-texto {
+    text-align: center;
+  }
+
+  .presentacion-foto img {
+    width: 220px;
+  }
+}

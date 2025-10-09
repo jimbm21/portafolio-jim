@@ -1,0 +1,221 @@
+/* ===============================
+   🔹 ESTRUCTURA PRINCIPAL
+=============================== */
+.proyectos-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.proyectos-container h1 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+/* ===============================
+   🔹 GRID DE PROYECTOS
+=============================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+}
+
+.project-thumb {
+  height: 160px;
+  background: linear-gradient(135deg, #42a5f5, #1e88e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.project-info {
+  padding: 1.2rem;
+}
+
+.project-info h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.project-info p {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* =======================
+   🔹 FOOTER (pie de página)
+========================== */
+.footer {
+  background: linear-gradient(180deg, #f9f9f9, #f1f1f1);
+  padding: 40px 20px;
+  text-align: center;
+  color: #444;
+  border-top: 2px solid #e0e0e0;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.footer p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.footer strong {
+  color: #000;
+}
+
+.footer-links {
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #0077ff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #0055cc;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-socials a {
+  color: #0077ff;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #0055cc;
+  transform: scale(1.1);
+}
+
+/* ===============================
+   🔹 MODO OSCURO
+=============================== */
+body.dark-mode {
+  --bg: #181818;
+  --text: #f0f0f0;
+  --card-bg: #242424;
+  --accent: #2196f3;
+}
+
+body.dark-mode .proyectos-container {
+  background-color: var(--bg);
+}
+
+body.dark-mode .project-card {
+  background: var(--card-bg);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .project-info p {
+  color: var(--text);
+}
+
+body.dark-mode .footer {
+  background: linear-gradient(180deg, #1e1e1e, #121212);
+  color: #ddd;
+  border-top: 2px solid #333;
+}
+
+body.dark-mode .footer strong {
+  color: #fff;
+}
+
+body.dark-mode .footer-links a {
+  color: #66aaff;
+}
+
+body.dark-mode .footer-socials a {
+  color: #66aaff;
+}
+
+/* ===============================
+   🔹 RESPONSIVIDAD
+=============================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+
+  .proyectos-container h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .project-thumb {
+    height: 140px;
+    font-size: 1.4rem;
+  }
+}
+
+/* Celulares pequeños */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thumb {
+    height: 130px;
+  }
+
+  .project-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .project-info p {
+    font-size: 0.9rem;
+  }
+
+  .footer p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links a {
+    display: inline-block;
+    margin: 5px;
+  }
+}
