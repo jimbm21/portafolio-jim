@@ -1,4 +1,10 @@
 /* ===============================
+   💻 PROYECTOS - PORTAFOLIO JIM
+   Autor: Jim Jhordan Balvín Marcos
+   Última actualización: 2025
+=============================== */
+
+/* ===============================
    🔹 ESTRUCTURA PRINCIPAL
 =============================== */
 .proyectos-container {
@@ -23,17 +29,28 @@
   gap: 1.5rem;
 }
 
+/* ===============================
+   🔹 TARJETAS DE PROYECTO
+=============================== */
 .project-card {
+  position: relative;
   background: var(--card-bg);
   border-radius: 16px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: pointer;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(180deg, #f8fbff, #e8f2ff);
 }
 
 .project-thumb {
@@ -46,6 +63,12 @@
   color: white;
   font-weight: 600;
   letter-spacing: 1px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-card:hover .project-thumb {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  transform: scale(1.03);
 }
 
 .project-info {
@@ -64,9 +87,46 @@
   line-height: 1.5;
 }
 
-/* =======================
+/* ===============================
+   🔹 OVERLAY INTERACTIVO
+=============================== */
+.project-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, background 0.3s ease;
+  border-radius: 16px;
+  pointer-events: none;
+}
+
+.project-card:hover .overlay {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.project-card .overlay span {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.1rem;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .overlay span {
+  transform: scale(1.05);
+}
+
+/* ===============================
    🔹 FOOTER (pie de página)
-========================== */
+=============================== */
 .footer {
   background: linear-gradient(180deg, #f9f9f9, #f1f1f1);
   padding: 40px 20px;
@@ -143,8 +203,29 @@ body.dark-mode .project-card {
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
 }
 
+body.dark-mode .project-card:hover {
+  background: #2a2a2a;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .project-thumb {
+  background: linear-gradient(135deg, #2196f3, #1976d2);
+}
+
+body.dark-mode .project-card:hover .project-thumb {
+  background: linear-gradient(135deg, #1976d2, #0d47a1);
+}
+
 body.dark-mode .project-info p {
   color: var(--text);
+}
+
+body.dark-mode .overlay {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .project-card:hover .overlay {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 body.dark-mode .footer {
@@ -157,10 +238,7 @@ body.dark-mode .footer strong {
   color: #fff;
 }
 
-body.dark-mode .footer-links a {
-  color: #66aaff;
-}
-
+body.dark-mode .footer-links a,
 body.dark-mode .footer-socials a {
   color: #66aaff;
 }
@@ -218,4 +296,18 @@ body.dark-mode .footer-socials a {
     display: inline-block;
     margin: 5px;
   }
+}
+
+/* ===============================
+   🔹 ANIMACIÓN DE APARICIÓN
+=============================== */
+.project-card {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease-out;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

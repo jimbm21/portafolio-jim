@@ -97,6 +97,22 @@ document.addEventListener("DOMContentLoaded", () => {
         card.style.boxShadow = "";
       });
     });
+
+   // --- Aparición suave al hacer scroll ---
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    cards.forEach((card) => observer.observe(card));
+
   }
 
 if (path.includes("cuaderno.html")) {
