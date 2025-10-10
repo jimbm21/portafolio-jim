@@ -2040,25 +2040,368 @@ git push -u origin main</code></pre>
   <button class="semana-header">📘 Semana 7</button>
   <div class="semana-content">
 
-    <div class="sub-semana">
-      <button class="sub-header">📖 Definiciones y Procedimientos</button>
-      <div class="sub-content"> ... </div>
-    </div>
+<div class="sub-semana">
+  <button class="sub-header">📖 Definiciones y Procedimientos</button>
+  <div class="sub-content definiciones">
 
-    <div class="sub-semana">
-      <button class="sub-header">🧪 Ejercicios de Laboratorio - Resultados</button>
-      <div class="sub-content"> ... </div>
-    </div>
+    <p>
+      Durante la séptima semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, nos enfocamos en dos temas centrales dentro del ecosistema de 
+      <strong>React</strong>:
+    </p>
 
-    <div class="sub-semana">
-      <button class="sub-header">💭 Reflexión Metacognitiva</button>
-      <div class="sub-content"> ... </div>
-    </div>
+    <ol>
+      <li>La <strong>creación y personalización de componentes</strong> mediante el uso de <strong>JSX, TypeScript y Tailwind CSS</strong>.</li>
+      <li>El <strong>manejo del estado y la lógica interna de los componentes</strong> a través de los <strong>Hooks en React</strong>.</li>
+    </ol>
 
-    <div class="sub-semana">
-      <button class="sub-header">📚 Bibliografía</button>
-      <div class="sub-content"> ... </div>
-    </div>
+    <p>
+      Esta semana fue clave para comprender cómo React construye interfaces dinámicas y cómo cada componente puede mantener su propio comportamiento, 
+      comunicarse con otros y actualizarse sin recargar toda la página.
+    </p>
+
+    <hr>
+
+    <h3>⚛️ Tema 1: Componentes, JSX, TypeScript y Estilos en React</h3>
+
+    <p>
+      El profesor desarrolló cada punto del documento de manera práctica y detallada, explicando cómo React combina la lógica de programación 
+      con el diseño visual a través de una arquitectura modular.
+    </p>
+
+    <h4>1️⃣ Renderizar HTML en React</h4>
+    <p>
+      React utiliza el <strong>DOM Virtual</strong> para renderizar los elementos de manera más eficiente. 
+      La función <code>ReactDOM.render()</code> toma dos parámetros: el componente a renderizar y el elemento HTML donde se insertará 
+      (generalmente <code>&lt;div id="root"&gt;</code>). Cada cambio en el componente genera una comparación con el DOM anterior, 
+      y React actualiza solo las partes necesarias.
+    </p>
+
+    <h4>2️⃣ Componentes en React</h4>
+    <p>
+      Los <strong>componentes</strong> son las unidades fundamentales de una aplicación React. 
+      Se crean en archivos con extensión <code>.jsx</code> o <code>.tsx</code> y su nombre debe comenzar con mayúscula. 
+      Existen dos tipos principales:
+    </p>
+    <ul>
+      <li><strong>Componentes de Clase</strong>: extienden <code>React.Component</code> y usan métodos de ciclo de vida.</li>
+      <li><strong>Componentes Funcionales</strong>: usan <strong>Hooks</strong> y una sintaxis más moderna y limpia.</li>
+    </ul>
+
+    <h4>3️⃣ Desarrollo de Componentes</h4>
+    <p>
+      Cada componente se compone de tres partes: 
+      <strong>Estructura (HTML/JSX)</strong>, <strong>Lógica (JavaScript)</strong> y <strong>Estilos (CSS o librerías)</strong>. 
+      Los componentes pueden anidarse, comunicarse entre sí y recibir datos mediante <strong>props</strong>.
+    </p>
+
+    <h4>4️⃣ JSX (JavaScript eXtensible)</h4>
+    <p>
+      JSX permite escribir código HTML dentro de JavaScript. Se pueden incluir expresiones dentro de llaves <code>{ }</code>, 
+      como variables u operaciones. Por ejemplo:
+    </p>
+    <pre><code class="codigo">
+const nombre = "Juan";
+const mensaje = &lt;h1&gt;Bienvenido {nombre}!&lt;/h1&gt;;
+    </code></pre>
+    <p>JSX debe ser transpilado por <strong>Babel</strong> para convertirse en JavaScript comprensible por el navegador.</p>
+
+    <h4>5️⃣ TypeScript en React</h4>
+    <p>
+      <strong>TypeScript</strong> agrega tipado estático, permitiendo detectar errores antes de ejecutar el código. Ejemplo:
+    </p>
+    <pre><code class="codigo">
+const mensaje: string = "Hola Mundo";
+const elemento: JSX.Element = &lt;h1&gt;{mensaje}&lt;/h1&gt;;
+    </code></pre>
+    <p>
+      Este sistema mejora la productividad y claridad del código, siendo muy útil en proyectos grandes.
+    </p>
+
+    <h4>6️⃣ Diseñar Componentes en React</h4>
+    <p>
+      Existen tres formas principales de aplicar estilos en React:
+    </p>
+    <ul>
+      <li>Hojas de estilo CSS tradicionales importadas en el componente.</li>
+      <li>Módulos CSS que encapsulan los estilos por componente.</li>
+      <li>Estilos en línea (<em>inline styles</em>) definidos como objetos dentro del JSX.</li>
+    </ul>
+
+    <h4>7️⃣ Librería Tailwind CSS en React</h4>
+    <p>
+      <strong>Tailwind CSS</strong> se integra con React mediante instalación con npm y configuración de 
+      <code>tailwind.config.js</code> y <code>postcss.config.js</code>. 
+      Permite diseñar rápidamente con clases utilitarias como 
+      <code>p-4</code>, <code>text-center</code> o <code>bg-blue-500</code>, facilitando el diseño responsivo y la coherencia visual.
+    </p>
+
+    <h4>8️⃣ Props y Children en Componentes</h4>
+    <p>
+      Los <strong>props</strong> son parámetros que se envían a los componentes como atributos, 
+      permitiendo la comunicación entre padre e hijo. Ejemplo:
+    </p>
+    <pre><code class="codigo">
+function Saludo(props) {
+  return &lt;h1&gt;Hola {props.nombre}!&lt;/h1&gt;;
+}
+    </code></pre>
+    <p>
+      El <strong>children</strong> permite pasar contenido dinámico dentro de un componente, reutilizando estructuras con distintos contenidos.
+    </p>
+
+    <hr>
+
+    <h3>🧩 Ejercicios de Laboratorio – Componentes y JSX</h3>
+    <p>
+      Durante la práctica resolvimos los <strong>cinco ejercicios</strong> del documento:
+    </p>
+
+    <ol>
+      <li><strong>Diseño responsivo con 7 componentes:</strong> aplicación con secciones adaptadas a PC, tableta y móvil.</li>
+      <li><strong>Componentes anidados:</strong> paso de datos entre componentes mediante <em>props</em>.</li>
+      <li><strong>Comunicación hijo → padre:</strong> uso de funciones callback para enviar datos del hijo al padre.</li>
+      <li><strong>Comunicación entre hermanos:</strong> intercambio de datos mediante el componente padre.</li>
+      <li><strong>Renderizado de tabla:</strong> tabla dinámica de estudiantes usando <code>map()</code> y estilos CSS.</li>
+    </ol>
+
+    <p>
+      Estos ejercicios reforzaron la <strong>modularidad, reutilización de código y comunicación entre componentes</strong>, 
+      principios esenciales de React.
+    </p>
+
+    <hr>
+
+    <h3>🪝 Tema 2: Hooks en React</h3>
+    <p>
+      En la segunda clase, el profesor presentó el tema <strong>Hooks en React</strong>, una de las características más poderosas del framework.
+    </p>
+
+    <ul>
+      <li><strong>Hooks en React:</strong> funciones especiales que permiten usar estado y ciclo de vida en componentes funcionales.</li>
+      <li><strong>State Management:</strong> manejo del estado (<em>state</em>) que actualiza automáticamente la interfaz.</li>
+      <li><strong>useState:</strong> declara y actualiza estados internos. Ejemplo:
+        <pre><code class="codigo">const [contador, setContador] = useState(0);</code></pre>
+      </li>
+      <li><strong>useEffect:</strong> maneja efectos secundarios como llamadas a APIs o temporizadores.</li>
+      <li><strong>useContext:</strong> comparte datos globales entre componentes sin pasar props.</li>
+      <li><strong>Custom Hooks:</strong> funciones personalizadas que encapsulan lógica reutilizable.</li>
+      <li><strong>useReducer:</strong> maneja estados complejos mediante un reductor (<em>reducer</em>).</li>
+      <li><strong>useNavigate y useParams:</strong> permiten la navegación y lectura de parámetros con <strong>React Router</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h3>🧠 Evaluación de Competencia – Hooks</h3>
+    <p>
+      En la parte final resolvimos <strong>10 preguntas de evaluación</strong> sobre los Hooks, abordando persistencia del estado, 
+      control de efectos, optimización con <code>useMemo</code> y <code>useCallback</code>, y manejo de <code>useReducer</code> y <code>useContext</code> 
+      en estructuras más complejas. 
+      Además, desarrollamos un <strong>formulario CRUD</strong> para una tabla de productos utilizando estos Hooks, integrando teoría y práctica.
+    </p>
+
+    <hr>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p class="conclusion">
+      Esta semana fue una de las más completas del curso. 
+      Pude conectar el diseño de interfaces mediante <strong>componentes y JSX</strong> con la <strong>lógica dinámica</strong> de los Hooks.
+      Comprendí que React combina lo mejor del diseño modular con la programación funcional, logrando que los proyectos sean escalables, 
+      organizados y fáciles de mantener. 
+      Además, al aplicar <code>useState</code>, <code>useEffect</code> y <code>useContext</code>, entendí cómo React gestiona el flujo de datos 
+      y la actualización de la interfaz sin recargar la página.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧩 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content ejercicios">
+
+    <p>
+      Durante la séptima semana realizamos una serie de <strong>ejercicios prácticos en React</strong>, que me permitieron aplicar los conceptos aprendidos sobre 
+      <strong>componentes, JSX, TypeScript, estilos y Hooks</strong>.
+      Estas prácticas me ayudaron a entender cómo React construye las aplicaciones desde pequeñas piezas modulares (componentes) 
+      y cómo cada una puede comunicarse, mantener su propio estado y actualizarse sin recargar la página.
+    </p>
+
+    <hr>
+
+    <h3>⚛️ Ejercicios sobre Componentes y JSX</h3>
+    <p>Desarrollamos <strong>cinco ejercicios</strong> para consolidar el uso de componentes, props y estilos.</p>
+
+    <h4>1️⃣ Ejercicio 1 – Diseño responsivo con 7 componentes</h4>
+    <p><strong>Objetivo:</strong> Crear una aplicación web con 7 componentes independientes adaptados a PC, tableta y móvil.</p>
+    <p><strong>Desarrollo:</strong> En <code>App.jsx</code> importé los componentes (<em>Header, Navbar, Main, Aside, Section, Article, Footer</em>) ubicados en 
+      <code>src/components/</code>, aplicando <code>@media queries</code> en CSS para un diseño responsivo.</p>
+    <p><strong>Resultado:</strong> La interfaz se adaptó correctamente a distintos tamaños de pantalla. 
+      Aprendí a <strong>reutilizar componentes</strong> y separar la lógica de la presentación, manteniendo un código ordenado.</p>
+
+    <h4>2️⃣ Ejercicio 2 – Componentes anidados</h4>
+    <p><strong>Objetivo:</strong> Crear 4 componentes anidados y pasar datos del padre al cuarto hijo usando <strong>props</strong>.</p>
+    <p><strong>Desarrollo:</strong> Definí un objeto:</p>
+    <pre><code class="codigo">
+const persona = { nombre: "Jaime", direccion: "Jr. Junín 450", ciudad: "Huancayo" };
+    </code></pre>
+    <p>El objeto se pasó por props a través de los componentes intermedios hasta el hijo 4, donde se mostró en un <em>card informativo</em>.</p>
+    <p><strong>Resultado:</strong> Comprendí la <strong>transmisión jerárquica de datos</strong> y la importancia de la consistencia en props.</p>
+
+    <h4>3️⃣ Ejercicio 3 – Comunicación Hijo → Padre</h4>
+    <p><strong>Objetivo:</strong> Enviar información desde un componente hijo al padre.</p>
+    <p><strong>Desarrollo:</strong> En el padre definí:</p>
+    <pre><code class="codigo">
+const recibirDato = (dato) => setMensaje(dato);
+    </code></pre>
+    <p>El hijo ejecutaba <code>props.recibirDato("Hola desde el hijo")</code> al hacer clic en un botón.</p>
+    <p><strong>Resultado:</strong> Aprendí la <strong>comunicación inversa</strong> usando callbacks y props funcionales.</p>
+
+    <h4>4️⃣ Ejercicio 4 – Comunicación entre hermanos</h4>
+    <p><strong>Objetivo:</strong> Enviar datos desde un componente hermano 1 hacia otro 2.</p>
+    <p><strong>Desarrollo:</strong> El componente <em>Padre</em> usó <code>useState</code> para gestionar un estado compartido: 
+      Hermano 1 actualizaba el estado, y Hermano 2 lo recibía como prop.</p>
+    <p><strong>Resultado:</strong> Los datos se mostraron dinámicamente, entendiendo la <strong>comunicación lateral</strong> mediante estado compartido.</p>
+
+    <h4>5️⃣ Ejercicio 5 – Renderizar datos en tabla</h4>
+    <p><strong>Objetivo:</strong> Mostrar una tabla con datos de estudiantes (id, nombre, ciudad).</p>
+    <p><strong>Desarrollo:</strong> Se definió un arreglo y se recorrió con <code>map()</code>:</p>
+    <pre><code class="codigo">
+const estudiantes = [
+  { id: 1, nombre: "Ana", ciudad: "Lima" },
+  { id: 2, nombre: "Luis", ciudad: "Huancayo" },
+  { id: 3, nombre: "Rosa", ciudad: "Arequipa" },
+  { id: 4, nombre: "Jorge", ciudad: "Cusco" },
+];
+    </code></pre>
+    <p><strong>Resultado:</strong> La tabla se renderizó correctamente con un diseño limpio y <strong>renderizado dinámico</strong> 
+      mediante keys únicas.</p>
+
+    <hr>
+
+    <h3>🪝 Ejercicio adicional – CRUD con Hooks (useContext y useReducer)</h3>
+    <p><strong>Objetivo:</strong> Implementar un CRUD para productos usando Hooks avanzados.</p>
+    <p><strong>Desarrollo:</strong> Se combinaron <code>useState</code>, <code>useContext</code> y <code>useReducer</code>:</p>
+    <ol>
+      <li><strong>useContext:</strong> compartió el estado global de productos entre componentes.</li>
+      <li><strong>useReducer:</strong> manejó las acciones CRUD con un reductor.</li>
+      <li><strong>useEffect:</strong> guardó los datos en <code>LocalStorage</code> para persistencia.</li>
+    </ol>
+    <pre><code class="codigo">
+const initialState = { productos: [] };
+function reducer(state, action) {
+  switch (action.type) {
+    case "AGREGAR":
+      return { ...state, productos: [...state.productos, action.payload] };
+    case "ELIMINAR":
+      return { ...state, productos: state.productos.filter(p => p.id !== action.payload) };
+    default:
+      return state;
+  }
+}
+    </code></pre>
+    <p><strong>Resultado:</strong> El CRUD funcionó correctamente, mostrando productos en tiempo real y guardándolos en 
+      <code>LocalStorage</code>. 
+      Comprendí cómo React gestiona el <strong>estado global</strong> y cómo los Hooks pueden reemplazar Redux.</p>
+
+    <hr>
+
+    <h3>💬 Conclusión general de la práctica</h3>
+    <p class="conclusion">
+      Los ejercicios de esta semana fueron esenciales para consolidar mi comprensión de <strong>React como framework completo</strong>. 
+      Aprendí a construir componentes reutilizables, conectar la lógica con la interfaz y gestionar estados mediante Hooks. 
+      El CRUD me permitió experimentar con una estructura similar a proyectos reales, aplicando principios de 
+      <strong>modularidad, mantenibilidad y comunicación entre componentes</strong>. 
+      En conjunto, esta práctica marcó un gran avance en mi dominio de React, pasando de la estructura básica a la 
+      <strong>programación funcional y dinámica</strong> con componentes interactivos.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">💭 Reflexión Final</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la séptima semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, sentí que alcancé un punto clave en mi aprendizaje con 
+      <strong>React</strong>. Hasta este momento había comprendido la estructura del framework, pero en esta semana logré aplicarla de manera completa mediante la creación de 
+      <strong>componentes funcionales</strong>, <strong>comunicación entre ellos</strong> y <strong>manejo de estados con Hooks</strong>.
+    </p>
+
+    <p>
+      Al desarrollar los <strong>componentes con JSX</strong>, entendí cómo React combina la lógica de programación con la estructura visual del HTML 
+      de una forma mucho más ordenada y dinámica. Me resultó muy interesante ver cómo cada componente puede funcionar como una pieza independiente 
+      del sistema, pero al mismo tiempo integrarse en una sola aplicación. La modularidad de React me permitió trabajar de manera más organizada, 
+      y descubrí la importancia de usar <strong>props</strong> y <strong>children</strong> para comunicar datos entre componentes padre, hijo y hermanos.
+    </p>
+
+    <p>
+      Además, conocer <strong>TypeScript</strong> me ayudó a dar un paso más profesional en la programación. 
+      Aprendí que el tipado fuerte previene errores antes de ejecutar el código, lo cual es esencial cuando los proyectos crecen y tienen múltiples componentes.
+      También exploré diferentes maneras de dar estilo a los componentes —desde el CSS tradicional hasta los módulos y el uso de 
+      <strong>Tailwind CSS</strong>, que simplifica enormemente el diseño responsivo.
+    </p>
+
+    <p>
+      Los <strong>ejercicios prácticos</strong> fueron la mejor forma de reforzar los conocimientos. 
+      Crear los siete componentes de una interfaz, anidar datos entre ellos y renderizar listas dinámicamente me permitió aplicar de forma tangible los principios de React.
+      Al mismo tiempo, la práctica del <strong>CRUD con Hooks</strong> me hizo comprender en profundidad cómo funciona el manejo de estados y la lógica interna del framework.
+      Mediante <code>useState</code>, <code>useReducer</code> y <code>useContext</code>, entendí cómo se puede administrar la información global sin necesidad de librerías externas como Redux.
+      El CRUD me hizo ver a React no solo como una herramienta de diseño, sino como un entorno completo para desarrollar aplicaciones funcionales y persistentes.
+    </p>
+
+    <p>
+      Reflexionando sobre mi proceso de aprendizaje, reconozco que esta semana aprendí <strong>haciendo y analizando</strong>. 
+      Al principio, manejar tantos conceptos nuevos —JSX, props, hooks, reducer, context— parecía complicado, pero al combinarlos en proyectos prácticos logré integrarlos de manera natural.
+      Me di cuenta de que React está basado en la lógica de “dividir para construir”: dividir el proyecto en componentes pequeños que juntos crean una aplicación coherente y escalable.
+    </p>
+
+    <p class="conclusion">
+      En conclusión, esta semana marcó un antes y un después en mi formación como desarrollador. 
+      Aprendí que los <strong>componentes son el corazón de React</strong>, los <strong>hooks son su mente lógica</strong>, y 
+      <strong>JSX es el lenguaje que une todo</strong>. 
+      Dominar estos conceptos me dio la confianza para continuar creando aplicaciones reales, entendiendo cada parte del proceso y valorando la importancia de escribir código limpio, 
+      modular y reutilizable. 
+      Siento que ahora tengo una visión completa de cómo se construye una aplicación en React, y estoy preparado para seguir avanzando hacia la 
+      <strong>gestión avanzada de estados, rutas y optimización de rendimiento</strong> en las próximas semanas.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+    <ul>
+      <li>Wieruch, R. (2023). <em>The Road to React: Your journey to master plain yet pragmatic React.js.</em> Independently Published.</li>
+      <li>Banks, A., &amp; Porcello, E. (2021). <em>Learning React: Modern Patterns for Developing React Apps (3rd Edition).</em> O’Reilly Media.</li>
+      <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide (7th Edition).</em> O’Reilly Media.</li>
+      <li>Freeman, A., &amp; Robson, E. (2022). <em>Head First JavaScript Programming.</em> O’Reilly Media.</li>
+      <li>TypeScript Documentation. (2024). <em>TypeScript Handbook – Official Documentation.</em> Recuperado de: 
+        <a href="https://www.typescriptlang.org/docs/" target="_blank">https://www.typescriptlang.org/docs/</a>
+      </li>
+      <li>React Official Documentation. (2024). <em>React – A JavaScript library for building user interfaces.</em> Recuperado de: 
+        <a href="https://react.dev/" target="_blank">https://react.dev/</a>
+      </li>
+      <li>React Hooks API Reference. (2024). <em>Hooks – useState, useEffect, useContext, useReducer.</em> Recuperado de: 
+        <a href="https://react.dev/reference/react" target="_blank">https://react.dev/reference/react</a>
+      </li>
+      <li>Tailwind CSS Documentation. (2024). <em>Tailwind CSS – Utility-First CSS Framework.</em> Recuperado de: 
+        <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a>
+      </li>
+      <li>MDN Web Docs. (2024). <em>React: Componentes, JSX y renderizado.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_components" target="_blank">
+          https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_components
+        </a>
+      </li>
+      <li>Babel Documentation. (2024). <em>Babel – The JavaScript Compiler (JSX Transpiler).</em> Recuperado de: 
+        <a href="https://babeljs.io/docs/" target="_blank">https://babeljs.io/docs/</a>
+      </li>
+      <li>ESLint Documentation. (2024). <em>Find and fix problems in your JavaScript code.</em> Recuperado de: 
+        <a href="https://eslint.org/docs/latest/" target="_blank">https://eslint.org/docs/latest/</a>
+      </li>
+    </ul>
+  </div>
+</div>
 
   </div>
 </section>
