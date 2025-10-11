@@ -127,8 +127,8 @@
   }
 }
 
-/* ============================
-   ⚫️ FOOTER (Pie de página)
+/* ===============================
+   🔹 FOOTER (pie de página)
 =============================== */
 .footer {
   background: linear-gradient(180deg, #f9f9f9, #f1f1f1);
@@ -142,10 +142,6 @@
 .footer-content {
   max-width: 900px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .footer p {
@@ -634,6 +630,7 @@ body.dark-mode .semana-content {
   color: #ddd;
 }
 
+/* Footer */
 body.dark-mode .footer {
   background: linear-gradient(180deg, #1e1e1e, #121212);
   color: #ddd;
@@ -644,10 +641,7 @@ body.dark-mode .footer strong {
   color: #fff;
 }
 
-body.dark-mode .footer-links a {
-  color: #66aaff;
-}
-
+body.dark-mode .footer-links a,
 body.dark-mode .footer-socials a {
   color: #66aaff;
 }

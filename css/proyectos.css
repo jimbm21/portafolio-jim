@@ -228,6 +228,7 @@ body.dark-mode .project-card:hover .overlay {
   background: rgba(255, 255, 255, 0.1);
 }
 
+/* Footer */
 body.dark-mode .footer {
   background: linear-gradient(180deg, #1e1e1e, #121212);
   color: #ddd;

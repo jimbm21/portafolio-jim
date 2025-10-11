@@ -59,18 +59,56 @@ document.addEventListener("DOMContentLoaded", () => {
     // Aquí puedes poner animaciones o interacciones solo para el index
   }
 
-  if (path.includes("sobre-mi.html")) {
+if (path.includes("sobre-mi.html")) {
   console.log("👤 Página: Sobre mí");
 
-  // Animar barras de habilidades
-  const skills = document.querySelectorAll(".progress");
-  skills.forEach((bar) => {
-    const value = bar.getAttribute("style");
-    bar.style.width = "0";
-    setTimeout(() => {
-      bar.setAttribute("style", value);
-    }, 400);
+  // === Animar barras de habilidades al entrar en pantalla (nuevo diseño) ===
+  const skillBars = document.querySelectorAll(".skill-fill");
+
+  const barObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          barObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  skillBars.forEach((bar) => barObserver.observe(bar));
+
+  // === Animar aparición de secciones (fade / slide / zoom) ===
+  const elementosAnimados = document.querySelectorAll(
+    ".fade-in, .slide-up, .zoom-in"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  elementosAnimados.forEach((el) => observer.observe(el));
+
+  // === Efecto hover en botones de contacto ===
+  const contactButtons = document.querySelectorAll(".contact-btn");
+  contactButtons.forEach((btn) => {
+    btn.addEventListener("mouseenter", () => {
+      btn.style.transform = "scale(1.05)";
+    });
+    btn.addEventListener("mouseleave", () => {
+      btn.style.transform = "scale(1)";
+    });
   });
+  
 }
 
   if (path.includes("proyectos.html")) {
