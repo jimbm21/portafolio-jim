@@ -4172,7 +4172,437 @@ protected $fillable = ['nomEstudiante', 'dirEstudiante', 'ciuEstudiante'];</code
   <button class="semana-header">📘 Semana 14</button>
   <div class="semana-content">
 
+    <div class="sub-semana">
+  <button class="sub-header">📖 Definiciones y Procedimientos</button>
+  <div class="sub-content definiciones">
 
+    <p>
+      Durante la <strong>semana 14</strong> del curso 
+      <strong>Desarrollo de Aplicaciones Web</strong>, se abordó el tema 
+      <strong>Desarrollo Backend con Python</strong>, cuyo propósito fue comprender 
+      cómo funciona el entorno de ejecución de <strong>Python</strong> en un servidor web, 
+      cómo se configura el módulo <strong>mod_wsgi</strong> en Apache para ejecutar aplicaciones Python, 
+      y cómo crear aplicaciones web dinámicas utilizando el 
+      <strong>framework Flask</strong> y el <strong>motor de plantillas Jinja2</strong>. 
+      Esta semana permitió afianzar el conocimiento del lado servidor desde un lenguaje moderno, 
+      interpretado y multiparadigma, muy utilizado en el desarrollo web actual.
+    </p>
+
+    <h3>⚙️ 1. Apache HTTP Server y configuración del entorno</h3>
+    <p>
+      Aprendí que <strong>Apache HTTP Server</strong> es un software de código abierto que actúa 
+      como intermediario entre el navegador del usuario y la aplicación web del servidor. 
+      Su función es <strong>recibir las solicitudes HTTP/HTTPS</strong>, localizar los recursos 
+      solicitados (HTML, imágenes, archivos o scripts Python), procesarlos y 
+      <strong>enviar la respuesta al navegador</strong>.
+    </p>
+
+    <p>Para la práctica se utilizó <strong>Apache Lounge</strong>, una versión portable para Windows. 
+    Los pasos básicos de configuración fueron:</p>
+
+<pre><code>1. Descargar la versión desde https://www.apachelounge.com/download/
+2. Descomprimirla en D:\Server\Apache24
+3. Editar el archivo httpd.conf agregando:
+   Listen 8080
+   ServerName localhost:8080
+   Define SRVROOT "D:\Server\Apache24"
+4. Ejecutar httpd.exe y verificar en http://localhost:8080</code></pre>
+
+    <p>El mensaje “It works!” confirmó que el servidor Apache estaba operativo.</p>
+
+    <h3>🔗 2. Instalación y configuración del módulo mod_wsgi</h3>
+    <p>
+      Aprendí que <strong>mod_wsgi</strong> (Web Server Gateway Interface) es un módulo que 
+      permite que <strong>Apache ejecute aplicaciones Python</strong>, integrando frameworks 
+      como Flask o Django en entornos de producción.
+    </p>
+
+<pre><code>pip install mod_wsgi
+mod_wsgi-express module-config
+</code></pre>
+
+    <p>El comando anterior genera líneas como:</p>
+
+<pre><code>LoadFile "C:/Python39/python39.dll"
+LoadModule wsgi_module "C:/Python39/Lib/site-packages/mod_wsgi/server/mod_wsgi.cp39-win_amd64.pyd"
+WSGIScriptAlias / "C:/webapps/miapp/app.wsgi"
+&lt;Directory "C:/webapps/miapp"&gt;
+    Require all granted
+&lt;/Directory&gt;
+</code></pre>
+
+    <p>Con esta integración, el servidor Apache quedó preparado para ejecutar proyectos Python mediante <strong>WSGI</strong>.</p>
+
+    <h3>🐍 3. Introducción al lenguaje Python</h3>
+    <p>
+      Python es un <strong>lenguaje interpretado, de tipado dinámico y multiparadigma</strong> 
+      que combina enfoques estructurados, orientados a objetos y funcionales. 
+      Se destaca por su <strong>sintaxis clara</strong>, su comunidad activa y su amplia 
+      biblioteca estándar.
+    </p>
+
+    <ul>
+      <li><strong>1989–1991:</strong> Creado por Guido van Rossum.</li>
+      <li><strong>2000–2010:</strong> Python 2 introdujo Unicode y comprensión de listas.</li>
+      <li><strong>2008–presente:</strong> Python 3 incorpora mejoras en memoria y Unicode por defecto.</li>
+    </ul>
+
+    <p>Hoy en día, Python se utiliza en <strong>ciencia de datos, desarrollo web, inteligencia artificial y automatización</strong>.</p>
+
+    <h3>💻 4. Instalación y ejecución de Python</h3>
+<pre><code>1. Descargar desde https://www.python.org/downloads
+2. Marcar "Add Python to PATH"
+3. Verificar con python --version
+4. Crear un programa:
+   print("¡Hola, mundo!")</code></pre>
+
+    <p>Este ejercicio demuestra la ejecución directa del código sin necesidad de compilación.</p>
+
+    <h3>📦 5. Gestor de paquetes PIP</h3>
+<pre><code>pip install requests
+pip list
+pip install -r requirements.txt</code></pre>
+
+    <p>
+      <strong>PIP</strong> es el gestor de paquetes de Python, utilizado para instalar, 
+      actualizar o eliminar dependencias desde <strong>PyPI</strong>. 
+      Facilita la integración de librerías externas en los proyectos.
+    </p>
+
+    <h3>🧠 6. Estilo de programación – PEP 8</h3>
+    <ul>
+      <li>Usar 4 espacios por nivel de indentación.</li>
+      <li>Evitar espacios innecesarios y mantener líneas de máximo 79 caracteres.</li>
+      <li>Usar <em>snake_case</em> para funciones y <em>PascalCase</em> para clases.</li>
+      <li>Organizar importaciones por tipo (estándar, terceros, locales).</li>
+    </ul>
+
+    <p>Seguir PEP 8 garantiza un código limpio, legible y profesional.</p>
+
+    <h3>🧩 7. Sintaxis y fundamentos de Python</h3>
+<pre><code># Comentarios con #
+nombre = "Ana"
+print("Hola, mundo!")
+
+if edad >= 18:
+    print("Mayor de edad")
+else:
+    print("Menor de edad")
+
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    def saludar(self):
+        print(f"Hola, soy {self.nombre}")
+</code></pre>
+
+    <p>Estos ejemplos me ayudaron a comprender la estructura básica del lenguaje y su enfoque legible y eficiente.</p>
+
+    <h3>🌐 8. Framework Flask</h3>
+<pre><code>from flask import Flask
+app = Flask(__name__)
+
+@app.route('/')
+def hola():
+    return '¡Hola Mundo desde Flask!'
+
+if __name__ == '__main__':
+    app.run(debug=True)</code></pre>
+
+    <p>
+      Flask es un <strong>microframework ligero</strong> que implementa el patrón MVC. 
+      Permite manejar rutas, vistas y lógica de negocio con gran flexibilidad, integrando 
+      fácilmente bases de datos y motores de plantillas.
+    </p>
+
+    <h3>🧱 9. Jinja2 – Motor de plantillas</h3>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h1&gt;Hola {{ nombre }}&lt;/h1&gt;
+  {% if edad &gt;= 18 %}
+     &lt;p&gt;Eres mayor de edad.&lt;/p&gt;
+  {% else %}
+     &lt;p&gt;Eres menor de edad.&lt;/p&gt;
+  {% endif %}
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <p>
+      <strong>Jinja2</strong> separa la lógica del backend del diseño visual, 
+      permitiendo generar contenido dinámico en las vistas.
+    </p>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p>
+      Esta semana consolidó mis conocimientos sobre el 
+      <strong>backend con Python</strong>, comprendiendo desde la instalación de Apache y 
+      mod_wsgi, hasta la creación de una aplicación web funcional con Flask y Jinja2. 
+      Aprendí que Python, gracias a su sencillez y versatilidad, se adapta a múltiples áreas del 
+      desarrollo web. 
+      El uso de Flask me permitió entender la gestión de rutas, vistas y lógica bajo MVC, 
+      mientras que Jinja2 mostró la importancia de separar presentación y código. 
+      En conjunto, esta semana fortaleció mi capacidad para construir sistemas backend modernos, 
+      modulares y escalables con herramientas profesionales del ecosistema Python.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧪 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante la <strong>Semana 14</strong>, desarrollamos la 
+      <strong>Guía de Laboratorio N°14: Desarrollo Backend con Python – Flask – Django</strong>, 
+      con una duración total de <strong>30 minutos</strong>. 
+      El objetivo del laboratorio fue <strong>aplicar los fundamentos de la programación orientada a objetos (POO) en Python</strong>, 
+      configurar una aplicación <strong>Flask</strong> conectada a <strong>MySQL</strong> y comprender 
+      el flujo de ejecución de una aplicación web dinámica bajo el modelo cliente–servidor.
+    </p>
+
+    <h3>🧠 Ejercicio 1: Creación de un Proyecto Python – Programación Orientada a Objetos</h3>
+    <p><strong>Objetivo:</strong> Comprender la estructura de clases, herencia y sobrescritura de métodos en Python mediante un ejemplo con las clases <em>Persona</em> y <em>Estudiante</em>.</p>
+
+<pre><code>class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    def presentarse(self):
+        return f"Hola, soy {self.nombre} y tengo {self.edad} años."
+
+class Estudiante(Persona):
+    def __init__(self, nombre, edad, carrera):
+        super().__init__(nombre, edad)
+        self.carrera = carrera
+    def estudiar(self):
+        return f"{self.nombre} está estudiando {self.carrera}."
+    def presentarse(self):
+        return f"Hola, soy {self.nombre}, tengo {self.edad} años y estudio {self.carrera}."
+</code></pre>
+
+<pre><code>alumno = Estudiante("Laura", 20, "Ingeniería de Sistemas")
+print(alumno.presentarse())
+print(alumno.estudiar())
+</code></pre>
+
+<pre><code>Salida:
+Hola, soy Laura, tengo 20 años y estudio Ingeniería de Sistemas.
+Laura está estudiando Ingeniería de Sistemas.
+</code></pre>
+
+    <p><strong>Conclusión:</strong> Este ejercicio permitió reforzar la comprensión del paradigma <strong>orientado a objetos</strong>, la <strong>herencia de clases</strong> y el <strong>polimorfismo</strong> mediante la sobrescritura de métodos.</p>
+
+    <hr>
+
+    <h3>🌐 Ejercicio 2: Creación de una Aplicación Web en Flask</h3>
+    <p><strong>Objetivo:</strong> Desarrollar una aplicación web en Flask conectada a MySQL, capaz de registrar estudiantes mediante un formulario HTML.</p>
+
+    <h4>1. Requisitos previos</h4>
+<pre><code>pip install flask pymysql</code></pre>
+
+    <h4>2. Creación de la base de datos</h4>
+<pre><code>CREATE DATABASE escuela;
+USE escuela;
+CREATE TABLE estudiantes (
+  IdEstudiante INT PRIMARY KEY AUTO_INCREMENT,
+  nomEstudiante VARCHAR(100),
+  dirEstudiante VARCHAR(150),
+  ciuEstudiante VARCHAR(100)
+);
+</code></pre>
+
+    <h4>3. Archivo de conexión (conexion.py)</h4>
+<pre><code>import pymysql
+def obtener_conexion():
+    return pymysql.connect(
+        host='localhost',
+        user='root',
+        password='123456',
+        db='escuela',
+        cursorclass=pymysql.cursors.DictCursor
+    )
+</code></pre>
+
+    <h4>4. Aplicación Flask (app.py)</h4>
+<pre><code>from flask import Flask, render_template, request, redirect
+from conexion import obtener_conexion
+
+app = Flask(__name__)
+
+@app.route('/')
+def formulario():
+    return render_template('formulario.html')
+
+@app.route('/guardar', methods=['POST'])
+def guardar():
+    nombre = request.form['nombre']
+    direccion = request.form['direccion']
+    ciudad = request.form['ciudad']
+    conexion = obtener_conexion()
+    with conexion.cursor() as cursor:
+        cursor.execute(
+            "INSERT INTO estudiantes(nomEstudiante, dirEstudiante, ciuEstudiante) VALUES (%s, %s, %s)",
+            (nombre, direccion, ciudad)
+        )
+    conexion.commit()
+    conexion.close()
+    return redirect('/')
+</code></pre>
+
+    <h4>5. Plantilla HTML (templates/formulario.html)</h4>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;title&gt;Registro de Estudiantes&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Agregar Estudiante&lt;/h1&gt;
+  &lt;form action="/guardar" method="post"&gt;
+    &lt;label&gt;Nombre:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" name="nombre"&gt;&lt;br&gt;
+    &lt;label&gt;Dirección:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" name="direccion"&gt;&lt;br&gt;
+    &lt;label&gt;Ciudad:&lt;/label&gt;&lt;br&gt;
+    &lt;input type="text" name="ciudad"&gt;&lt;br&gt;&lt;br&gt;
+    &lt;input type="submit" value="Guardar"&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <h4>6. Ejecución del proyecto</h4>
+<pre><code>python app.py</code></pre>
+    <p>
+      Se accedió a <code>http://localhost:5000</code>, se visualizó el formulario web y al registrar 
+      un nuevo estudiante los datos se almacenaron correctamente en la base de datos <strong>escuela</strong>.
+    </p>
+
+    <hr>
+
+    <h3>✅ Resultados obtenidos</h3>
+    <ul>
+      <li>Se implementó una <strong>aplicación web funcional con Flask</strong>.</li>
+      <li>Se validó la conexión entre Flask y <strong>MySQL</strong> mediante <code>pymysql</code>.</li>
+      <li>Los formularios HTML interactuaron correctamente con el servidor mediante el método <strong>POST</strong>.</li>
+      <li>Los registros fueron almacenados correctamente en la tabla <code>estudiantes</code>.</li>
+      <li>La estructura del proyecto reflejó el patrón <strong>MVC (Modelo–Vista–Controlador)</strong> en un entorno Python real.</li>
+    </ul>
+
+    <h3>💬 Conclusión general del laboratorio</h3>
+    <p>
+      Este laboratorio permitió integrar <strong>conceptos de programación orientada a objetos en Python</strong> 
+      con el <strong>desarrollo backend web usando Flask</strong>. 
+      Aprendí a conectar una aplicación con MySQL, manipular datos mediante formularios y comprender 
+      el procesamiento de solicitudes HTTP. 
+      Además, la práctica me familiarizó con la estructura modular de Flask, las <strong>rutas</strong>, 
+      las <strong>plantillas Jinja2</strong> y el manejo de peticiones <strong>POST</strong> 
+      en un entorno real. 
+      Fue una experiencia valiosa para entender cómo Python se utiliza profesionalmente en el desarrollo 
+      de <strong>sistemas web ligeros, rápidos y escalables</strong>.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧭 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la <strong>Semana 14</strong> del curso 
+      <strong>Desarrollo de Aplicaciones Web</strong>, consolidé mis conocimientos sobre el 
+      <strong>desarrollo backend utilizando Python</strong>, un lenguaje versátil y ampliamente adoptado 
+      en la industria tecnológica. 
+      A través de la práctica, comprendí cómo los principios de la 
+      <strong>programación orientada a objetos (POO)</strong> se aplican directamente en la construcción de 
+      aplicaciones web, permitiendo diseñar sistemas más organizados, mantenibles y escalables.
+    </p>
+
+    <p>
+      El primer ejercicio de la semana, enfocado en las clases <em>Persona</em> y <em>Estudiante</em>, 
+      me permitió aplicar los pilares de la POO: <strong>abstracción, herencia, encapsulamiento y polimorfismo</strong>. 
+      Comprendí que la herencia facilita la reutilización del código y que el polimorfismo otorga flexibilidad 
+      a los métodos, permitiendo redefinir su comportamiento según las necesidades de cada clase. 
+      Esta parte fue fundamental para entender cómo Python implementa los objetos y las relaciones jerárquicas 
+      entre ellos, sirviendo de base para estructuras más complejas en el desarrollo web.
+    </p>
+
+    <p>
+      Posteriormente, el laboratorio práctico con <strong>Flask</strong> fue una experiencia clave para comprender 
+      cómo se construyen las <strong>aplicaciones web dinámicas</strong> con Python. 
+      Pude observar cómo Flask gestiona las <strong>rutas (routes)</strong> y los 
+      <strong>métodos HTTP (GET y POST)</strong>, permitiendo que los datos de los formularios HTML se envíen 
+      al servidor y se almacenen en una base de datos. 
+      Aprendí que, a pesar de ser un microframework, Flask es muy poderoso y flexible, pues permite desarrollar 
+      aplicaciones reales con una estructura basada en el patrón 
+      <strong>Modelo–Vista–Controlador (MVC)</strong>.
+    </p>
+
+    <p>
+      La integración con <strong>MySQL</strong> me ayudó a reforzar el conocimiento sobre el flujo de datos 
+      entre el frontend y el backend. 
+      Comprendí cómo Python, mediante la librería <code>pymysql</code>, puede establecer una conexión con la base 
+      de datos, ejecutar consultas SQL y manejar transacciones en tiempo real. 
+      Además, el uso de <strong>Jinja2</strong> como motor de plantillas demostró la importancia de separar la lógica 
+      del código de la presentación visual, facilitando el mantenimiento y la personalización de las vistas.
+    </p>
+
+    <p>
+      A nivel reflexivo, esta semana me permitió conectar todos los conceptos aprendidos a lo largo del curso:
+    </p>
+
+    <ul>
+      <li>Entendí cómo se construye un <strong>entorno de desarrollo backend completo</strong>, desde la instalación del servidor Apache y los módulos de integración, hasta la ejecución de aplicaciones en Flask.</li>
+      <li>Aprendí que la organización del código y el uso de frameworks no solo facilitan el desarrollo, sino que también reflejan <strong>profesionalismo y buenas prácticas</strong> en la ingeniería de software.</li>
+      <li>Reconocí que el dominio de herramientas como Flask y MySQL amplía las posibilidades laborales, al ser tecnologías demandadas en el desarrollo de aplicaciones web modernas.</li>
+    </ul>
+
+    <p>
+      En conclusión, esta semana me permitió comprobar que 
+      <strong>Python es una herramienta potente para el backend</strong>, no solo por su facilidad de aprendizaje, 
+      sino por su capacidad de integrarse con bases de datos, frameworks y servidores de manera sencilla. 
+      Flask me enseñó la lógica real de un servidor web y cómo se implementa el ciclo completo de una aplicación 
+      dinámica. 
+      Gracias a esta experiencia, reforcé mi confianza para construir aplicaciones completas en Python y comprendí 
+      la importancia de los fundamentos de la programación orientada a objetos como base de todo desarrollo profesional.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>Python Software Foundation. (2024). <em>The Python Language Reference – Official Documentation.</em> Recuperado de: <a href="https://docs.python.org/3/" target="_blank">https://docs.python.org/3/</a></li>
+
+      <li>Apache Software Foundation. (2024). <em>Apache HTTP Server Documentation.</em> Recuperado de: <a href="https://httpd.apache.org/docs/" target="_blank">https://httpd.apache.org/docs/</a></li>
+
+      <li>mod_wsgi Documentation. (2024). <em>Official mod_wsgi Documentation for Apache and Python Integration.</em> Recuperado de: <a href="https://modwsgi.readthedocs.io/en/develop/" target="_blank">https://modwsgi.readthedocs.io/en/develop/</a></li>
+
+      <li>Flask Documentation. (2024). <em>Flask – Web Development, One Drop at a Time.</em> Recuperado de: <a href="https://flask.palletsprojects.com/en/latest/" target="_blank">https://flask.palletsprojects.com/en/latest/</a></li>
+
+      <li>Ronacher, A. (2023). <em>Jinja2 Documentation – Template Engine for Python.</em> Recuperado de: <a href="https://jinja.palletsprojects.com/en/latest/" target="_blank">https://jinja.palletsprojects.com/en/latest/</a></li>
+
+      <li>Oracle Corporation. (2024). <em>MySQL 8.0 Reference Manual.</em> Recuperado de: <a href="https://dev.mysql.com/doc/refman/8.0/en/" target="_blank">https://dev.mysql.com/doc/refman/8.0/en/</a></li>
+
+      <li>PEP 8 – van Rossum, G., Warsaw, B., &amp; Coghlan, N. (2024). <em>Style Guide for Python Code.</em> Recuperado de: <a href="https://peps.python.org/pep-0008/" target="_blank">https://peps.python.org/pep-0008/</a></li>
+
+      <li>Reitz, K., &amp; Schlusser, T. (2016). <em>The Hitchhiker’s Guide to Python: Best Practices for Development.</em> O’Reilly Media.</li>
+
+      <li>Grinberg, M. (2018). <em>Flask Web Development: Developing Web Applications with Python (2nd Edition).</em> O’Reilly Media.</li>
+
+      <li>MDN Web Docs. (2024). <em>HTTP Overview and Client-Server Communication.</em> Recuperado de: <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank">https://developer.mozilla.org/es/docs/Web/HTTP/Overview</a></li>
+
+      <li>W3C. (2024). <em>Web Architecture Principles.</em> Recuperado de: <a href="https://www.w3.org/TR/webarch/" target="_blank">https://www.w3.org/TR/webarch/</a></li>
+    </ul>
+
+  </div>
+</div>
 
   </div>
 </section>
