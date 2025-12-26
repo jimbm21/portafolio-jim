@@ -5056,7 +5056,484 @@ async function sendPrompt() {
   <button class="semana-header">📘 Semana 16</button>
   <div class="semana-content">
 
+    <div class="semana">
+  <button class="semana-header">📘 Semana 16: Definiciones y Procedimientos</button>
+  <div class="semana-content">
 
+    <p>
+      Durante la <strong>Semana 16</strong> del curso <strong>Desarrollo de Aplicaciones Web</strong>, se desarrolló la 
+      <strong>Evaluación Final en grupo</strong>, cuyo objetivo fue diseñar, implementar y desplegar un 
+      <strong>Sistema Web Inteligente para la Predicción de Resultados de la NBA mediante Modelos de Machine Learning</strong>.
+      El proyecto integró todo el conocimiento adquirido durante el semestre, combinando 
+      <strong>desarrollo backend y frontend</strong>, <strong>bases de datos relacionales</strong>, 
+      <strong>autenticación segura</strong> e <strong>inteligencia artificial aplicada a la predicción deportiva</strong>.
+    </p>
+
+    <hr>
+
+    <h3>🧩 1. Objetivo general del proyecto</h3>
+    <p>
+      El propósito del sistema fue crear una <strong>plataforma web predictiva</strong> donde los usuarios pudieran registrarse, 
+      iniciar sesión, ingresar partidos de la NBA y obtener predicciones sobre el posible ganador, junto con un 
+      <strong>porcentaje de probabilidad y nivel de confianza</strong>, calculados por un modelo de 
+      <strong>Machine Learning</strong>.
+    </p>
+    <p>
+      Esta herramienta demuestra cómo la <strong>inteligencia artificial</strong> puede integrarse en sistemas web modernos 
+      para generar información analítica y útil en tiempo real.
+    </p>
+
+    <hr>
+
+    <h3>⚙️ 2. Arquitectura general del sistema</h3>
+    <p>
+      El sistema se construyó bajo una <strong>arquitectura cliente–servidor orientada a servicios</strong>, basada en 
+      <strong>API REST</strong>. La solución se estructuró en <strong>tres módulos principales</strong> integrados mediante 
+      comunicación HTTP en formato JSON:
+    </p>
+
+    <ul>
+      <li><strong>Frontend (React + Vite):</strong> interfaz SPA, consumo de API con Axios, JWT para sesiones seguras y diseño con Tailwind CSS.</li>
+      <li><strong>Backend (Flask + MySQL):</strong> autenticación, persistencia de datos y comunicación con el modelo de IA mediante Flask-JWT-Extended, SQLAlchemy y CORS.</li>
+      <li><strong>Módulo de Inteligencia Artificial (FastAPI + Scikit-learn + XGBoost):</strong> microservicio predictivo independiente encargado del análisis y predicción de resultados.</li>
+    </ul>
+
+    <p>
+      El <em>diagrama de arquitectura</em> (pág. 7 del informe) evidencia la integración entre los módulos y la base de datos 
+      <strong>MySQL</strong>, garantizando escalabilidad, modularidad y seguridad en el flujo de información.
+    </p>
+
+    <hr>
+
+    <h3>💾 3. Diseño del backend y autenticación</h3>
+    <p>
+      El backend fue desarrollado en <strong>Flask 3.0</strong> con un sistema de autenticación basado en 
+      <strong>JSON Web Tokens (JWT)</strong>. Cada usuario obtiene un token al iniciar sesión, el cual se incluye en el 
+      encabezado <code>Authorization: Bearer &lt;token&gt;</code> para acceder a rutas protegidas.
+      Este mecanismo garantiza el principio de <em>confianza cero</em> y asegura la trazabilidad de cada sesión.
+    </p>
+
+    <p><strong>Rutas principales del backend:</strong></p>
+    <ul>
+      <li><code>POST /api/register</code> – Registro de nuevos usuarios.</li>
+      <li><code>POST /api/login</code> – Autenticación y emisión de token JWT.</li>
+      <li><code>GET /api/profile</code> – Consulta de perfil autenticado.</li>
+      <li><code>POST /api/analyze-text</code> – Análisis y predicción de partidos.</li>
+      <li><code>GET /api/predictions/history</code> – Historial de predicciones del usuario.</li>
+      <li><code>GET /api/teams</code> – Consulta de equipos disponibles.</li>
+    </ul>
+
+    <hr>
+
+    <h3>🧠 4. Módulo de Inteligencia Artificial (Machine Learning)</h3>
+    <p>
+      El corazón del sistema fue el módulo de <strong>IA predictiva</strong>, implementado con <strong>FastAPI</strong> y 
+      entrenado con datos históricos de la <strong>NBA</strong>. Se utilizó un enfoque de 
+      <strong>aprendizaje supervisado</strong> con librerías como <em>Scikit-learn, XGBoost, Pandas y NumPy</em>.
+    </p>
+
+    <ul>
+      <li>Entrenamiento con métricas como ELO, puntos promedio, efectividad y desempeño general.</li>
+      <li>Modelo <strong>XGBoostClassifier</strong> por su alta precisión en datos tabulares.</li>
+      <li>Exportación del modelo entrenado con <code>joblib</code> y carga automática en el microservicio.</li>
+      <li>Generación de probabilidades y nivel de confianza en formato JSON.</li>
+    </ul>
+
+    <p>
+      El flujo completo: el usuario solicita la predicción → el backend procesa los datos → el modelo infiere los resultados → 
+      el backend guarda la información → el frontend muestra las probabilidades.
+    </p>
+
+    <hr>
+
+    <h3>💻 5. Base de datos y persistencia</h3>
+    <p>
+      La base de datos <strong>MySQL</strong> gestionó dos entidades principales:
+    </p>
+    <ul>
+      <li><strong>Users:</strong> credenciales y datos personales.</li>
+      <li><strong>Predictions:</strong> historial de predicciones, equipos, ganador, probabilidades y fecha.</li>
+    </ul>
+    <p>
+      La relación <strong>1:N</strong> entre <em>users</em> y <em>predictions</em> garantizó el aislamiento lógico de datos y la trazabilidad de los registros por usuario.
+    </p>
+
+    <hr>
+
+    <h3>🖥️ 6. Frontend interactivo en React</h3>
+    <p>
+      El frontend, desarrollado con <strong>React 19 y Vite</strong>, ofreció una experiencia fluida y moderna. 
+      Se implementaron las siguientes vistas:
+    </p>
+    <ul>
+      <li>Inicio de sesión y registro.</li>
+      <li>Área de predicción con formulario para ingresar partidos.</li>
+      <li>Visualización de resultados con porcentajes de probabilidad y confianza.</li>
+      <li>Historial personal de predicciones.</li>
+      <li>Dashboard (en desarrollo) con métricas históricas globales.</li>
+    </ul>
+    <p>
+      El uso de <strong>JWT</strong> en el almacenamiento local permitió mantener sesiones seguras y persistentes, 
+      optimizando la experiencia del usuario.
+    </p>
+
+    <hr>
+
+    <h3>⚙️ 7. Procedimiento general de ejecución</h3>
+    <ol>
+      <li>El usuario se registra o inicia sesión.</li>
+      <li>Ingresa un partido (por ejemplo, <em>LAL vs GSW</em>).</li>
+      <li>El backend consulta el microservicio de IA con las estadísticas de ambos equipos.</li>
+      <li>El modelo predice el ganador y devuelve las probabilidades.</li>
+      <li>El backend guarda la predicción en la base de datos.</li>
+      <li>El frontend actualiza la interfaz con los resultados.</li>
+    </ol>
+
+    <hr>
+
+    <h3>🧾 8. Resultados del sistema</h3>
+    <ul>
+      <li>Implementación exitosa de una <strong>arquitectura desacoplada</strong> (frontend, backend e IA).</li>
+      <li>Integración efectiva de un modelo <strong>XGBoost</strong> con predicciones confiables.</li>
+      <li>Seguridad garantizada mediante <strong>autenticación JWT</strong>.</li>
+      <li>Persistencia y consistencia de datos con <strong>MySQL</strong>.</li>
+      <li>Interfaz moderna y responsiva con <strong>React + Tailwind CSS</strong>.</li>
+    </ul>
+
+    <hr>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p>
+      Esta semana representó la culminación del proceso formativo del curso. Aprendí a 
+      <strong>integrar múltiples tecnologías web con inteligencia artificial</strong>, aplicando conceptos de desarrollo 
+      full stack, seguridad, machine learning y despliegue modular.
+      El proyecto final demostró la posibilidad de construir una <strong>plataforma web inteligente, escalable y segura</strong>, 
+      capaz de combinar análisis de datos con interfaces interactivas y modernas.
+    </p>
+    <p>
+      Comprendí que el éxito de un sistema inteligente no depende solo del modelo de IA, sino también de su 
+      <strong>arquitectura, seguridad y experiencia de usuario</strong>.
+      Este proyecto final consolidó mis habilidades técnicas y de trabajo en equipo, 
+      demostrando la aplicación práctica del conocimiento en la creación de soluciones reales con impacto tecnológico.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧩 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante la <strong>Semana 16</strong> se llevó a cabo la <strong>Evaluación Final Grupal</strong> del curso 
+      <strong>Desarrollo de Aplicaciones Web</strong>, que consistió en el diseño, desarrollo y exposición del proyecto:
+      <em>“Sistema Web Inteligente para la Predicción de Resultados de la NBA mediante Modelos de Machine Learning”.</em>
+    </p>
+    <p>
+      El objetivo fue integrar todos los conocimientos adquiridos durante el semestre —desde el desarrollo backend y frontend, hasta la aplicación de inteligencia artificial— demostrando la capacidad del equipo para construir una 
+      <strong>solución web funcional, predictiva e interactiva</strong> utilizando herramientas y metodologías profesionales.
+    </p>
+
+    <hr>
+
+    <h3>⚙️ 1. Preparación del entorno de desarrollo</h3>
+    <p><strong>Entorno y herramientas utilizadas:</strong></p>
+    <ul>
+      <li><strong>Lenguaje principal:</strong> Python 3.11</li>
+      <li><strong>Framework backend:</strong> Flask</li>
+      <li><strong>Framework frontend:</strong> React + Vite</li>
+      <li><strong>Motor de base de datos:</strong> MySQL 8.0</li>
+      <li><strong>Bibliotecas de IA:</strong> Scikit-learn, XGBoost, Pandas, NumPy</li>
+      <li><strong>Librerías adicionales:</strong> Flask-JWT-Extended, Flask-CORS, SQLAlchemy, Joblib</li>
+      <li><strong>Gestores de dependencias:</strong> PIP y npm</li>
+      <li><strong>Control de versiones:</strong> GitHub</li>
+    </ul>
+
+    <pre><code>
+/nba-predictor/
+│
+├── backend/
+│   ├── app.py
+│   ├── models/
+│   ├── routes/
+│   ├── ml_model/
+│   └── database/
+│
+├── frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── ai_service/
+│   ├── model.pkl
+│   ├── predictor.py
+│   └── app.py
+└── README.md
+    </code></pre>
+
+    <p>
+      El entorno fue configurado colaborativamente en <strong>GitHub</strong>, utilizando ramas de desarrollo 
+      (<code>dev-frontend</code>, <code>dev-backend</code>, <code>ai-module</code>) para garantizar la integración progresiva y libre de conflictos.
+    </p>
+
+    <hr>
+
+    <h3>🧩 2. Desarrollo del módulo de Machine Learning</h3>
+    <p>
+      El <strong>módulo de IA</strong> fue el núcleo del proyecto, encargado de predecir los resultados de los partidos de la NBA 
+      a partir de datos históricos. Se implementó un modelo supervisado basado en <strong>XGBoostClassifier</strong>.
+    </p>
+
+    <ol>
+      <li>Recopilación y limpieza del dataset de estadísticas históricas.</li>
+      <li>Normalización de variables y partición del dataset (80% entrenamiento, 20% prueba).</li>
+      <li>Entrenamiento con <code>XGBoostClassifier</code> logrando una precisión del 87.5%.</li>
+      <li>Exportación del modelo en formato <code>.pkl</code> con <code>Joblib</code>.</li>
+      <li>Integración en el microservicio Flask/FastAPI.</li>
+    </ol>
+
+    <pre><code class="language-python">
+data = pd.read_csv("nba_dataset.csv")
+X = data.drop("Winner", axis=1)
+y = data["Winner"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+model = XGBClassifier()
+model.fit(X_train, y_train)
+accuracy = accuracy_score(y_test, model.predict(X_test))
+joblib.dump(model, "model.pkl")
+print(f"Precisión del modelo: {accuracy * 100:.2f}%")
+    </code></pre>
+
+    <blockquote>Precisión del modelo: <strong>87.5%</strong></blockquote>
+
+    <p><strong>Conclusión parcial:</strong> el modelo generalizó correctamente los patrones de desempeño de los equipos, alcanzando una precisión destacable para un modelo tabular supervisado.</p>
+
+    <hr>
+
+    <h3>💻 3. Implementación del backend (API Flask)</h3>
+    <p>
+      El backend, desarrollado en <strong>Flask</strong>, gestionó las rutas para registro, autenticación, predicción y consulta del historial. 
+      Se empleó <strong>JWT</strong> para sesiones seguras y persistentes.
+    </p>
+
+    <pre><code class="language-python">
+@app.route('/api/predict', methods=['POST'])
+@jwt_required()
+def predict():
+    data = request.get_json()
+    team_a = data['team_a']
+    team_b = data['team_b']
+    prediction = ml_model.predict_result(team_a, team_b)
+    save_prediction(current_user.id, team_a, team_b, prediction)
+    return jsonify(prediction)
+    </code></pre>
+
+    <pre><code class="language-json">
+{
+  "team_a": "Lakers",
+  "team_b": "Warriors",
+  "predicted_winner": "Lakers",
+  "confidence": 0.87
+}
+    </code></pre>
+
+    <p>El token JWT garantizó el acceso seguro a las rutas protegidas y la trazabilidad de cada sesión de usuario.</p>
+
+    <hr>
+
+    <h3>🧠 4. Creación de la interfaz web (Frontend React + Vite)</h3>
+    <p>
+      El <strong>frontend</strong> fue implementado en <strong>React</strong> con componentes modulares y diseño <em>responsive</em> en 
+      <strong>Tailwind CSS</strong>. Los principales módulos fueron:
+    </p>
+
+    <ul>
+      <li><code>Login.jsx</code> / <code>Register.jsx</code> – Autenticación y registro de usuarios.</li>
+      <li><code>PredictionForm.jsx</code> – Ingreso de equipos para predicción.</li>
+      <li><code>ResultsCard.jsx</code> – Visualización de resultados.</li>
+      <li><code>History.jsx</code> – Consulta del historial del usuario.</li>
+    </ul>
+
+    <pre><code class="language-jsx">
+const handlePredict = async () => {
+  const res = await axios.post("/api/predict", { team_a, team_b }, {
+    headers: { Authorization: `Bearer ${token}` }
+  });
+  setResult(res.data);
+};
+    </code></pre>
+
+    <blockquote>
+      <em>Ganador predicho: Los Angeles Lakers (Probabilidad: 87%)</em>
+    </blockquote>
+
+    <hr>
+
+    <h3>🧾 5. Pruebas funcionales del sistema</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Tipo de Prueba</th>
+          <th>Descripción</th>
+          <th>Resultado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Unitarias</td><td>Validación de rutas API Flask y carga del modelo de IA.</td><td>Correcto</td></tr>
+        <tr><td>Integración</td><td>Comunicación entre frontend y backend mediante Axios.</td><td>Correcto</td></tr>
+        <tr><td>Seguridad</td><td>Generación y validación de token JWT.</td><td>Correcto</td></tr>
+        <tr><td>Rendimiento</td><td>Tiempo de respuesta del modelo &lt; 1.5 segundos.</td><td>Aprobado</td></tr>
+        <tr><td>Experiencia de usuario</td><td>Fluidez del flujo de navegación React.</td><td>Óptima</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Conclusión:</strong> el sistema cumplió con los objetivos de la evaluación final, mostrando integración funcional y estable entre todas las capas del software.</p>
+
+    <hr>
+
+    <h3>🧠 6. Presentación del proyecto</h3>
+    <ul>
+      <li>Demostración del flujo completo: registro, predicción y visualización.</li>
+      <li>Presentación del modelo de aprendizaje supervisado y su precisión.</li>
+      <li>Exposición de la arquitectura Flask + React y despliegue local sincronizado (<code>npm run dev</code> y <code>flask run</code>).</li>
+    </ul>
+    <p>
+      El docente destacó la <strong>modularización del código</strong>, el <strong>uso profesional de frameworks modernos</strong> y la 
+      <strong>integración exitosa de IA con desarrollo web</strong>.
+    </p>
+
+    <hr>
+
+    <h3>✅ Resultados finales del proyecto</h3>
+    <ul>
+      <li>Desarrollo exitoso de un <strong>sistema web inteligente funcional y seguro</strong>.</li>
+      <li>Modelo de Machine Learning con <strong>87.5% de precisión</strong>.</li>
+      <li>Implementación completa de <strong>autenticación JWT</strong>.</li>
+      <li>Registro persistente de predicciones por usuario.</li>
+      <li>Frontend moderno y <em>responsive</em> con <strong>React + Tailwind CSS</strong>.</li>
+      <li>Despliegue local estable y presentación operativa ante el docente evaluador.</li>
+    </ul>
+
+    <hr>
+
+    <h3>💬 Conclusión general del laboratorio</h3>
+    <p>
+      La <strong>evaluación final</strong> marcó la culminación del proceso formativo del curso, integrando todos los conocimientos 
+      adquiridos en el desarrollo de un sistema completo y profesional. Comprendí cómo una aplicación web puede funcionar como una 
+      <strong>plataforma inteligente</strong>, donde el backend actúa como el cerebro lógico, el frontend como la interfaz comunicativa 
+      y el modelo de IA como el componente cognitivo.
+    </p>
+    <p>
+      Además, aprendí el valor del <strong>trabajo en equipo</strong>, la <strong>planificación estructurada</strong> y el uso de 
+      <strong>repositorios colaborativos (GitHub)</strong>. Este proyecto me brindó una visión integral del ciclo de vida del software, 
+      demostrando que la ingeniería web y la inteligencia artificial pueden converger en soluciones reales, eficientes e innovadoras.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧠 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la <strong>Semana 16</strong> culminó mi proceso de aprendizaje en el curso 
+      <strong>Desarrollo de Aplicaciones Web</strong>, mediante la presentación de un proyecto integrador que sintetizó todo lo aprendido a lo largo del semestre.
+      El desarrollo del <em>“Sistema Web Inteligente para la Predicción de Resultados de la NBA mediante Modelos de Machine Learning”</em> 
+      fue una experiencia altamente significativa, tanto en el ámbito técnico como en el trabajo colaborativo.
+    </p>
+
+    <p>
+      A nivel tecnológico, esta experiencia me permitió <strong>consolidar mis competencias en el desarrollo full stack</strong>, 
+      comprendiendo cómo las distintas capas de una aplicación —frontend, backend, base de datos y modelo de inteligencia artificial— 
+      interactúan de forma coordinada para ofrecer un servicio inteligente y funcional.
+      Aprendí a integrar <strong>React</strong> con <strong>Flask</strong> y <strong>MySQL</strong>, garantizando una arquitectura escalable y segura, 
+      basada en servicios <strong>RESTful</strong> y autenticación con <strong>JSON Web Tokens (JWT)</strong>.
+      Asimismo, pude aplicar los principios de modularidad, reutilización y desacoplamiento del software, logrando una estructura limpia, mantenible y extensible.
+    </p>
+
+    <p>
+      El componente de <strong>inteligencia artificial</strong> fue el núcleo del sistema y una de las partes más enriquecedoras del proceso.
+      Al entrenar un modelo <strong>XGBoostClassifier</strong> con datos reales de la NBA, comprendí cómo las técnicas de 
+      <strong>aprendizaje supervisado</strong> permiten crear sistemas predictivos capaces de generar resultados precisos y confiables.
+      Este módulo me enseñó la importancia del <em>preprocesamiento de datos</em>, la <em>selección de variables</em> y la 
+      <em>evaluación del rendimiento</em>, factores fundamentales para garantizar que los modelos de Machine Learning sean aplicables en contextos reales.
+    </p>
+
+    <p>
+      El proceso de integración entre el modelo de IA y la aplicación web fue uno de los mayores desafíos técnicos, 
+      ya que implicó sincronizar la comunicación entre microservicios, gestionar respuestas asincrónicas y validar los flujos de autenticación.
+      Superar estas dificultades me permitió comprender la <strong>importancia del diseño de arquitecturas distribuidas</strong>, 
+      esenciales en la industria tecnológica moderna.
+    </p>
+
+    <p>
+      En el ámbito personal y de trabajo en equipo, este proyecto reforzó mi capacidad de 
+      <strong>colaborar eficazmente en entornos de desarrollo reales</strong>, asignando responsabilidades, compartiendo código mediante 
+      <strong>GitHub</strong> y asegurando la coherencia del producto final.
+      La coordinación de tareas entre los integrantes del grupo me enseñó que un proyecto exitoso depende del 
+      <strong>compromiso, la comunicación y la organización colectiva</strong>.
+      Además, la presentación final ante el docente validó el esfuerzo conjunto y demostró el valor del aprendizaje progresivo alcanzado.
+    </p>
+
+    <p>
+      Reflexionando de manera más profunda, considero que este proyecto final marcó una transición entre el 
+      <strong>aprendizaje académico y la aplicación profesional del conocimiento</strong>.
+      Entendí que el desarrollo web actual no se limita a crear interfaces, sino que integra 
+      <strong>inteligencia artificial, seguridad, experiencia de usuario y despliegue escalable</strong>.
+      El sistema desarrollado no fue solo un ejercicio académico, sino una demostración de cómo la tecnología puede emplearse para 
+      resolver problemas reales mediante el uso de datos y algoritmos inteligentes.
+    </p>
+
+    <p>
+      En conclusión, esta experiencia representó la síntesis de todo mi proceso formativo en el curso.
+      Pude aplicar conocimientos de <strong>programación, arquitectura de software, machine learning y diseño web</strong> en un solo proyecto integral.
+      El <em>Sistema Web Inteligente para la Predicción de Resultados de la NBA</em> no solo fortaleció mis habilidades técnicas, 
+      sino que también desarrolló mi pensamiento crítico, capacidad analítica y trabajo colaborativo.
+      Cierro este curso con la satisfacción de haber construido una solución real, funcional y sustentada en las mejores prácticas de 
+      la <strong>ingeniería de software moderna</strong>, reafirmando mi interés en continuar especializándome en 
+      <strong>desarrollo web inteligente e inteligencia artificial aplicada</strong>.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>Géron, A. (2023). <em>Hands-On Machine Learning with Scikit-Learn, Keras &amp; TensorFlow (3rd Edition).</em> O’Reilly Media.</li>
+      <li>Chen, T., &amp; Guestrin, C. (2016). <em>XGBoost: A Scalable Tree Boosting System.</em> Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining.</li>
+      <li>Raschka, S., Mirjalili, V., &amp; Liu, Y. (2022). <em>Machine Learning with PyTorch and Scikit-Learn.</em> Packt Publishing.</li>
+      <li>Chollet, F. (2021). <em>Deep Learning with Python (2nd Edition).</em> Manning Publications.</li>
+      <li>Python Software Foundation. (2024). <em>The Python Language Reference.</em> Recuperado de: 
+        <a href="https://docs.python.org/3/" target="_blank">https://docs.python.org/3/</a></li>
+      <li>Flask Documentation. (2024). <em>Flask – Web Development, One Drop at a Time.</em> Recuperado de: 
+        <a href="https://flask.palletsprojects.com/en/latest/" target="_blank">https://flask.palletsprojects.com/en/latest/</a></li>
+      <li>Flask-JWT-Extended. (2024). <em>JSON Web Token Authentication for Flask APIs.</em> Recuperado de: 
+        <a href="https://flask-jwt-extended.readthedocs.io/en/stable/" target="_blank">https://flask-jwt-extended.readthedocs.io/en/stable/</a></li>
+      <li>Django Software Foundation. (2024). <em>Django Web Framework – Official Documentation.</em> Recuperado de: 
+        <a href="https://docs.djangoproject.com/en/stable/" target="_blank">https://docs.djangoproject.com/en/stable/</a></li>
+      <li>React Team – Meta Platforms, Inc. (2024). <em>React Documentation.</em> Recuperado de: 
+        <a href="https://react.dev/" target="_blank">https://react.dev/</a></li>
+      <li>Vercel, Inc. (2024). <em>Vite and Frontend Tooling Documentation.</em> Recuperado de: 
+        <a href="https://vitejs.dev/" target="_blank">https://vitejs.dev/</a></li>
+      <li>Oracle Corporation. (2024). <em>MySQL 8.0 Reference Manual.</em> Recuperado de: 
+        <a href="https://dev.mysql.com/doc/" target="_blank">https://dev.mysql.com/doc/</a></li>
+      <li>Hugging Face. (2024). <em>Transformers Documentation – Model Deployment.</em> Recuperado de: 
+        <a href="https://huggingface.co/docs/transformers" target="_blank">https://huggingface.co/docs/transformers</a></li>
+      <li>Russell, S., &amp; Norvig, P. (2021). <em>Artificial Intelligence: A Modern Approach (4th Edition).</em> Pearson Education.</li>
+      <li>MDN Web Docs. (2024). <em>HTTP Methods and Client–Server Communication.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank">https://developer.mozilla.org/es/docs/Web/HTTP/Overview</a></li>
+      <li>GitHub Docs. (2024). <em>Collaborating with Branches and Pull Requests.</em> Recuperado de: 
+        <a href="https://docs.github.com/en/pull-requests" target="_blank">https://docs.github.com/en/pull-requests</a></li>
+    </ul>
+
+  </div>
+</div>
 
   </div>
 </section>
