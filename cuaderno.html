@@ -2403,6 +2403,426 @@ function reducer(state, action) {
   </div>
 </section>
 
+<!-- Semana 8 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 8</button>
+  <div class="semana-content">
+
+    <div class="sub-semana">
+  <button class="sub-header">⚙️ Definiciones y Procedimientos</button>
+  <div class="sub-content definiciones">
+
+    <p>
+      Durante la octava semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, realizamos la 
+      <strong>Evaluación Parcial</strong> en equipos de cuatro integrantes. 
+      Esta evaluación tuvo una duración de <strong>120 minutos</strong> y consistió en el desarrollo completo de una 
+      aplicación web funcional utilizando <strong>React</strong>, <strong>Vite</strong>, <strong>TypeScript</strong> 
+      y <strong>Local Storage</strong> como mecanismo de persistencia de datos.
+    </p>
+
+    <p>
+      El caso de estudio planteó el diseño de un <strong>Sistema de Certificación en Línea</strong>, 
+      que simulaba un entorno real de acreditación profesional. 
+      Este proyecto integró múltiples módulos y funcionalidades, poniendo a prueba nuestras habilidades técnicas, 
+      trabajo colaborativo y comprensión del flujo lógico de una aplicación web moderna.
+    </p>
+
+    <hr>
+
+    <h3>⚙️ Descripción general del sistema</h3>
+    <p>
+      El sistema debía permitir la <strong>gestión de exámenes</strong>, la <strong>rendición en línea</strong>, 
+      la <strong>evaluación automática de resultados</strong>, la <strong>generación de certificados digitales</strong> 
+      y la <strong>creación de un perfil de usuario</strong> con currículum profesional vinculado.
+      Estas funcionalidades estaban divididas en cinco partes principales, cada una con objetivos y componentes específicos.
+    </p>
+
+    <hr>
+
+    <h3>1️⃣ Módulo de gestión de exámenes por el comité técnico</h3>
+    <p><strong>Objetivo:</strong> Permitir al comité técnico crear, editar y eliminar exámenes con diferentes tipos de preguntas.</p>
+    <p><strong>Procedimiento:</strong></p>
+    <ul>
+      <li>Se implementó el componente <code>ExamEditor</code> para registrar exámenes.</li>
+      <li>Cada examen incluía título, área temática, tipo de pregunta y porcentaje de aprobación.</li>
+      <li>Se usaron <strong>componentes funcionales</strong> con <code>props</code> y <code>useState</code> para manejar el estado.</li>
+      <li>Los exámenes se almacenaron en <strong>Local Storage</strong>, simulando persistencia.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Comprendí la importancia de estructurar la aplicación por componentes 
+      (<code>ExamEditor</code>, <code>QuestionForm</code>, <code>ExamList</code>) 
+      y aplicar <strong>validaciones</strong> para garantizar la integridad de los datos.</p>
+
+    <hr>
+
+    <h3>2️⃣ Rendición de exámenes en línea por los usuarios</h3>
+    <p><strong>Objetivo:</strong> Desarrollar una interfaz para responder exámenes y conocer resultados.</p>
+    <p><strong>Procedimiento:</strong></p>
+    <ul>
+      <li>Se creó el componente <code>ExamView</code> que cargaba preguntas desde Local Storage.</li>
+      <li>El sistema evaluaba automáticamente respuestas de opción múltiple.</li>
+      <li>Se implementó una restricción de <strong>intento único</strong> mediante control lógico y almacenamiento local.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Aprendí a manejar <strong>eventos en formularios</strong>, 
+      <strong>renderizado condicional</strong> y combinar <code>useState</code> con <code>useEffect</code> 
+      para controlar actualizaciones automáticas.</p>
+
+    <hr>
+
+    <h3>3️⃣ Generación de certificados digitales con URL pública</h3>
+    <p><strong>Objetivo:</strong> Crear certificados automáticos en PDF con datos del usuario y examen aprobado.</p>
+    <p><strong>Procedimiento:</strong></p>
+    <ul>
+      <li>Se desarrolló el componente <code>CertificateGenerator</code> con nombre, examen, fecha y código único.</li>
+      <li>Los certificados se almacenaron en <strong>Local Storage</strong> y se vinculaban al perfil del usuario.</li>
+      <li>Se generó un archivo PDF y una <strong>URL pública</strong> simulada de validación.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Comprendí el flujo de <strong>validación y autenticación</strong> de datos, 
+      y la importancia de generar documentos digitales con identificadores únicos (hash).</p>
+
+    <hr>
+
+    <h3>4️⃣ Gestión de usuarios registrados</h3>
+    <p><strong>Objetivo:</strong> Permitir el registro de usuarios con autenticación básica y asociación de datos personales.</p>
+    <p><strong>Procedimiento:</strong></p>
+    <ul>
+      <li>Se implementó el componente <code>UserForm</code> para registrar nombre, correo, documento y especialidad.</li>
+      <li>Se aplicaron <strong>validaciones de unicidad</strong> para evitar registros duplicados.</li>
+      <li>Los usuarios se listaban en <code>UserList</code> con acceso a exámenes y certificados.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Aprendí a manejar <strong>formularios controlados</strong> en React, 
+      validar campos con expresiones regulares y gestionar datos en Local Storage.</p>
+
+    <hr>
+
+    <h3>5️⃣ Currículum digital vinculado a certificaciones</h3>
+    <p><strong>Objetivo:</strong> Diseñar un perfil público para cada usuario con datos y certificaciones aprobadas.</p>
+    <p><strong>Procedimiento:</strong></p>
+    <ul>
+      <li>Se construyó el componente <code>Profile</code> con información personal, certificaciones y experiencia.</li>
+      <li>Cada perfil contaba con una <strong>URL única</strong> simulando un portafolio profesional.</li>
+      <li>Se aplicaron <strong>estilos responsivos</strong> con Tailwind CSS para distintos dispositivos.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Este módulo integró todo lo aprendido: 
+      <strong>componentes, props, useContext</strong> y <strong>diseño con Tailwind CSS</strong>.</p>
+
+    <hr>
+
+    <h3>💡 Aspectos técnicos y trabajo en equipo</h3>
+    <p>
+      El examen requirió una cuidadosa <strong>organización del código</strong>, división de tareas y coordinación del grupo. 
+      Cada integrante se encargó de un módulo y usamos <strong>GitHub</strong> para centralizar el proyecto y realizar el <em>merge final</em>.
+      Esta dinámica reflejó un entorno de trabajo real, donde la colaboración, comunicación y gestión del tiempo son esenciales.
+    </p>
+    <p>
+      En lo técnico, aprendí a combinar <strong>React + TypeScript + Vite</strong> coherentemente, 
+      comprendiendo la importancia del tipado, los componentes reutilizables y el control del estado global con <strong>Hooks</strong>.
+    </p>
+
+    <hr>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p class="conclusion">
+      Esta semana fue especialmente significativa porque me permitió aplicar todos los conocimientos teóricos en un proyecto integral y funcional.
+      Comprendí que React no se limita al diseño visual, sino que es una herramienta potente para construir sistemas completos con 
+      <strong>manejo de datos, validación, autenticación</strong> y <strong>generación de documentos digitales</strong>.
+      El trabajo en equipo reforzó mis habilidades de planificación, comunicación técnica y desarrollo colaborativo.
+      Gracias a esta evaluación, confirmé que he adquirido competencias reales en el uso de 
+      <strong>React, TypeScript y Vite</strong>, así como en la <strong>construcción, validación y despliegue</strong> de aplicaciones web modernas.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧩 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante esta semana realizamos la <strong>Evaluación Parcial del curso Desarrollo de Aplicaciones Web</strong>, 
+      la cual se desarrolló en <strong>equipos de cuatro integrantes</strong>.
+      El examen consistió en diseñar y programar un <strong>Sistema de Certificación en Línea</strong> 
+      utilizando <strong>React, Vite, TypeScript</strong> y <strong>Local Storage</strong>.
+      El proyecto se construyó bajo una estructura modular por componentes y con buenas prácticas de desarrollo colaborativo.
+    </p>
+
+    <p>
+      El objetivo principal fue demostrar nuestra capacidad para 
+      <strong>integrar los conocimientos de frontend moderno con la lógica funcional y la persistencia local de datos</strong>,
+      además de trabajar de manera organizada en un tiempo limitado.
+    </p>
+
+    <hr>
+
+    <h3>⚙️ Estructura general del sistema</h3>
+    <p>
+      El proyecto fue dividido en <strong>cinco módulos principales</strong>, distribuidos entre los miembros del equipo según su complejidad.
+      Se trabajó de forma sincronizada en un repositorio compartido de <strong>GitHub</strong>, donde cada integrante desarrolló su rama 
+      y posteriormente se realizó el <em>merge</em> final del código antes de la presentación.
+    </p>
+
+    <hr>
+
+    <h3>1️⃣ Módulo de creación y gestión de exámenes</h3>
+    <p><strong>Resultado:</strong> Desarrollamos un componente <code>ExamEditor</code> que permitía al comité técnico crear, editar y eliminar exámenes.</p>
+    <ul>
+      <li>Incluía título, área temática, tipo de pregunta y porcentaje de aprobación.</li>
+      <li><code>QuestionForm</code> gestionaba las preguntas y <code>ExamList</code> listaba los exámenes almacenados en Local Storage.</li>
+      <li>Se aplicaron validaciones y un diseño funcional con <strong>Tailwind CSS</strong>.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Aprendí a estructurar formularios dinámicos, usar <code>useState</code> y <code>useEffect</code> 
+       para manejar estados compuestos y reforcé la lógica CRUD en React.</p>
+
+    <hr>
+
+    <h3>2️⃣ Módulo de rendición de exámenes online</h3>
+    <p><strong>Resultado:</strong> Los usuarios podían seleccionar un examen y responderlo en el componente <code>ExamView</code>.
+       El sistema evaluaba automáticamente la nota final y almacenaba los resultados en Local Storage con control de intento único.</p>
+    <p><strong>Aprendizaje:</strong> Comprendí cómo manejar eventos y estados controlados con Hooks, 
+       aplicar <strong>renderizado condicional</strong> y mantener sincronía de datos entre componentes sin recargar la página.</p>
+
+    <hr>
+
+    <h3>3️⃣ Módulo de generación de certificados digitales</h3>
+    <p><strong>Resultado:</strong> El sistema generaba un <strong>certificado PDF</strong> al aprobar un examen, con:</p>
+    <ul>
+      <li>Nombre, título, fecha, código único y URL pública.</li>
+      <li>Generación mediante una librería PDF integrada en React.</li>
+      <li>Certificados almacenados y vinculados al perfil del usuario.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Apliqué conceptos de <strong>generación de archivos</strong> y manejo de rutas, 
+       comprendiendo cómo crear estructuras de datos que vinculan usuarios, exámenes y certificados.</p>
+
+    <hr>
+
+    <h3>4️⃣ Módulo de gestión de usuarios registrados</h3>
+    <p><strong>Resultado:</strong> Se implementó <code>UserForm</code> para registrar usuarios con validaciones de unicidad 
+       y almacenamiento en Local Storage, junto con <code>UserList</code> para visualizar registros y exámenes.</p>
+    <p>Además, se añadió una autenticación básica por número de documento para acceder al perfil personal.</p>
+    <p><strong>Aprendizaje:</strong> Aprendí a desarrollar <strong>formularios controlados</strong> con validación, 
+       aplicar <strong>useContext</strong> para compartir datos globales y manejar flujos de autenticación simple.</p>
+
+    <hr>
+
+    <h3>5️⃣ Módulo de currículum digital vinculado a certificaciones</h3>
+    <p><strong>Resultado:</strong> Cada usuario disponía de un perfil público con información personal, certificaciones y experiencia profesional.</p>
+    <ul>
+      <li>Diseño responsivo con <strong>Tailwind CSS</strong>.</li>
+      <li>Gestión de datos compartidos mediante <code>useContext</code>.</li>
+      <li>URL única simulando un portafolio profesional.</li>
+    </ul>
+    <p><strong>Aprendizaje:</strong> Integré conocimientos de componentes, props y Hooks en una aplicación real, 
+       comprendiendo la importancia del <strong>diseño centrado en el usuario</strong>.</p>
+
+    <hr>
+
+    <h3>🧩 Integración de los módulos y presentación final</h3>
+    <p>
+      Tras finalizar los módulos, realizamos pruebas de integración completas:
+      <em>Registro de usuario → Rendición de examen → Calificación → Certificado → Currículum</em>.
+      El resultado fue una aplicación web funcional, con dependencias gestionadas en <code>package.json</code> 
+      y ejecutada localmente con el servidor de <strong>Vite</strong>.
+    </p>
+    <p>
+      Durante la presentación mostramos al profesor el flujo completo del sistema, cumpliendo con todos los requisitos y demostrando 
+      una <strong>comprensión integral de React aplicado a un caso real</strong>.
+    </p>
+
+    <hr>
+
+    <h3>💬 Conclusión general del trabajo</h3>
+    <p class="conclusion">
+      Esta evaluación fue la experiencia práctica más completa del curso.
+      Pude comprobar cómo <strong>React, Vite y TypeScript</strong> se combinan para crear aplicaciones escalables y eficientes.
+      Fortalecí mis habilidades de <strong>trabajo en equipo</strong>, <strong>gestión del tiempo</strong>, 
+      <strong>integración de código en GitHub</strong> y <strong>planificación modular</strong>.
+      Más allá del aspecto técnico, comprendí la importancia de estructurar proyectos reales con roles definidos, 
+      comunicación efectiva y enfoque en la experiencia del usuario.
+      Esta evaluación representó una simulación profesional del desarrollo web colaborativo moderno.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧠 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la octava semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+      viví una experiencia distinta a las anteriores, ya que realizamos la <strong>Evaluación Parcial</strong> 
+      en equipos de cuatro integrantes. 
+      Esta actividad fue un desafío tanto técnico como organizacional, 
+      porque en un tiempo limitado tuvimos que desarrollar un 
+      <strong>Sistema de Certificación en Línea</strong> completamente funcional 
+      utilizando <strong>React, Vite, TypeScript</strong> y <strong>Local Storage</strong>.
+    </p>
+
+    <p>
+      La experiencia me permitió comprender cómo se integran todas las piezas trabajadas durante las semanas previas: 
+      <strong>componentes</strong>, <strong>Hooks</strong>, <strong>props</strong>, 
+      <strong>comunicación entre módulos</strong>, <strong>persistencia de datos</strong> 
+      y <strong>diseño con Tailwind CSS</strong>. 
+      A diferencia de las prácticas anteriores, esta vez tuvimos que pensar y actuar como un 
+      <em>equipo de desarrollo real</em>, organizando tareas, asignando responsabilidades 
+      y unificando nuestro código en un solo proyecto.
+    </p>
+
+    <p>
+      Desde el punto de vista técnico, la práctica me ayudó a reforzar el dominio de 
+      <strong>React como framework completo</strong>. 
+      Aprendí a estructurar una aplicación con módulos independientes y a manejar la interacción entre ellos 
+      a través de <strong>props</strong>, <strong>contextos</strong> y <strong>estados compartidos</strong>. 
+      También comprendí la importancia de <strong>TypeScript</strong> para mantener un código limpio y predecible, 
+      ya que su sistema de tipado nos permitió detectar errores antes de ejecutar la aplicación. 
+      El uso de <strong>Vite</strong> agilizó el desarrollo gracias a su velocidad y recarga instantánea, 
+      permitiéndonos probar los cambios en tiempo real sin interrupciones.
+    </p>
+
+    <p>
+      Durante el desarrollo del sistema, enfrentamos varios retos. 
+      Uno de los más significativos fue coordinar el trabajo de cuatro personas en paralelo y mantener 
+      la coherencia entre nuestros componentes y archivos. 
+      Para resolverlo, utilizamos <strong>GitHub</strong> como repositorio central, 
+      creando ramas individuales y realizando el <em>merge</em> final del código. 
+      Esto me permitió comprender el valor del <strong>control de versiones</strong>, 
+      la <strong>comunicación constante</strong> y la colaboración basada en planificación y confianza técnica.
+    </p>
+
+    <p>
+      En cuanto al contenido del examen, pude aplicar múltiples conceptos:
+    </p>
+    <ul>
+      <li>En el módulo del comité técnico, reforcé mi habilidad para <strong>crear y validar formularios complejos</strong> con estados controlados.</li>
+      <li>En el módulo de usuarios, comprendí cómo <strong>manejar datos persistentes</strong> en Local Storage y controlar intentos únicos.</li>
+      <li>En el módulo de certificados, aprendí a <strong>generar documentos PDF dinámicos</strong> y simular enlaces públicos mediante rutas locales.</li>
+      <li>En el perfil de usuario, confirmé la importancia del <strong>diseño responsivo</strong> y la coherencia entre los datos y la interfaz.</li>
+    </ul>
+
+    <p>
+      Reflexionando sobre mi aprendizaje, entendí que este examen no solo evaluó mis conocimientos, 
+      sino también mi capacidad de <strong>resolver problemas bajo presión</strong>, 
+      <strong>comunicarme eficazmente con mis compañeros</strong> 
+      y <strong>aplicar buenas prácticas de desarrollo web moderno</strong>. 
+      Fue una experiencia integral que me permitió consolidar la teoría, practicar la colaboración 
+      y asumir el rol de un verdadero desarrollador dentro de un equipo.
+    </p>
+
+    <p class="conclusion">
+      En conclusión, la <strong>Evaluación Parcial</strong> fue una oportunidad para demostrar que el aprendizaje obtenido hasta ahora 
+      no es solo conceptual, sino también práctico. 
+      Pude comprobar que soy capaz de planificar, construir e integrar un sistema funcional con tecnologías modernas, 
+      respetando los principios de <strong>modularidad</strong>, <strong>escalabilidad</strong> y <strong>usabilidad</strong>. 
+      Esta experiencia me motivó a seguir perfeccionando mis habilidades en React y me demostró que el 
+      <strong>trabajo en equipo, la organización y la constancia</strong> 
+      son tan importantes como el dominio técnico del código.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>Wieruch, R. (2023). <em>The Road to React: Your journey to master plain yet pragmatic React.js.</em> Independently Published.</li>
+      <li>Banks, A., & Porcello, E. (2021). <em>Learning React: Modern Patterns for Developing React Apps (3rd Edition).</em> O’Reilly Media.</li>
+      <li>Flanagan, D. (2020). <em>JavaScript: The Definitive Guide (7th Edition).</em> O’Reilly Media.</li>
+      <li>TypeScript Documentation. (2024). <em>TypeScript Handbook – Official Documentation.</em> Recuperado de: 
+        <a href="https://www.typescriptlang.org/docs/" target="_blank">https://www.typescriptlang.org/docs/</a></li>
+      <li>React Official Documentation. (2024). <em>React – A JavaScript library for building user interfaces.</em> Recuperado de: 
+        <a href="https://react.dev/" target="_blank">https://react.dev/</a></li>
+      <li>Vite Official Documentation. (2024). <em>Vite – Next Generation Frontend Tooling.</em> Recuperado de: 
+        <a href="https://vitejs.dev/" target="_blank">https://vitejs.dev/</a></li>
+      <li>MDN Web Docs. (2024). <em>Window.localStorage – Web APIs Documentation.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage" target="_blank">https://developer.mozilla.org/es/docs/Web/API/Window/localStorage</a></li>
+      <li>jsPDF Documentation. (2024). <em>jsPDF – Generate PDF files in JavaScript.</em> Recuperado de: 
+        <a href="https://github.com/parallax/jsPDF" target="_blank">https://github.com/parallax/jsPDF</a></li>
+      <li>GitHub Docs. (2024). <em>Collaborating with branches and pull requests.</em> Recuperado de: 
+        <a href="https://docs.github.com/es/pull-requests/collaborating-with-pull-requests" target="_blank">https://docs.github.com/es/pull-requests/collaborating-with-pull-requests</a></li>
+      <li>Tailwind CSS Documentation. (2024). <em>Tailwind CSS – Utility-First CSS Framework.</em> Recuperado de: 
+        <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a></li>
+      <li>Mozilla Developer Network (MDN). (2024). <em>React Components and Hooks: State and Effects.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_hooks" target="_blank">https://developer.mozilla.org/es/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_hooks</a></li>
+    </ul>
+
+  </div>
+</div>
+
+  </div>
+</section>
+
+<!-- Semana 9 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 9</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+<!-- Semana 10 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 10</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+<!-- Semana 11-12 -->
+<section class="semana">
+  <button class="semana-header">📘 Semanas 11-12</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+<!-- Semana 13 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 13</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+<!-- Semana 14 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 14</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+<!-- Semana 15 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 15</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+<!-- Semana 16 -->
+<section class="semana">
+  <button class="semana-header">📘 Semana 16</button>
+  <div class="semana-content">
+
+
+
+  </div>
+</section>
+
+
   <!-- ======= FOOTER ======= -->
   <footer class="footer">
     <div class="footer-content">
