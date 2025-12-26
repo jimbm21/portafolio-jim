@@ -4612,7 +4612,441 @@ def guardar():
   <button class="semana-header">📘 Semana 15</button>
   <div class="semana-content">
 
+    <div class="sub-semana">
+  <button class="sub-header">📘 Definiciones y Procedimientos</button>
+  <div class="sub-content definiciones">
 
+    <p>
+      Durante la <strong>Semana 15</strong> del curso <strong>Desarrollo de Aplicaciones Web</strong>, se desarrolló el tema 
+      <strong>“Sistemas Inteligentes con Python – Flask – Django”</strong>, enfocado en comprender los fundamentos de la 
+      <strong>inteligencia artificial aplicada al backend</strong>, su arquitectura funcional y las tecnologías que permiten su integración en entornos web.
+      El objetivo principal fue reconocer cómo los sistemas inteligentes perciben, razonan, aprenden y actúan dentro de una infraestructura de software, 
+      y cómo estas capacidades pueden implementarse con <strong>Python</strong>, utilizando frameworks modernos como 
+      <strong>Flask</strong> y <strong>Django</strong> para crear aplicaciones inteligentes.
+    </p>
+
+    <h3>🤖 1. Concepto de Sistemas Inteligentes</h3>
+    <p>
+      Un <strong>sistema inteligente</strong> es una entidad computacional capaz de <strong>percibir su entorno, procesar información, 
+      razonar, aprender y actuar de manera autónoma</strong> para alcanzar objetivos definidos. 
+      Estos sistemas combinan diversas disciplinas —como el aprendizaje automático, la robótica, la minería de datos y el razonamiento simbólico— 
+      para emular capacidades cognitivas humanas.
+    </p>
+
+    <p><strong>Principales alcances funcionales:</strong></p>
+    <ul>
+      <li><strong>Percepción sensorial:</strong> Captura de datos desde sensores o fuentes digitales.</li>
+      <li><strong>Razonamiento simbólico:</strong> Aplicación de inferencias basadas en reglas lógicas y conocimiento previo.</li>
+      <li><strong>Aprendizaje adaptativo:</strong> Mejora continua del desempeño a partir de la experiencia.</li>
+    </ul>
+
+    <p><strong>Ámbitos de aplicación:</strong></p>
+    <ul>
+      <li>Automatización industrial y robótica autónoma.</li>
+      <li>Diagnóstico médico asistido por IA.</li>
+      <li>Vehículos inteligentes (conducción autónoma).</li>
+      <li>Finanzas y sistemas predictivos.</li>
+      <li>Educación personalizada y asistentes virtuales.</li>
+      <li>Ciudades y hogares inteligentes.</li>
+    </ul>
+
+    <h3>🧩 2. Arquitectura de un Sistema Inteligente</h3>
+    <p>
+      La arquitectura de un sistema inteligente define cómo se estructuran sus módulos funcionales y cómo se comunican para cumplir objetivos cognitivos.
+      Está compuesta por los siguientes componentes principales:
+    </p>
+    <ul>
+      <li><strong>Módulo de percepción:</strong> Adquiere y traduce estímulos externos (datos o imágenes) en información procesable.</li>
+      <li><strong>Módulo de conocimiento:</strong> Contiene bases de datos estructuradas, ontologías o redes semánticas.</li>
+      <li><strong>Módulo de razonamiento:</strong> Ejecuta inferencias y genera planes de acción.</li>
+      <li><strong>Módulo de aprendizaje:</strong> Aplica algoritmos de machine learning y deep learning.</li>
+      <li><strong>Módulo de acción:</strong> Ejecuta respuestas físicas o virtuales.</li>
+      <li><strong>Interfaz hombre–máquina:</strong> Permite la interacción con el usuario.</li>
+    </ul>
+
+    <h3>🧠 3. Redes Neuronales y Deep Learning</h3>
+    <p>
+      Las <strong>redes neuronales artificiales</strong> son modelos inspirados en el cerebro humano, formados por neuronas conectadas mediante pesos sinápticos. 
+      Aprenden ajustando estos pesos mediante algoritmos como la <em>retropropagación del error</em>.
+    </p>
+
+    <p><strong>Tipos comunes:</strong></p>
+    <ul>
+      <li><strong>Perceptrón Multicapa (MLP):</strong> Clasificación general.</li>
+      <li><strong>Redes Convolucionales (CNN):</strong> Procesamiento de imágenes.</li>
+      <li><strong>Redes Recurrentes (RNN, LSTM):</strong> Series temporales y texto.</li>
+      <li><strong>Redes de Kohonen:</strong> Agrupación y reducción de dimensionalidad.</li>
+    </ul>
+
+    <p>
+      El <strong>deep learning</strong> se basa en redes neuronales profundas con múltiples capas ocultas que permiten 
+      representar funciones complejas y extraer características automáticamente.
+    </p>
+
+    <h3>⚙️ 4. Algoritmos de Razonamiento y Toma de Decisiones</h3>
+    <p>
+      El <strong>razonamiento automático</strong> permite evaluar opciones y seleccionar la mejor acción según los objetivos del sistema. 
+      Los principales enfoques son:
+    </p>
+    <ul>
+      <li><strong>Sistemas basados en reglas:</strong> Uso de condiciones <em>IF–THEN</em>.</li>
+      <li><strong>Redes Bayesianas:</strong> Modelado probabilístico de la incertidumbre.</li>
+      <li><strong>Lógica difusa:</strong> Trabajo con valores imprecisos y lingüísticos.</li>
+      <li><strong>Árboles de decisión:</strong> Análisis de alternativas y resultados.</li>
+      <li><strong>Heurísticas y planificación (A*, STRIPS):</strong> Optimización de rutas o secuencias de acción.</li>
+    </ul>
+
+    <h3>💡 5. Modelos Discriminativos y Generativos</h3>
+    <p>
+      Se diferenciaron dos grandes enfoques del aprendizaje automático:
+    </p>
+
+    <p><strong>Modelos Discriminativos:</strong></p>
+    <ul>
+      <li>Modelan <strong>P(y|x)</strong> para clasificar o predecir etiquetas.</li>
+      <li>Ejemplos: Regresión logística, SVM, Árboles de decisión, BERT.</li>
+    </ul>
+
+    <p><strong>Modelos Generativos:</strong></p>
+    <ul>
+      <li>Modelan <strong>P(x, y)</strong> o <strong>P(x)</strong> para generar nuevos datos.</li>
+      <li>Ejemplos: Naive Bayes, GANs, Autoencoders, VAEs, HMM.</li>
+    </ul>
+
+    <h3>🌍 6. Large Language Models (LLM)</h3>
+    <p>
+      Los <strong>LLM (Large Language Models)</strong> representan una evolución de los modelos generativos, 
+      enfocados en el procesamiento del lenguaje natural mediante arquitecturas <strong>Transformer</strong>.
+    </p>
+
+    <ul>
+      <li>Modelan <strong>P(texto|contexto)</strong> para generar lenguaje coherente.</li>
+      <li>Utilizan mecanismos de <strong>autoatención (self-attention)</strong>.</li>
+      <li>Ejemplos: <strong>GPT</strong> (OpenAI), <strong>Gemini</strong> (Google), <strong>Claude</strong> (Anthropic), <strong>LLaMA</strong> (Meta).</li>
+    </ul>
+
+    <h3>🧱 7. Integración de Sistemas Inteligentes con Python – Flask – Django</h3>
+    <p>
+      Se revisó la integración de la IA en entornos web mediante Python, que destaca por su sintaxis clara y bibliotecas como 
+      <strong>NumPy, TensorFlow, PyTorch</strong> y <strong>Scikit-learn</strong>.
+    </p>
+
+    <p><strong>Procedimiento de integración:</strong></p>
+    <ol>
+      <li>Entrenar un modelo con librerías de Machine Learning.</li>
+      <li>Exportarlo (por ejemplo, como <code>.pkl</code> o <code>.h5</code>).</li>
+      <li>Integrarlo en una aplicación Flask o Django.</li>
+      <li>Crear rutas <code>/predict</code> o <code>/analyze</code> para devolver predicciones.</li>
+      <li>Conectar la interfaz web para mostrar resultados en tiempo real.</li>
+    </ol>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p>
+      Esta semana fue fundamental para comprender cómo la <strong>inteligencia artificial</strong> se implementa en sistemas backend reales. 
+      Aprendí que los <strong>sistemas inteligentes</strong> no solo simulan el pensamiento humano, sino que lo integran dentro de 
+      arquitecturas computacionales capaces de percibir, aprender y actuar. 
+      La conexión entre la <strong>IA y los frameworks web de Python (Flask y Django)</strong> abre la puerta al desarrollo de 
+      aplicaciones inteligentes adaptativas. 
+      En síntesis, comprendí la relación entre la teoría de la IA y su aplicación práctica en el desarrollo de software moderno, 
+      donde el backend se convierte en el núcleo de la inteligencia computacional.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧩 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante la <strong>Semana 15</strong> se realizaron dos prácticas complementarias:
+    </p>
+    <ul>
+      <li><strong>Guía de Laboratorio N°15-1:</strong> Implementación de algoritmos inteligentes en Python aplicando lógica condicional y control difuso.</li>
+      <li><strong>Guía de Laboratorio N°15-2:</strong> Desarrollo de una <strong>interfaz web con Flask</strong> para interactuar con un <strong>modelo de lenguaje Llama 3 (Meta AI)</strong>, integrando procesamiento natural del lenguaje (NLP) mediante la librería <strong>Transformers de Hugging Face</strong>.</li>
+    </ul>
+
+    <p>
+      Estas prácticas consolidaron los fundamentos del <strong>razonamiento automatizado</strong>, la <strong>lógica difusa</strong> y la 
+      <strong>integración de modelos de inteligencia artificial (IA)</strong> dentro de aplicaciones web modernas.
+    </p>
+
+    <hr>
+
+    <h3>🧠 Parte I – Guía de Laboratorio N°15-1: Desarrollo de Sistemas Inteligentes en Python</h3>
+
+    <h4>Ejercicio 1: Algoritmo de Toma de Decisiones Basado en Reglas IF–THEN</h4>
+    <p><strong>Objetivo:</strong> Diseñar un sistema experto básico que emule un diagnóstico médico mediante reglas lógicas del tipo <em>IF–THEN</em>, aplicando herencia y clases en Python.</p>
+
+    <p><strong>Desarrollo:</strong></p>
+    <pre><code class="language-python">
+class Persona:
+    def __init__(self, nombre, edad):
+        self.nombre = nombre
+        self.edad = edad
+    def presentarse(self):
+        return f"Hola, soy {self.nombre} y tengo {self.edad} años."
+
+class Paciente(Persona):
+    def __init__(self, nombre, edad, sintomas):
+        super().__init__(nombre, edad)
+        self.sintomas = sintomas
+    def mostrar_sintomas(self):
+        return f"Síntomas reportados: {', '.join(self.sintomas)}"
+
+def diagnosticar(sintomas):
+    if "fiebre" in sintomas and "tos" in sintomas and "dolor de garganta" in sintomas:
+        return "Diagnóstico: Posible gripe común"
+    elif "fiebre" in sintomas and "dolor muscular" in sintomas and "cansancio" in sintomas:
+        return "Diagnóstico: Posible influenza"
+    elif "dolor de cabeza" in sintomas and "mareos" in sintomas and "visión borrosa" in sintomas:
+        return "Diagnóstico: Posible migraña"
+    elif "tos" in sintomas and "dificultad para respirar" in sintomas:
+        return "Diagnóstico: Posible bronquitis"
+    else:
+        return "Diagnóstico: No se identificó una condición clara. Se recomienda consulta médica."
+    </code></pre>
+
+    <p><strong>Resultado en consola:</strong></p>
+    <pre><code>
+Hola, soy Lucía y tengo 22 años.
+Síntomas reportados: fiebre, tos, dolor de garganta
+Diagnóstico: Posible gripe común
+    </code></pre>
+
+    <p><strong>Conclusión:</strong> El ejercicio permitió aplicar <strong>razonamiento simbólico</strong> mediante reglas simples de diagnóstico automatizado.</p>
+
+    <hr>
+
+    <h4>Ejercicio 2: Sistema Inteligente de Control Difuso de Climatización</h4>
+    <p><strong>Objetivo:</strong> Implementar un sistema de <strong>lógica difusa (Fuzzy Logic)</strong> que determine la potencia del aire acondicionado según la temperatura ambiente.</p>
+
+    <p><strong>Desarrollo:</strong></p>
+    <pre><code class="language-python">
+temperatura = ctrl.Antecedent(np.arange(15, 41, 1), 'temperatura')
+potencia = ctrl.Consequent(np.arange(0, 101, 1), 'potencia')
+
+temperatura['baja'] = fuzz.trimf(temperatura.universe, [15, 15, 25])
+temperatura['media'] = fuzz.trimf(temperatura.universe, [20, 27, 34])
+temperatura['alta'] = fuzz.trimf(temperatura.universe, [30, 40, 40])
+
+potencia['baja'] = fuzz.trimf(potencia.universe, [0, 0, 50])
+potencia['media'] = fuzz.trimf(potencia.universe, [30, 50, 70])
+potencia['alta'] = fuzz.trimf(potencia.universe, [60, 100, 100])
+
+regla1 = ctrl.Rule(temperatura['baja'], potencia['baja'])
+regla2 = ctrl.Rule(temperatura['media'], potencia['media'])
+regla3 = ctrl.Rule(temperatura['alta'], potencia['alta'])
+
+simulador.input['temperatura'] = 33
+simulador.compute()
+print(f"Potencia sugerida: {simulador.output['potencia']:.2f}%")
+    </code></pre>
+
+    <p><strong>Resultado:</strong></p>
+    <pre><code>Potencia sugerida: 68.45%</code></pre>
+
+    <p><strong>Conclusión:</strong> El sistema ajustó dinámicamente la potencia del aire acondicionado según la temperatura, demostrando la <strong>precisión y adaptabilidad</strong> de la lógica difusa.</p>
+
+    <hr>
+
+    <h3>🤖 Parte II – Guía de Laboratorio N°15-2: Integración de un Modelo LLM con Flask</h3>
+    <p><strong>Objetivo:</strong> Desarrollar una <strong>interfaz web funcional</strong> que permita la interacción con el modelo <strong>Llama 3 (Meta AI)</strong>, integrando el backend con Flask y un frontend dinámico.</p>
+
+    <h4>1. Preparación del entorno</h4>
+    <pre><code class="language-bash">
+pip install torch transformers flask python-dotenv
+    </code></pre>
+
+    <h4>2. Estructura del proyecto</h4>
+    <pre><code>
+llama_web_app/
+├── app.py
+├── templates/
+│   └── index.html
+├── static/
+│   ├── style.css
+│   └── script.js
+├── .env
+    </code></pre>
+
+    <h4>3. Backend en Flask</h4>
+    <pre><code class="language-python">
+from flask import Flask, render_template, request, jsonify
+from transformers import AutoTokenizer, AutoModelForCausalLM
+import torch
+
+app = Flask(__name__)
+model_id = "meta-llama/Meta-Llama-3-8B-Instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_id)
+model = AutoModelForCausalLM.from_pretrained(model_id, device_map="auto")
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/generate", methods=["POST"])
+def generate():
+    prompt = request.json.get("prompt", "")
+    inputs = tokenizer(prompt, return_tensors="pt").to(model.device)
+    outputs = model.generate(**inputs, max_new_tokens=200)
+    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return jsonify({"response": response})
+
+if __name__ == "__main__":
+    app.run(debug=True)
+    </code></pre>
+
+    <h4>4. Interfaz HTML y JavaScript</h4>
+    <pre><code class="language-html">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat con Llama 3</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="chat-box">
+    <textarea id="prompt" placeholder="Escribe tu mensaje..."></textarea>
+    <button onclick="sendPrompt()">Enviar</button>
+    <div id="response"></div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
+    </code></pre>
+
+    <h4>script.js</h4>
+    <pre><code class="language-javascript">
+async function sendPrompt() {
+  const prompt = document.getElementById("prompt").value;
+  const responseBox = document.getElementById("response");
+  responseBox.innerHTML = "Generando respuesta...";
+  const res = await fetch("/generate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ prompt })
+  });
+  const data = await res.json();
+  responseBox.innerHTML = data.response;
+}
+    </code></pre>
+
+    <p>
+      Al ejecutar <code>python app.py</code> y acceder a 
+      <a href="http://localhost:5000" target="_blank">http://localhost:5000</a>, 
+      el sistema mostró una interfaz de chat donde el modelo 
+      <strong>Llama 3</strong> respondió en tiempo real a los mensajes ingresados.
+    </p>
+
+    <hr>
+
+    <h3>✅ Resultados finales</h3>
+    <ul>
+      <li>Se construyeron dos sistemas inteligentes funcionales: un <strong>sistema experto basado en reglas</strong> y un <strong>sistema de control difuso</strong>.</li>
+      <li>Se desarrolló una <strong>interfaz Flask–LLM</strong> para interactuar con el modelo <strong>Llama 3</strong> de Meta.</li>
+      <li>Se logró la <strong>integración de IA generativa</strong> dentro de un entorno web, validando la comunicación entre backend y frontend.</li>
+      <li>El servidor Flask respondió correctamente a las peticiones y generó texto dinámico en tiempo real.</li>
+    </ul>
+
+    <h3>💬 Conclusión general del laboratorio</h3>
+    <p>
+      Esta práctica representó un cierre integrador de la unidad. 
+      Combiné <strong>programación orientada a objetos</strong>, <strong>razonamiento lógico</strong>, 
+      <strong>lógica difusa</strong> y <strong>aprendizaje profundo</strong> aplicados en entornos reales con Python y Flask. 
+      El primer laboratorio simuló la <strong>toma de decisiones automática</strong>, 
+      mientras que el segundo demostró la conexión de <strong>modelos de lenguaje avanzados (LLMs)</strong> con aplicaciones web. 
+      Comprendí que la <strong>IA aplicada al backend</strong> no solo analiza datos, 
+      sino que puede ofrecer respuestas inteligentes en tiempo real mediante APIs y entornos web integrados.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧠 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la <strong>Semana 15</strong> del curso <strong>Desarrollo de Aplicaciones Web</strong>, tuve la oportunidad de integrar los conocimientos adquiridos a lo largo de todo el ciclo, aplicándolos en el contexto de la <strong>inteligencia artificial (IA)</strong> y su implementación en el desarrollo backend con <strong>Python</strong>.
+      Estas prácticas marcaron una etapa de consolidación, en la cual no solo comprendí los fundamentos teóricos de los <strong>sistemas inteligentes</strong>, sino también su funcionamiento real dentro de entornos web modernos.
+    </p>
+
+    <p>
+      En la <strong>primera parte del laboratorio (Guía 15-1)</strong>, desarrollé dos sistemas inteligentes: uno basado en <strong>reglas lógicas IF–THEN</strong> y otro fundamentado en <strong>lógica difusa</strong>.
+      El primer sistema me permitió experimentar el proceso de <strong>razonamiento simbólico</strong>, donde el conocimiento se representa mediante reglas que permiten a la máquina “pensar” y emitir un diagnóstico a partir de los síntomas ingresados por el usuario.
+      Aprendí cómo este tipo de sistemas expertos fueron los precursores de la inteligencia artificial moderna, y que su estructura aún es relevante para desarrollar soluciones determinísticas o de inferencia lógica.
+    </p>
+
+    <p>
+      El segundo sistema, basado en lógica difusa, me permitió entender cómo los sistemas inteligentes pueden manejar <strong>incertidumbre e imprecisión</strong>, simulando razonamientos más cercanos a los humanos.
+      Al definir conjuntos difusos y reglas de inferencia, comprendí cómo se pueden construir controladores inteligentes que interpretan condiciones intermedias, como ocurre en un sistema de climatización o en un sistema de recomendación.
+      Esta práctica reforzó mi comprensión del <strong>pensamiento computacional flexible</strong>, que combina lógica matemática con criterios de toma de decisión gradual.
+    </p>
+
+    <p>
+      En la <strong>segunda parte del laboratorio (Guía 15-2)</strong>, llevé el concepto de inteligencia artificial a un nivel más avanzado al integrar un <strong>modelo de lenguaje Llama 3 (Meta AI)</strong> con una aplicación web desarrollada en <strong>Flask</strong>.
+      Este ejercicio fue una demostración real de cómo los modelos de aprendizaje profundo (<strong>Deep Learning</strong>) pueden conectarse con un entorno web para generar respuestas automáticas en lenguaje natural.
+      Pude observar cómo los <strong>modelos generativos</strong>, basados en arquitecturas <strong>Transformer</strong>, procesan el contexto y producen texto coherente, emulando un comportamiento conversacional inteligente.
+    </p>
+
+    <p>
+      A nivel técnico, esta práctica me enseñó la importancia de los <strong>frameworks de backend (Flask y Django)</strong> como entornos ideales para desplegar modelos de IA, conectando la potencia del procesamiento en Python con la accesibilidad del entorno web.
+      Comprendí que un backend moderno puede servir como el “cerebro” del sistema, capaz de recibir datos, analizarlos, inferir resultados y devolver respuestas inteligentes en tiempo real.
+    </p>
+
+    <p>
+      Desde una perspectiva reflexiva, estas experiencias me ayudaron a comprender el verdadero alcance de la inteligencia artificial aplicada al desarrollo web.
+      Aprendí que un sistema inteligente no es solo un conjunto de algoritmos, sino una estructura que <strong>razona, aprende y se comunica</strong> con el usuario mediante interfaces digitales.
+      Además, reforcé habilidades clave como la integración de <strong>librerías de IA (Scikit-Fuzzy, Transformers)</strong>, el diseño de <strong>APIs inteligentes</strong> y la organización modular del código siguiendo buenas prácticas de ingeniería de software.
+    </p>
+
+    <p>
+      En conclusión, la <strong>Semana 15</strong> representó una síntesis de todo el curso, combinando <strong>programación, IA y desarrollo web</strong> en un mismo entorno.
+      Pude comprobar que el futuro del desarrollo backend está directamente vinculado con la inteligencia artificial, donde los sistemas ya no solo procesan información, sino que son capaces de <strong>entender, predecir y generar conocimiento</strong>.
+      Estas prácticas me motivaron a seguir profundizando en el campo de la <strong>IA aplicada al desarrollo de software</strong>, entendiendo que el ingeniero del futuro debe ser capaz de integrar la lógica, la programación y la inteligencia en un solo sistema.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>Russell, S., & Norvig, P. (2021). <em>Artificial Intelligence: A Modern Approach (4th Edition).</em> Pearson Education.</li>
+      <li>Negnevitsky, M. (2020). <em>Artificial Intelligence: A Guide to Intelligent Systems (4th Edition).</em> Addison-Wesley.</li>
+      <li>Zadeh, L. A. (1973). <em>Outline of a New Approach to the Analysis of Complex Systems and Decision Processes.</em> <strong>IEEE Transactions on Systems, Man, and Cybernetics</strong>, 3(1), 28–44.</li>
+      <li>Pedrycz, W., & Gomide, F. (2018). <em>Fuzzy Systems Engineering: Toward Human-Centric Computing.</em> Wiley–IEEE Press.</li>
+      <li>Giarratano, J., & Riley, G. (2020). <em>Expert Systems: Principles and Programming (6th Edition).</em> Cengage Learning.</li>
+      <li>Chollet, F. (2021). <em>Deep Learning with Python (2nd Edition).</em> Manning Publications.</li>
+      <li>Hugging Face. (2024). <em>Transformers Documentation – Pretrained Models and Pipelines.</em> Recuperado de: 
+        <a href="https://huggingface.co/docs/transformers" target="_blank">https://huggingface.co/docs/transformers</a>
+      </li>
+      <li>Meta AI. (2024). <em>Introducing Llama 3: The Next Generation of Open Foundation Models.</em> Recuperado de: 
+        <a href="https://ai.meta.com/llama/" target="_blank">https://ai.meta.com/llama/</a>
+      </li>
+      <li>Flask Documentation. (2024). <em>Flask – Web Development, One Drop at a Time.</em> Recuperado de: 
+        <a href="https://flask.palletsprojects.com/en/latest/" target="_blank">https://flask.palletsprojects.com/en/latest/</a>
+      </li>
+      <li>Django Software Foundation. (2024). <em>Django Web Framework – Official Documentation.</em> Recuperado de: 
+        <a href="https://docs.djangoproject.com/en/stable/" target="_blank">https://docs.djangoproject.com/en/stable/</a>
+      </li>
+      <li>Scikit-Fuzzy Documentation. (2024). <em>Python Fuzzy Logic Toolkit for Scientific Applications.</em> Recuperado de: 
+        <a href="https://pythonhosted.org/scikit-fuzzy/" target="_blank">https://pythonhosted.org/scikit-fuzzy/</a>
+      </li>
+      <li>Python Software Foundation. (2024). <em>The Python Language Reference.</em> Recuperado de: 
+        <a href="https://docs.python.org/3/" target="_blank">https://docs.python.org/3/</a>
+      </li>
+      <li>MDN Web Docs. (2024). <em>Client–Server Communication and HTTP Methods.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank">https://developer.mozilla.org/es/docs/Web/HTTP/Overview</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
 
   </div>
 </section>
