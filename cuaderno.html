@@ -3236,7 +3236,422 @@ javac --version</code></pre>
   <button class="semana-header">📘 Semana 10</button>
   <div class="semana-content">
 
+  <div class="sub-semana">
+  <button class="sub-header">📘 Definiciones y Procedimientos</button>
+  <div class="sub-content definiciones">
 
+    <p>
+      Durante la décima semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+      profundizamos en el desarrollo backend con <strong>tecnologías Java</strong>, comprendiendo cómo funcionan 
+      las páginas dinámicas, los frameworks empresariales y las herramientas modernas de automatización. 
+      Esta semana fue muy técnica, ya que abordamos desde la estructura interna del 
+      <strong>servidor Apache Tomcat</strong> hasta la creación de proyectos con <strong>Spring Boot</strong>, 
+      pasando por la comprensión de <strong>Jakarta Server Pages (JSP)</strong>, 
+      la <strong>inyección de dependencias (DI)</strong> y el manejo de proyectos con <strong>Maven</strong>.
+    </p>
+
+    <h3>⚙️ 1. Servidor Web: Apache Tomcat</h3>
+    <p>
+      Aprendí que <strong>Apache Tomcat</strong> (también conocido como <em>Jakarta Tomcat</em>) es un 
+      <strong>contenedor de servlets</strong> desarrollado por la Apache Software Foundation dentro del proyecto Jakarta. 
+      Tomcat implementa las especificaciones de <strong>Servlets</strong> y <strong>JavaServer Pages (JSP)</strong>, 
+      lo que permite ejecutar aplicaciones web basadas en Java.
+    </p>
+
+    <p>Estructura principal del servidor:</p>
+    <ul>
+      <li><strong>bin/</strong>: archivos ejecutables y scripts para iniciar o detener el servidor.</li>
+      <li><strong>conf/</strong>: configuración (por ejemplo, <code>server.xml</code>).</li>
+      <li><strong>webapps/</strong>: carpeta raíz donde se alojan las aplicaciones web.</li>
+      <li><strong>logs/</strong>: registros de ejecución.</li>
+      <li><strong>lib/</strong> y <strong>common/</strong>: bibliotecas compartidas.</li>
+    </ul>
+
+    <p>
+      El archivo <code>server.xml</code> define los elementos clave:
+      <ul>
+        <li><code>&lt;Server&gt;</code>: raíz de configuración.</li>
+        <li><code>&lt;Connector&gt;</code>: puertos y protocolos (por ejemplo, 8080).</li>
+        <li><code>&lt;Engine&gt;</code> y <code>&lt;Host&gt;</code>: administración de sitios y contextos.</li>
+      </ul>
+    </p>
+
+    <p>
+      Gracias a esta estructura modular, comprendí cómo Tomcat gestiona las conexiones HTTP y 
+      ejecuta el código Java del lado del servidor.
+    </p>
+
+    <h3>💻 2. Jakarta Server Pages (JSP)</h3>
+    <p>
+      El <strong>JSP (Jakarta Server Pages)</strong> combina <strong>HTML y Java</strong> para generar contenido dinámico. 
+      Su contenedor traduce archivos <code>.jsp</code> a <strong>servlets Java</strong> que son compilados y ejecutados por el servidor.
+    </p>
+
+    <h4>Ciclo de procesamiento JSP:</h4>
+    <ol>
+      <li>El cliente solicita la página (<code>GET /archivo.jsp</code>).</li>
+      <li>El servidor traduce el JSP a un archivo <code>.java</code>.</li>
+      <li>Compila el archivo en <code>.class</code>.</li>
+      <li>El servlet procesa la solicitud y devuelve HTML dinámico.</li>
+    </ol>
+
+    <p>
+      JSP puede acceder a todas las APIs de Java, incluyendo JDBC, lo que lo convierte en una herramienta potente 
+      para aplicaciones empresariales.
+    </p>
+
+    <h3>✏️ 3. Sintaxis y elementos de JSP</h3>
+    <ul>
+      <li><strong>Scriptlets:</strong> <code>&lt;% ... %&gt;</code> para insertar código Java.</li>
+    </ul>
+
+    <pre><code>&lt;% out.println("Hola Mundo desde JSP!"); %&gt;</code></pre>
+
+    <ul>
+      <li><strong>Declaraciones:</strong> <code>&lt;%!...%&gt;</code> para definir variables o métodos.</li>
+      <li><strong>Expresiones:</strong> <code>&lt;%= ... %&gt;</code> para mostrar valores.</li>
+      <li><strong>Directivas:</strong> <code>&lt;%@ page contentType="text/html" %&gt;</code></li>
+      <li><strong>Acciones:</strong> <code>&lt;jsp:include&gt;</code>, <code>&lt;jsp:useBean&gt;</code>, etc.</li>
+    </ul>
+
+    <p>
+      También existen <strong>objetos implícitos</strong> como <code>request</code>, <code>response</code>, 
+      <code>session</code>, <code>application</code> y <code>out</code> que JSP crea automáticamente.
+    </p>
+
+    <h3>🧩 4. Modelo MVC en JSP</h3>
+    <p>
+      El <strong>Modelo-Vista-Controlador (MVC)</strong> divide la aplicación en:
+    </p>
+    <ul>
+      <li><strong>Modelo:</strong> gestiona los datos y la lógica del negocio.</li>
+      <li><strong>Vista:</strong> muestra la información al usuario (HTML + JSP).</li>
+      <li><strong>Controlador:</strong> procesa las solicitudes mediante servlets.</li>
+    </ul>
+    <p>
+      Esta estructura separa la lógica de presentación y mejora la escalabilidad y mantenimiento.
+    </p>
+
+    <h3>⚙️ 5. Gestión de Dependencias con Maven</h3>
+    <p>
+      <strong>Maven</strong> es un gestor de dependencias que automatiza el ciclo de vida de proyectos Java. 
+      Su archivo principal <code>pom.xml</code> define las librerías, versiones y configuraciones.
+    </p>
+
+    <pre><code>&lt;project&gt;
+  &lt;groupId&gt;org.example&lt;/groupId&gt;
+  &lt;artifactId&gt;webapp&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+&lt;/project&gt;</code></pre>
+
+    <p>Comandos más usados:</p>
+    <ul>
+      <li><code>mvn clean install</code>: compila y empaqueta el proyecto.</li>
+      <li><code>mvn tomcat7:deploy</code>: despliega la aplicación.</li>
+    </ul>
+
+    <h3>🌱 6. Spring Framework</h3>
+    <p>
+      El <strong>Spring Framework</strong> facilita el desarrollo de aplicaciones empresariales mediante 
+      <strong>Inversión de Control (IoC)</strong> y <strong>Inyección de Dependencias (DI)</strong>.
+    </p>
+
+    <pre><code>@Autowired
+private EstudianteBean estudiante;</code></pre>
+
+    <p>
+      Spring gestiona los objetos dentro del <strong>Spring Container</strong>, 
+      definido en <code>springconfig.xml</code>, permitiendo desacoplar componentes y mejorar la reutilización.
+    </p>
+
+    <h3>🚀 7. Spring Boot</h3>
+    <p>
+      <strong>Spring Boot</strong> amplía Spring Framework y permite crear proyectos sin configuraciones manuales extensas. 
+      Incluye un servidor embebido (Tomcat o Jetty) y una estructura lista para producción.
+    </p>
+
+    <ul>
+      <li>Configuración automática.</li>
+      <li>Integración con Maven y Gradle.</li>
+      <li>Métricas y health checks integrados.</li>
+      <li>Arquitectura modular: Controller, Service, Repository, Entity (JPA).</li>
+    </ul>
+
+    <p>
+      El sitio <a href="https://start.spring.io" target="_blank">https://start.spring.io</a> 
+      permite generar proyectos personalizados con dependencias preconfiguradas.
+    </p>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p class="conclusion">
+      Esta semana consolidó mi comprensión del <strong>ecosistema backend en Java</strong>, 
+      desde la ejecución de páginas dinámicas con JSP hasta la automatización del desarrollo con Spring Boot. 
+      Aprendí a distinguir las capas del servidor web, gestionar dependencias con Maven y aplicar principios 
+      modernos como <strong>IoC</strong> y <strong>DI</strong> para construir aplicaciones modulares y escalables. 
+      Spring Boot demostró cómo las herramientas actuales simplifican la configuración 
+      y aceleran el desarrollo de aplicaciones empresariales.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">💻 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante la décima semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+      realizamos la <strong>Guía de Laboratorio N°10</strong>, la <strong>Práctica Calificada N°10</strong> 
+      y una serie de <strong>Ejercicios Propuestos</strong>, todos centrados en la creación, configuración 
+      y validación de <strong>APIs RESTful con Spring Boot</strong>. 
+      Esta semana fue esencial para afianzar los conocimientos del framework <strong>Spring</strong>, 
+      comprender el funcionamiento del modelo <strong>MVC (Modelo–Vista–Controlador)</strong>, 
+      e integrar los principios de programación orientada a objetos con la arquitectura backend moderna.
+    </p>
+
+    <h3>⚙️ Parte I – Guía de Laboratorio N°10 (7 ejercicios)</h3>
+
+    <h4>Ejercicio 1: Crear el proyecto en Spring Boot</h4>
+    <p><strong>Objetivo:</strong> Generar un nuevo proyecto en Spring Boot usando <em>Spring Initializr</em>.</p>
+    <p><strong>Desarrollo:</strong></p>
+    <ul>
+      <li>Proyecto <strong>Maven</strong> con grupo <code>com.apiacademico</code> y artefacto <code>apiRest</code>.</li>
+      <li>Dependencias: Spring Web, Spring Data JPA, MySQL Driver, DevTools y Validation.</li>
+      <li>Servidor embebido ejecutado correctamente en el puerto <strong>8080</strong>.</li>
+    </ul>
+    <p><strong>Resultado:</strong> El entorno quedó configurado y el servidor inició sin errores.</p>
+
+    <h4>Ejercicio 2: Configurar conexión con MySQL</h4>
+    <pre><code>spring.datasource.url=jdbc:mysql://localhost:3306/academico
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+</code></pre>
+    <p><strong>Resultado:</strong> Conexión exitosa y creación automática de tablas mediante Hibernate.</p>
+
+    <h4>Ejercicio 3: Crear el modelo de datos (Entidad Estudiante)</h4>
+    <pre><code>@Entity
+@Table(name="estudiante")
+public class Estudiante {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long idEstudiante;
+  private String nomEstudiante;
+  private String dirEstudiante;
+  private String ciuEstudiante;
+}</code></pre>
+    <p><strong>Resultado:</strong> Hibernate generó la tabla <code>estudiante</code> en la base de datos <code>academico</code>.</p>
+
+    <h4>Ejercicio 4: Crear el repositorio (Repository)</h4>
+    <pre><code>@Repository
+public interface EstudianteRepository extends JpaRepository&lt;Estudiante, Long&gt; {}</code></pre>
+    <p><strong>Resultado:</strong> CRUD básico gestionado automáticamente por Spring Data JPA.</p>
+
+    <h4>Ejercicio 5: Crear el controlador (Controller)</h4>
+    <pre><code>@RestController
+@RequestMapping("/api/estudiantes")
+public class EstudianteController {
+   @Autowired private EstudianteRepository repo;
+   @GetMapping public List&lt;Estudiante&gt; listar(){ return repo.findAll(); }
+   @PostMapping public Estudiante crear(@RequestBody Estudiante e){ return repo.save(e); }
+   @PutMapping("/{id}") public Estudiante editar(@PathVariable Long id, @RequestBody Estudiante e){ e.setIdEstudiante(id); return repo.save(e); }
+   @DeleteMapping("/{id}") public void eliminar(@PathVariable Long id){ repo.deleteById(id); }
+}</code></pre>
+    <p><strong>Resultado:</strong> Endpoints funcionales con respuestas JSON para cada solicitud.</p>
+
+    <h4>Ejercicio 6: Probar la API con Postman</h4>
+    <ul>
+      <li><code>POST /api/estudiantes</code></li>
+      <li><code>GET /api/estudiantes</code></li>
+      <li><code>PUT /api/estudiantes/{id}</code></li>
+      <li><code>DELETE /api/estudiantes/{id}</code></li>
+    </ul>
+    <p><strong>Resultado:</strong> Pruebas exitosas con códigos HTTP <code>200 OK</code>, <code>201 CREATED</code> y <code>204 NO CONTENT</code>.</p>
+
+    <h4>Ejercicio 7: Documentar la API con Swagger</h4>
+    <p>
+      Se agregó Springfox Swagger al <code>pom.xml</code> y se configuró <code>SwaggerConfig</code>.
+      La documentación se generó en 
+      <a href="http://localhost:8080/swagger-ui.html" target="_blank">http://localhost:8080/swagger-ui.html</a>.
+    </p>
+
+    <h3>💻 Parte II – Práctica Calificada N°10: API RESTful de Docentes</h3>
+    <p><strong>Objetivo:</strong> Desarrollar una API completa para la gestión de docentes con validaciones, filtros y paginación.</p>
+
+    <pre><code>@Entity
+@Table(name="docente")
+public class Docente {
+   @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+   private Long idDocente;
+   private String nomDocente;
+   private String dirDocente;
+   private String ciuDocente;
+   private String emailDocente;
+   private LocalDate fecNacimiento;
+   private int tiempoServicio;
+}</code></pre>
+
+    <p><strong>Endpoints:</strong></p>
+    <ul>
+      <li><code>GET /api/docentes</code> – lista general</li>
+      <li><code>POST /api/docentes</code> – registro</li>
+      <li><code>PUT /api/docentes/{id}</code> – actualización</li>
+      <li><code>DELETE /api/docentes/{id}</code> – eliminación</li>
+      <li><code>GET /api/docentes/ciudad/{nombre}</code> – filtro por ciudad</li>
+      <li><code>GET /api/docentes/experiencia/{anios}</code> – filtro por experiencia</li>
+      <li><code>GET /api/docentes/edad-promedio</code> – cálculo de edad promedio</li>
+    </ul>
+
+    <p><strong>Validaciones:</strong> Email válido, tiempo de servicio ≥ 0, fecha de nacimiento anterior a la actual.</p>
+    <p><strong>Resultado:</strong> API funcional con persistencia en MySQL y documentación en Swagger.</p>
+
+    <h3>🧩 Parte III – Ejercicios Propuestos (5 ejercicios)</h3>
+    <ul>
+      <li><strong>Registro de visitas (JSP):</strong> saludo dinámico y contador de sesiones.</li>
+      <li><strong>Controlador de validación numérica:</strong> respuesta JSON con código <code>202 Accepted</code>.</li>
+      <li><strong>Cálculo de promedio:</strong> endpoint con parámetros GET que devuelve promedio decimal.</li>
+      <li><strong>API de localización:</strong> devuelve relaciones jerárquicas Departamento–Provincia–Distrito.</li>
+      <li><strong>CRUD de localización:</strong> operaciones completas sobre las tres entidades.</li>
+    </ul>
+
+    <h3>💬 Conclusión general del laboratorio</h3>
+    <p class="conclusion">
+      Esta semana consolidé mis conocimientos en <strong>Spring Boot</strong>, <strong>JPA</strong> 
+      y el diseño de <strong>APIs RESTful</strong>. 
+      Aprendí a estructurar un proyecto por capas, configurar acceso a bases de datos 
+      y documentar endpoints con Swagger. 
+      Los ejercicios complementarios fortalecieron mi comprensión del modelo <strong>MVC</strong> 
+      y la integración entre <strong>JSP, REST y Java</strong>. 
+      Culminé la semana con una visión integral del desarrollo backend empresarial con Spring, 
+      enfocándome en modularidad, seguridad y eficiencia.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧠 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la décima semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+      experimenté un aprendizaje muy significativo, ya que logré conectar de manera práctica 
+      los fundamentos del desarrollo backend con las herramientas profesionales utilizadas 
+      actualmente en la industria del software. 
+      Esta semana fue un punto de consolidación entre la teoría vista sobre 
+      <strong>Spring Framework</strong>, <strong>JSP</strong>, <strong>Maven</strong>, 
+      y la práctica aplicada en la creación de <strong>APIs RESTful completas con Spring Boot y MySQL</strong>.
+    </p>
+
+    <p>
+      La <strong>Guía de Laboratorio N°10</strong> me permitió comprender paso a paso la estructura 
+      y el flujo de un proyecto backend en Java. 
+      Al crear un proyecto desde <em>Spring Initializr</em>, pude ver cómo 
+      <strong>Spring Boot</strong> automatiza la configuración de dependencias, el servidor y las librerías necesarias para ejecutar una aplicación. 
+      Esto me hizo valorar la importancia de las herramientas que simplifican tareas repetitivas y permiten concentrarse en la lógica del negocio. 
+      La conexión del proyecto con <strong>MySQL</strong> y la creación de entidades con 
+      <strong>JPA (Java Persistence API)</strong> reforzaron mi comprensión sobre el 
+      <em>mapeo objeto-relacional (ORM)</em> y cómo la persistencia de datos se integra naturalmente dentro del framework.
+    </p>
+
+    <p>
+      En la <strong>Práctica Calificada N°10</strong>, la creación de la <strong>API RESTful de gestión de docentes</strong> 
+      fue una experiencia fundamental. 
+      Aprendí a estructurar correctamente una aplicación en capas: 
+      <strong>Model, Repository, Service y Controller</strong>, aplicando el patrón 
+      <strong>MVC (Modelo–Vista–Controlador)</strong>. 
+      Además, pude implementar validaciones, filtros y paginación, características esenciales en sistemas reales 
+      que manejan grandes volúmenes de datos. 
+      El uso de <strong>Postman</strong> para probar los endpoints me ayudó a comprender la importancia de los métodos HTTP 
+      (<code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>) y de las respuestas JSON estandarizadas 
+      en la comunicación cliente–servidor. 
+      Al finalizar esta práctica, sentí que había alcanzado una comprensión completa del flujo REST: 
+      desde la solicitud enviada por el cliente hasta la respuesta procesada por el servidor.
+    </p>
+
+    <p>
+      Por otro lado, los <strong>Ejercicios Propuestos</strong> me sirvieron para reforzar la aplicación práctica de lo aprendido, 
+      combinando conceptos de <strong>JSP</strong>, <strong>controladores</strong> y <strong>rutas REST</strong>. 
+      Cada ejercicio tuvo un propósito claro: comprender cómo se maneja el estado de sesión en el servidor, 
+      cómo se pueden validar datos dinámicamente y cómo se estructuran los controladores para cálculos o consultas específicas. 
+      Estos ejercicios me ayudaron a visualizar la versatilidad de Java en la creación tanto de interfaces tradicionales 
+      como de servicios backend modernos.
+    </p>
+
+    <p>
+      Reflexionando sobre mi aprendizaje, puedo decir que esta semana desarrollé no solo competencias técnicas, 
+      sino también una comprensión más profunda de la <strong>arquitectura de software</strong>. 
+      Aprendí que una aplicación bien diseñada debe tener responsabilidades claras entre sus capas y 
+      una comunicación eficiente entre sus componentes. 
+      También comprendí que <strong>Spring Boot</strong> representa una evolución en la forma de desarrollar software, 
+      porque unifica el uso de herramientas, promueve la modularidad y acelera el desarrollo sin sacrificar 
+      la calidad ni la seguridad del código.
+    </p>
+
+    <p class="conclusion">
+      Finalmente, esta semana me permitió reconocer el papel clave del <strong>desarrollador backend</strong> 
+      dentro de un proyecto web completo. 
+      Ahora entiendo cómo se gestionan los datos, cómo se exponen los servicios al frontend 
+      y cómo se garantiza la integridad del sistema mediante buenas prácticas de programación y validación. 
+      Me siento más seguro para construir y desplegar aplicaciones profesionales con 
+      <strong>Spring Boot</strong>, <strong>JPA</strong> y <strong>MySQL</strong>, 
+      y motivado para continuar aprendiendo sobre servicios web avanzados, seguridad y despliegue en la nube.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>Oracle Corporation. (2024). <em>Jakarta Server Pages (JSP) Technology – Official Documentation.</em> Recuperado de: 
+        <a href="https://jakarta.ee/specifications/pages/" target="_blank">https://jakarta.ee/specifications/pages/</a>
+      </li>
+
+      <li>Apache Software Foundation. (2024). <em>Apache Tomcat 10 Documentation.</em> Recuperado de: 
+        <a href="https://tomcat.apache.org/tomcat-10.1-doc/" target="_blank">https://tomcat.apache.org/tomcat-10.1-doc/</a>
+      </li>
+
+      <li>Eclipse Foundation. (2024). <em>Jakarta EE Documentation.</em> Recuperado de: 
+        <a href="https://jakarta.ee/specifications/" target="_blank">https://jakarta.ee/specifications/</a>
+      </li>
+
+      <li>Pivotal Software / VMware. (2024). <em>Spring Framework Reference Documentation.</em> Recuperado de: 
+        <a href="https://docs.spring.io/spring-framework/docs/current/reference/html/" target="_blank">https://docs.spring.io/spring-framework/docs/current/reference/html/</a>
+      </li>
+
+      <li>Pivotal Software / VMware. (2024). <em>Spring Boot Reference Documentation.</em> Recuperado de: 
+        <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/" target="_blank">https://docs.spring.io/spring-boot/docs/current/reference/html/</a>
+      </li>
+
+      <li>Apache Software Foundation. (2024). <em>Apache Maven Project – Project Management and Comprehension Tool.</em> Recuperado de: 
+        <a href="https://maven.apache.org/guides/" target="_blank">https://maven.apache.org/guides/</a>
+      </li>
+
+      <li>Hibernate ORM Documentation. (2024). <em>Java Persistence API (JPA) and Object–Relational Mapping Guide.</em> Recuperado de: 
+        <a href="https://hibernate.org/orm/documentation/" target="_blank">https://hibernate.org/orm/documentation/</a>
+      </li>
+
+      <li>Richardson, L., & Ruby, S. (2008). <em>RESTful Web Services.</em> O’Reilly Media.</li>
+
+      <li>Banks, A., & Porcello, E. (2021). <em>Learning React: Modern Patterns for Developing React Apps (3rd Edition).</em> O’Reilly Media.</li>
+
+      <li>Wieruch, R. (2023). <em>The Road to Spring Boot: Build REST APIs with Java and Spring Framework.</em> Independently Published.</li>
+
+      <li>MDN Web Docs. (2024). <em>HTTP Methods – GET, POST, PUT, DELETE.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Methods" target="_blank">https://developer.mozilla.org/es/docs/Web/HTTP/Methods</a>
+      </li>
+
+      <li>Swagger API Documentation. (2024). <em>OpenAPI Specification and Swagger UI.</em> Recuperado de: 
+        <a href="https://swagger.io/specification/" target="_blank">https://swagger.io/specification/</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
 
   </div>
 </section>
