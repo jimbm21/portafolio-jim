@@ -3662,7 +3662,7 @@ public class Docente {
   <div class="semana-content">
 
   <div class="sub-semana">
-    <button class="sub-header">📖 HUELGA DOCENTES</button>
+    <button class="sub-header">📘 Definiciones y Procedimientos</button>
     <div class="sub-content definiciones">
       <p>
         Durante las semanas <strong>11 y 12</strong> del curso 
@@ -3756,7 +3756,416 @@ public class Docente {
   <button class="semana-header">📘 Semana 13</button>
   <div class="semana-content">
 
+<div class="semana">
+  <h2>📅 Semana 13</h2>
 
+  <div class="sub-semana">
+    <button class="sub-header">📖 Definiciones y Procedimientos</button>
+    <div class="sub-content definiciones">
+
+      <p>
+        Durante la <strong>semana 13</strong> del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+        se abordó el tema <strong>“Desarrollo Backend con PHP”</strong>, cuyo objetivo principal fue comprender 
+        cómo funcionan los servidores web, cómo se configura el entorno de ejecución de PHP y cómo se estructura 
+        la programación del lado del servidor para crear aplicaciones web dinámicas. 
+        Además, se introdujo el <strong>framework Laravel</strong>, que representa la evolución del desarrollo moderno en PHP 
+        bajo el patrón <strong>MVC (Modelo–Vista–Controlador)</strong>.
+      </p>
+
+      <h3>⚙️ 1. Apache HTTP Server y su instalación</h3>
+      <p>
+        Aprendí que <strong>Apache HTTP Server</strong>, o simplemente <strong>Apache</strong>, 
+        es el servidor web de código abierto más utilizado en el mundo. 
+        Su función es <strong>recibir solicitudes HTTP</strong> del navegador, buscar el contenido solicitado 
+        (HTML, imágenes, videos o scripts) y <strong>enviar las respuestas al cliente</strong>.
+      </p>
+      <p>
+        Para la práctica, se utilizó <strong>Apache Lounge</strong>, una versión portable del servidor que puede ejecutarse directamente en Windows. 
+        El procedimiento de instalación incluyó:
+      </p>
+      <ol>
+        <li>Descargar el archivo ZIP desde <a href="https://www.apachelounge.com/download/" target="_blank">Apache Lounge</a>.</li>
+        <li>Descomprimirlo en una carpeta, por ejemplo <code>D:\Server\Apache24</code>.</li>
+        <li>Configurar el archivo <code>httpd.conf</code> con los parámetros adecuados:</li>
+      </ol>
+      <pre><code>Listen 8080
+ServerName localhost:8080
+Define SRVROOT "D:\Server\Apache24"</code></pre>
+      <p>
+        Al ejecutar <code>httpd.exe</code> desde la consola e ingresar a 
+        <code>http://localhost:8080</code>, el mensaje <em>“It works!”</em> confirmó su correcto funcionamiento.
+      </p>
+
+      <h3>💻 2. Instalación y configuración de PHP</h3>
+      <p>
+        <strong>PHP (Hypertext Preprocessor)</strong> es un lenguaje de programación <strong>del lado del servidor</strong> 
+        diseñado para generar contenido web dinámico. 
+        Su característica principal es que el navegador nunca ve el código fuente PHP, sino el resultado procesado en HTML.
+      </p>
+      <p>El procedimiento de instalación incluyó:</p>
+      <ol>
+        <li>Descargar el ZIP desde <a href="https://windows.php.net/download/" target="_blank">https://windows.php.net/download/</a>.</li>
+        <li>Descomprimirlo en <code>D:\Server\php</code>.</li>
+        <li>Renombrar <code>php.ini-development</code> como <code>php.ini</code> y habilitar extensiones como:</li>
+      </ol>
+      <pre><code>extension_dir = "ext"
+extension=mysqli
+extension=curl</code></pre>
+      <p>
+        Tras agregar PHP al PATH del sistema y ejecutar <code>php -v</code>, 
+        se confirmó la instalación. 
+        Aprendí que Apache recibe el archivo <code>.php</code>, lo envía al intérprete PHP, 
+        este lo ejecuta y devuelve solo el HTML al navegador.
+      </p>
+
+      <h3>⚙️ 3. Configuración del archivo httpd.conf</h3>
+      <p>
+        El archivo <code>httpd.conf</code> define el comportamiento del servidor Apache. 
+        Entre sus directivas más importantes están:
+      </p>
+      <ul>
+        <li><strong>ServerRoot</strong>: carpeta principal del servidor.</li>
+        <li><strong>Listen</strong>: puerto de escucha.</li>
+        <li><strong>ServerName</strong>: dominio o dirección local.</li>
+        <li><strong>DocumentRoot</strong>: carpeta de archivos del sitio.</li>
+        <li><strong>DirectoryIndex</strong>: archivo de inicio (index.php).</li>
+        <li><strong>ErrorLog</strong> y <strong>LogLevel</strong>: control de errores y registros.</li>
+      </ul>
+
+      <h3>🧩 4. Instalación y uso de Composer</h3>
+      <p>
+        <strong>Composer</strong> es el gestor de dependencias de PHP, similar a <code>npm</code> en JavaScript, 
+        y permite instalar librerías externas y frameworks de forma automatizada. 
+        Tras descargarlo desde <a href="https://getcomposer.org/download/" target="_blank">getcomposer.org</a>, 
+        se configuró la ruta del ejecutable PHP y se verificó la instalación con <code>composer -V</code>.
+      </p>
+
+      <h3>🖥️ 5. Fundamentos de programación en PHP</h3>
+      <p>Se realizaron ejercicios básicos de sintaxis PHP:</p>
+      <pre><code>&lt;?php echo "Hola mundo"; ?&gt;</code></pre>
+      <ul>
+        <li>Variables con prefijo <code>$</code>: <code>$nombre = "Ana";</code></li>
+        <li>Estructuras de control: <code>if</code>, <code>else</code>, <code>switch</code>.</li>
+        <li>Bucles: <code>for</code>, <code>while</code>, <code>foreach</code>.</li>
+        <li>Inclusión de archivos: <code>include</code> y <code>require</code>.</li>
+        <li>Creación de funciones y retorno de valores.</li>
+      </ul>
+
+      <h3>🌐 6. Introducción al Framework Laravel</h3>
+      <p>
+        Se estudió <strong>Laravel</strong>, un framework moderno basado en el patrón 
+        <strong>MVC</strong>, que organiza el desarrollo en rutas, controladores, vistas y modelos. 
+        Se revisaron sus componentes clave: <strong>Routes</strong>, <strong>Controllers</strong>, 
+        <strong>Blade</strong>, <strong>Eloquent ORM</strong>, <strong>Middleware</strong>, 
+        <strong>Artisan</strong>, <strong>Migrations</strong> y <strong>Service Providers</strong>.
+      </p>
+
+      <h3>🧱 7. Instalación y estructura de Laravel</h3>
+      <p><strong>Método 1 – Composer:</strong></p>
+      <pre><code>composer create-project laravel/laravel nombre-del-proyecto
+cd nombre-del-proyecto
+php artisan serve</code></pre>
+
+      <p><strong>Método 2 – Laravel Installer:</strong></p>
+      <pre><code>composer global require "laravel/installer"
+laravel new nombre-del-proyecto
+php artisan serve</code></pre>
+
+      <p>Estructura principal de un proyecto Laravel:</p>
+      <ul>
+        <li><strong>app/</strong> – controladores y lógica de negocio.</li>
+        <li><strong>config/</strong> – configuración general.</li>
+        <li><strong>database/</strong> – migraciones y seeders.</li>
+        <li><strong>public/</strong> – punto de acceso (<code>index.php</code>).</li>
+        <li><strong>resources/</strong> – vistas y archivos Blade.</li>
+        <li><strong>routes/</strong> – define <code>web.php</code> y <code>api.php</code>.</li>
+        <li><strong>storage/</strong> – logs y sesiones.</li>
+        <li><strong>vendor/</strong> – dependencias de Composer.</li>
+      </ul>
+
+      <h3>💬 Conclusión de los temas</h3>
+      <p>
+        En esta semana comprendí el <strong>flujo completo del desarrollo backend en PHP</strong>, 
+        desde la instalación del servidor Apache y la ejecución de scripts básicos hasta la implementación 
+        de un entorno profesional con <strong>Composer y Laravel</strong>. 
+        Aprendí que PHP, aunque es un lenguaje clásico, sigue siendo una herramienta poderosa y vigente 
+        gracias a su comunidad y frameworks modernos. 
+        Laravel, en particular, me demostró la importancia de trabajar con estructuras organizadas, 
+        escalables y seguras para el desarrollo de aplicaciones web.
+      </p>
+
+    </div>
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">💻 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante la <strong>Semana 13</strong>, realizamos la 
+      <strong>Guía de Laboratorio N°13: Desarrollo Backend con PHP Laravel</strong>, 
+      con una duración de <strong>90 minutos</strong>. 
+      El objetivo principal fue <strong>crear una aplicación web dinámica con PHP y el framework Laravel</strong>, 
+      conectada a una base de datos MySQL, aplicando los fundamentos de 
+      <strong>MVC (Modelo–Vista–Controlador)</strong> y utilizando 
+      <strong>Tailwind CSS</strong> para el diseño del formulario.
+    </p>
+
+    <h3>⚙️ Ejercicio 1: Creación del Proyecto Web PHP Laravel</h3>
+
+    <p><strong>Objetivo:</strong> Diseñar una aplicación web que permita registrar estudiantes en una base de datos, mostrando la fecha actual y validando el flujo completo desde la vista hasta el almacenamiento.</p>
+
+    <h4>Desarrollo y procedimiento:</h4>
+    <ol>
+      <li><strong>Creación del proyecto:</strong><br>
+        Se generó una nueva aplicación ejecutando:
+        <pre><code>laravel new estudiantes-app
+cd estudiantes-app</code></pre>
+        Este proceso creó la estructura base del framework Laravel con carpetas como <code>app/</code>, <code>routes/</code>, <code>resources/</code> y <code>database/</code>.
+      </li>
+
+      <li><strong>Configuración de conexión a MySQL:</strong><br>
+        En el archivo <code>.env</code> se establecieron los parámetros:
+        <pre><code>DB_DATABASE=academico
+DB_USERNAME=root
+DB_PASSWORD=123456</code></pre>
+        Esto permitió enlazar el proyecto con la base de datos <strong>academico</strong> en MySQL.
+      </li>
+
+      <li><strong>Creación del modelo y migración:</strong><br>
+        Se ejecutó el comando:
+        <pre><code>php artisan make:model Estudiante -m</code></pre>
+        En el archivo de migración se definió:
+        <pre><code>Schema::create('estudiantes', function (Blueprint $table) {
+    $table->id('idEstudiante');
+    $table->string('nomEstudiante');
+    $table->string('dirEstudiante');
+    $table->string('ciuEstudiante');
+    $table->timestamps();
+});</code></pre>
+        Finalmente, la migración se aplicó con:
+        <pre><code>php artisan migrate</code></pre>
+        Confirmando la creación de la tabla <strong>estudiantes</strong> en MySQL.
+      </li>
+    </ol>
+
+    <h3>🎨 Configuración de Tailwind CSS</h3>
+    <p>
+      Para el diseño visual del formulario se instaló <strong>Tailwind CSS 3</strong>, junto con PostCSS y Autoprefixer:
+    </p>
+    <pre><code>npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p</code></pre>
+
+    <p>En el archivo <code>resources/css/app.css</code> se añadieron:</p>
+    <pre><code>@tailwind base;
+@tailwind components;
+@tailwind utilities;</code></pre>
+
+    <p>Luego se compiló el entorno con:</p>
+    <pre><code>npm install
+npm run dev</code></pre>
+    <p>El resultado fue un entorno moderno de desarrollo frontend totalmente integrado con Laravel.</p>
+
+    <h3>🧩 Configuración de Rutas, Controlador y Modelo</h3>
+
+    <h4>Rutas</h4>
+    <pre><code>use App\Http\Controllers\EstudianteController;
+
+Route::get('/', [EstudianteController::class, 'create']);
+Route::post('/guardar', [EstudianteController::class, 'store']);</code></pre>
+
+    <h4>Controlador</h4>
+    <p>Creado con:</p>
+    <pre><code>php artisan make:controller EstudianteController</code></pre>
+
+    <p>Con los métodos principales:</p>
+    <pre><code>public function create() {
+    return view('formulario');
+}
+
+public function store(Request $request) {
+    Estudiante::create([
+        'nomEstudiante' => $request->nombre,
+        'dirEstudiante' => $request->direccion,
+        'ciuEstudiante' => $request->ciudad
+    ]);
+    return redirect('/')->with('mensaje', 'Estudiante registrado');
+}</code></pre>
+
+    <h4>Modelo</h4>
+    <pre><code>protected $table = 'estudiantes';
+protected $primaryKey = 'idEstudiante';
+protected $fillable = ['nomEstudiante', 'dirEstudiante', 'ciuEstudiante'];</code></pre>
+
+    <p>El modelo permitió la vinculación directa con la base de datos y el guardado masivo de datos.</p>
+
+    <h3>🖥️ Vista del Formulario (Blade + Tailwind CSS)</h3>
+
+    <p>Se creó la vista con:</p>
+    <pre><code>php artisan make:view formulario</code></pre>
+
+    <p>Contenido del archivo <code>resources/views/formulario.blade.php</code>:</p>
+    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="es"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Registro&lt;/title&gt;
+  @vite('resources/css/app.css')
+&lt;/head&gt;
+&lt;body class="bg-gray-100 flex justify-center items-center h-screen"&gt;
+  &lt;form action="/guardar" method="POST" class="bg-white p-6 rounded shadow-md w-96"&gt;
+    @csrf
+    &lt;h2 class="text-xl font-bold mb-4"&gt;Nuevo Estudiante&lt;/h2&gt;
+    &lt;input type="text" name="nombre" placeholder="Nombre" required class="w-full mb-3 p-2 border rounded"&gt;
+    &lt;input type="text" name="direccion" placeholder="Dirección" required class="w-full mb-3 p-2 border rounded"&gt;
+    &lt;input type="text" name="ciudad" placeholder="Ciudad" required class="w-full mb-3 p-2 border rounded"&gt;
+    &lt;button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded w-full"&gt;Guardar&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+    <p>
+      El formulario se mostró centrado y responsivo, con un diseño limpio gracias a <strong>Tailwind CSS</strong>, 
+      permitiendo registrar estudiantes correctamente en la base de datos.
+    </p>
+
+    <h3>✅ Resultados obtenidos</h3>
+    <ul>
+      <li>El proyecto <strong>Laravel “estudiantes-app”</strong> fue ejecutado correctamente con <code>php artisan serve</code>.</li>
+      <li>Se comprobó la conexión con la base de datos <strong>academico</strong> y la creación de la tabla <strong>estudiantes</strong>.</li>
+      <li>Los datos se insertaron correctamente mediante el formulario.</li>
+      <li>La interfaz presentó un diseño moderno y funcional con <strong>Tailwind CSS</strong>.</li>
+    </ul>
+
+    <p><strong>Resultado final:</strong> Se obtuvo una aplicación web completamente funcional que permite registrar estudiantes mediante un formulario en Laravel conectado a MySQL, aplicando los principios de MVC, control de rutas, validaciones y persistencia de datos.</p>
+
+    <h3>💬 Conclusión general del laboratorio</h3>
+    <p>
+      Esta práctica me permitió comprender de manera integral cómo funciona el 
+      <strong>desarrollo backend con PHP y Laravel</strong>, 
+      desde la configuración del entorno hasta la creación de un proyecto funcional. 
+      Aprendí a conectar Laravel con una base de datos, gestionar modelos, rutas y controladores, 
+      además de aplicar un diseño moderno con <strong>Tailwind CSS</strong>. 
+      Gracias a este ejercicio, consolidé mi comprensión sobre cómo los frameworks facilitan 
+      el desarrollo estructurado y profesional de aplicaciones web dinámicas, 
+      mejorando la productividad y la organización del código.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧠 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la <strong>semana 13</strong> del curso 
+      <strong>Desarrollo de Aplicaciones Web</strong>, logré consolidar mis conocimientos en el 
+      desarrollo <strong>backend con PHP</strong>, comprendiendo cómo funcionan los servidores, 
+      los intérpretes y los frameworks modernos que facilitan la construcción de sistemas web. 
+      Esta semana marcó un cambio importante en mi aprendizaje, ya que pasé de entender el backend 
+      desde un nivel teórico (con Java y Spring Boot) a implementarlo de forma práctica con 
+      <strong>PHP y Laravel</strong>, utilizando herramientas reales de desarrollo profesional.
+    </p>
+
+    <p>
+      Al inicio, la instalación y configuración de 
+      <strong>Apache HTTP Server</strong> y <strong>PHP</strong> me permitieron visualizar cómo el 
+      servidor procesa las solicitudes del navegador, ejecuta el código del lado del servidor y 
+      devuelve el resultado en HTML. 
+      Comprendí que este ciclo cliente–servidor es el corazón del funcionamiento de todas las 
+      aplicaciones web, y que cada configuración en los archivos 
+      <code>httpd.conf</code> o <code>php.ini</code> define cómo se comporta el entorno de ejecución. 
+      Asimismo, aprender a utilizar <strong>Composer</strong> como gestor de dependencias me ayudó a 
+      reconocer la importancia de automatizar la instalación y actualización de librerías, 
+      garantizando estabilidad y compatibilidad en los proyectos.
+    </p>
+
+    <p>
+      El paso siguiente fue trabajar con <strong>Laravel</strong>, donde comprendí el verdadero 
+      potencial de los frameworks modernos. 
+      La creación del proyecto, la configuración del entorno y la conexión con 
+      <strong>MySQL</strong> fueron ejercicios esenciales para entender cómo Laravel implementa 
+      el patrón <strong>Modelo–Vista–Controlador (MVC)</strong>. 
+      Con esta arquitectura, cada parte de la aplicación cumple un rol específico:
+    </p>
+
+    <ul>
+      <li><strong>Modelo:</strong> gestiona la base de datos y la lógica de los datos.</li>
+      <li><strong>Controlador:</strong> administra las peticiones del usuario y coordina las respuestas.</li>
+      <li><strong>Vista:</strong> presenta la información de manera visual y organizada.</li>
+    </ul>
+
+    <p>
+      La parte práctica, que consistió en desarrollar una aplicación para el 
+      <strong>registro de estudiantes</strong>, me permitió aplicar todos estos conceptos en un 
+      proyecto real. 
+      Pude construir un formulario funcional utilizando <strong>Blade</strong> (motor de plantillas 
+      de Laravel) y diseñarlo con <strong>Tailwind CSS</strong>, lo que me ayudó a comprender la 
+      importancia del diseño responsivo y la integración entre backend y frontend. 
+      Al enviar los datos del formulario y verlos reflejados en la base de datos, comprobé el 
+      funcionamiento completo del ciclo de comunicación entre cliente, servidor y base de datos.
+    </p>
+
+    <p>
+      Reflexionando sobre mi aprendizaje, reconozco que esta semana me permitió fortalecer tres 
+      competencias clave:
+    </p>
+
+    <ol>
+      <li><strong>Técnica:</strong> aprendí a configurar, desarrollar y ejecutar un proyecto backend completo con PHP y Laravel.</li>
+      <li><strong>Lógica:</strong> comprendí cómo se gestiona la información en el servidor y cómo se estructura un sistema bajo buenas prácticas de programación.</li>
+      <li><strong>Profesional:</strong> trabajé con herramientas actuales utilizadas en entornos reales, como Composer, Artisan, Eloquent y Tailwind CSS.</li>
+    </ol>
+
+    <p>
+      En conclusión, esta semana me enseñó que el <strong>backend no es solo código</strong>, sino 
+      una estructura organizada que garantiza el funcionamiento, la seguridad y la escalabilidad 
+      de una aplicación. 
+      Laravel demostró que la eficiencia en el desarrollo se logra mediante el uso de frameworks 
+      que integran todo lo necesario para construir soluciones robustas y mantenibles. 
+      Me siento motivado y preparado para seguir creando aplicaciones más completas, que integren 
+      tanto el backend como el frontend, aplicando las mejores prácticas del desarrollo web moderno.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>The Apache Software Foundation. (2024). <em>Apache HTTP Server Documentation.</em> Recuperado de: 
+        <a href="https://httpd.apache.org/docs/" target="_blank">https://httpd.apache.org/docs/</a>
+      </li>
+      <li>PHP Group. (2024). <em>PHP Manual – The Official PHP Documentation.</em> Recuperado de: 
+        <a href="https://www.php.net/manual/es/" target="_blank">https://www.php.net/manual/es/</a>
+      </li>
+      <li>Composer. (2024). <em>Dependency Manager for PHP – Composer Documentation.</em> Recuperado de: 
+        <a href="https://getcomposer.org/doc/" target="_blank">https://getcomposer.org/doc/</a>
+      </li>
+      <li>Laravel LLC. (2024). <em>Laravel – The PHP Framework for Web Artisans (Official Documentation).</em> Recuperado de: 
+        <a href="https://laravel.com/docs" target="_blank">https://laravel.com/docs</a>
+      </li>
+      <li>Tailwind Labs Inc. (2024). <em>Tailwind CSS Documentation.</em> Recuperado de: 
+        <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a>
+      </li>
+      <li>Mozilla Developer Network (MDN). (2024). <em>Introducción al Modelo Cliente-Servidor y HTTP.</em> Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank">https://developer.mozilla.org/es/docs/Web/HTTP/Overview</a>
+      </li>
+      <li>Welling, L., & Thomson, L. (2017). <em>PHP and MySQL Web Development (5th Edition).</em> Addison-Wesley Professional.</li>
+      <li>Keith, J., & Andrews, R. (2020). <em>Modern PHP: New Features and Good Practices.</em> O’Reilly Media.</li>
+      <li>McCreary, M. (2023). <em>Mastering Laravel 10: Build modern web applications with the latest version of Laravel.</em> Packt Publishing.</li>
+      <li>Ullman, L. (2019). <em>PHP for the Web: Visual QuickStart Guide (5th Edition).</em> Peachpit Press.</li>
+      <li>W3C. (2024). <em>HTML and CSS Standards for Web Development.</em> Recuperado de: 
+        <a href="https://www.w3.org/" target="_blank">https://www.w3.org/</a>
+      </li>
+    </ul>
+
+  </div>
+</div>
 
   </div>
 </section>
