@@ -2757,8 +2757,477 @@ function reducer(state, action) {
   <button class="semana-header">📘 Semana 9</button>
   <div class="semana-content">
 
+    <div class="sub-semana">
+  <button class="sub-header">📘 Definiciones y Procedimientos</button>
+  <div class="sub-content definiciones">
 
+    <p>
+      Durante la novena semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+      el profesor desarrolló el tema <strong>“Desarrollo Backend: Arquitectura y Principios”</strong>, 
+      centrado en comprender cómo funcionan las <strong>arquitecturas del lado servidor (server-side)</strong>, 
+      los <strong>modelos de despliegue</strong>, las <strong>tecnologías backend</strong> 
+      y las herramientas que permiten construir aplicaciones web completas. 
+      Esta semana marcó la transición del enfoque frontend al backend, 
+      entendiendo cómo se estructura, aloja y ejecuta la lógica de negocio que da soporte 
+      a las interfaces que desarrollamos en React.
+    </p>
 
+    <h3>⚙️ 1. Arquitecturas de las Aplicaciones Web</h3>
+    <p>
+      Aprendí que toda aplicación web moderna se basa en una <strong>arquitectura cliente-servidor</strong>, 
+      donde el <strong>cliente (frontend)</strong> envía peticiones HTTP y el <strong>servidor (backend)</strong> 
+      las procesa, ejecuta lógica y devuelve respuestas (HTML, JSON o XML).
+    </p>
+
+    <ul>
+      <li><strong>Arquitectura C/S Clásica (MPA - Multi Page Application):</strong> 
+      Modelo tradicional donde cada página se recarga por completo al navegar.</li>
+      <li><strong>Arquitectura C/S Multicapa:</strong> 
+      Basada en el modelo <strong>MVC (Model-View-Controller)</strong>, separa presentación, negocio y datos.</li>
+      <li><strong>Arquitectura SPA (Single Page Application):</strong> 
+      El servidor envía una sola página HTML y luego el cliente actualiza el contenido dinámicamente con JavaScript y APIs REST o GraphQL.</li>
+      <li><strong>Arquitectura híbrida SPA/MPA (Next.js):</strong> 
+      Combina renderizado del cliente y servidor, mejorando el SEO y el rendimiento.</li>
+      <li><strong>Arquitectura Hexagonal (Puertos y Adaptadores):</strong> 
+      Separa la lógica del dominio de los servicios externos, promoviendo independencia, mantenibilidad y pruebas modulares.</li>
+    </ul>
+
+    <h3>🖥️ 2. Servidores Web, Hosting y Cloud Hosting</h3>
+    <p>
+      Los servidores web almacenan y distribuyen los recursos de una aplicación mediante el protocolo <strong>HTTP</strong>. 
+      Los más usados son <strong>Apache HTTP Server, NGINX, LiteSpeed, Microsoft IIS</strong> y <strong>Node.js</strong>.
+    </p>
+    <p>
+      El <strong>hosting</strong> es el servicio que permite publicar sitios web. 
+      Existen modalidades como <em>compartido</em>, <em>VPS</em>, <em>dedicado</em>, <em>administrado</em> y <em>en la nube</em>. 
+      El <strong>Cloud Hosting</strong> utiliza múltiples servidores físicos y virtuales, escalando según demanda. 
+      Principales proveedores: <strong>AWS, Google Cloud, Azure, IBM Cloud y Alibaba Cloud</strong>.
+    </p>
+
+    <h3>🌐 3. Administración de Servidores Web</h3>
+    <p>
+      La administración de servidores implica la gestión de <strong>dominios (DNS)</strong>, configuración, rendimiento y seguridad.
+      Los dominios (por ejemplo, <em>midominio.com</em>) se registran en plataformas como <strong>GoDaddy, Namecheap, HostGator</strong> o <strong>Google Domains</strong>.
+    </p>
+
+    <p><strong>Archivos de configuración:</strong></p>
+    <ul>
+      <li><code>httpd.conf</code> – Apache HTTP Server.</li>
+      <li><code>server.xml</code> – Apache Tomcat.</li>
+    </ul>
+
+    <p><strong>Parámetros esenciales:</strong></p>
+    <ul>
+      <li><strong>DocumentRoot:</strong> carpeta base del sitio.</li>
+      <li><strong>Listen:</strong> puerto (80 o 443).</li>
+      <li><strong>ServerName:</strong> dominio o IP.</li>
+      <li><strong>DirectoryIndex:</strong> archivo predeterminado.</li>
+      <li><strong>SSLEngine:</strong> habilita HTTPS mediante certificados SSL/TLS.</li>
+    </ul>
+
+    <h3>🔁 4. Funcionamiento del Server Side</h3>
+    <p>
+      El lado servidor (<strong>server side</strong>) procesa las solicitudes y genera respuestas. 
+      El flujo general:
+    </p>
+    <ol>
+      <li>El cliente envía una solicitud HTTP.</li>
+      <li>El servidor la interpreta y ejecuta código (PHP, Node.js, Java, Python, etc.).</li>
+      <li>Consulta la base de datos si es necesario.</li>
+      <li>Genera y devuelve una respuesta (HTML, JSON o XML).</li>
+    </ol>
+
+    <p><strong>Ejemplos:</strong></p>
+    <ul>
+      <li><strong>Apache + PHP:</strong> ejecuta archivos <code>.php</code> devolviendo HTML.</li>
+      <li><strong>Tomcat + JSP:</strong> traduce código JSP a servlets Java compilados en HTML.</li>
+    </ul>
+
+    <h3>🧩 5. Ecosistema Server Side y Lenguajes Backend</h3>
+    <p>
+      El ecosistema backend incluye sistema operativo, servidor, lenguaje y base de datos.
+      Lenguajes más usados: <strong>PHP, Java, Python, Node.js, C#, Ruby, Go, .NET</strong>.
+      Frameworks comunes: <strong>Laravel, Spring Boot, Django, Express.js, Ruby on Rails, ASP.NET</strong>.
+      Principales gestores de base de datos: <strong>MySQL, PostgreSQL, SQL Server, Oracle, MongoDB</strong>.
+    </p>
+
+    <h3>🧱 6. Stack Tecnológico y Full Stack Developer</h3>
+    <p>
+      Un <strong>stack tecnológico</strong> combina herramientas de frontend, backend, bases de datos e infraestructura.
+    </p>
+    <ul>
+      <li><strong>Front-End:</strong> HTML, CSS, JavaScript, React, Angular, Vue.</li>
+      <li><strong>Back-End:</strong> Node.js, Java, Python, PHP, .NET.</li>
+      <li><strong>Bases de datos:</strong> SQL o NoSQL.</li>
+      <li><strong>Infraestructura:</strong> servicios en la nube, contenedores (Docker, Kubernetes), servidores web (NGINX, Apache).</li>
+    </ul>
+    <p>
+      El <strong>Full Stack Developer</strong> domina ambos lados, integrando cliente y servidor en una aplicación completa.
+    </p>
+
+    <h3>🖥️ 7. Servidor Web Apache Tomcat</h3>
+    <p>
+      <strong>Apache Tomcat</strong> es un servidor open source que implementa <strong>Servlets</strong> y <strong>JSP</strong>. 
+      Su estructura incluye:
+    </p>
+    <ul>
+      <li><code>bin/</code> – scripts de ejecución.</li>
+      <li><code>conf/</code> – configuración.</li>
+      <li><code>logs/</code> – registros.</li>
+      <li><code>webapps/</code> – aplicaciones desplegadas.</li>
+    </ul>
+    <p>
+      Su configuración modular (Server, Service, Connector, Engine, Host, Context) 
+      define la forma en que Tomcat procesa las peticiones y despliega aplicaciones.
+    </p>
+
+    <h3>⚙️ 8. Gestión de Dependencias con Maven</h3>
+    <p>
+      <strong>Maven</strong> automatiza el ciclo de vida del proyecto: 
+      compilar, empaquetar, probar y desplegar. 
+      Las dependencias se definen en <code>pom.xml</code>.
+    </p>
+    <ul>
+      <li><strong>mvn install</strong> – instala el proyecto localmente.</li>
+      <li><strong>mvn package</strong> – genera archivos .jar o .war.</li>
+      <li><strong>mvn deploy</strong> – despliega el proyecto en un servidor remoto.</li>
+    </ul>
+    <p>
+      Fases del ciclo de vida: <strong>compile → test → package → install → deploy</strong>.
+    </p>
+
+    <h3>💬 Conclusión de los temas</h3>
+    <p class="conclusion">
+      Esta semana me permitió comprender la <strong>estructura completa del desarrollo backend</strong>, 
+      desde la arquitectura de software y la configuración de servidores hasta la administración de proyectos con Maven. 
+      Aprendí que el backend no solo procesa datos, sino que conecta el frontend con las bases de datos, 
+      servidores y servicios externos. 
+      Además, entendí la importancia de las <strong>arquitecturas en capas</strong> 
+      y los principios que garantizan <strong>escalabilidad, modularidad y mantenimiento</strong> 
+      en los sistemas modernos.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧪 Ejercicios de Laboratorio – Resultados</button>
+  <div class="sub-content laboratorio">
+
+    <p>
+      Durante la novena semana realizamos la <strong>Guía de Laboratorio N° 09</strong>, centrada en la 
+      <strong>instalación y configuración del entorno de desarrollo backend con Java</strong>. 
+      El trabajo tuvo una duración de <strong>90 minutos</strong> y su objetivo fue configurar correctamente el 
+      <strong>JDK de Jakarta (OpenJDK)</strong>, el <strong>IDE IntelliJ IDEA</strong> y el 
+      <strong>Servidor Web Apache Tomcat</strong>, además de crear un 
+      <strong>proyecto web con Java Server Pages (JSP)</strong>. 
+      Esta práctica fue fundamental para comprender cómo se estructura un entorno de desarrollo backend basado en tecnologías Java, 
+      y cómo los diferentes componentes (JDK, servidor y entorno de desarrollo) se integran entre sí para desplegar aplicaciones web dinámicas.
+    </p>
+
+    <h3>⚙️ Ejercicio 1: Instalación del JDK Open Source y Servidor Web Tomcat</h3>
+    <p><strong>Objetivo:</strong> Instalar y configurar el entorno Java y el servidor Apache Tomcat para ejecutar aplicaciones web en Jakarta EE.</p>
+
+    <h4>1. Instalación del JDK (Java Development Kit)</h4>
+    <p>
+      Se descargó la versión 19 de <strong>OpenJDK</strong> desde 
+      <a href="https://jdk.java.net/19/" target="_blank">https://jdk.java.net/19/</a>. 
+      Luego se descomprimió en <code>C:\java</code>, generando la carpeta <code>jdk-19.0.2</code>. 
+      Se configuraron las variables de entorno:
+    </p>
+
+    <ul>
+      <li><code>JAVA_HOME</code> → ruta del JDK.</li>
+      <li><code>PATH</code> → actualizado con <code>%JAVA_HOME%\bin</code>.</li>
+    </ul>
+
+    <p>
+      Con esto, los comandos de Java pudieron ejecutarse desde cualquier directorio:
+    </p>
+
+    <pre><code>java --version
+javac --version</code></pre>
+
+    <p>
+      Las versiones mostradas confirmaron la instalación correcta del entorno Java.
+    </p>
+
+    <h4>2. Instalación del servidor Apache Tomcat</h4>
+    <p>
+      Desde <a href="http://tomcat.apache.org/" target="_blank">http://tomcat.apache.org/</a> se descargó la versión más reciente de 
+      <strong>Tomcat 10</strong> (Windows Service Installer). Durante la instalación:
+    </p>
+
+    <ul>
+      <li>Se aceptó el acuerdo de licencia (“I Agree”).</li>
+      <li>Se seleccionó la instalación <strong>Full</strong>.</li>
+      <li>Puerto HTTP: <strong>8080</strong>; puerto de apagado: <strong>8005</strong>.</li>
+      <li>Ruta del JDK: <code>C:\java\jdk-19.0.2</code>.</li>
+    </ul>
+
+    <p>
+      El servicio se inició desde el Administrador de Tomcat y se comprobó en 
+      <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a>, 
+      donde apareció la página de inicio de Apache Tomcat.
+    </p>
+
+    <p><strong>Resultado:</strong> El servidor quedó configurado y operativo. 
+      Aprendí cómo Tomcat actúa como <strong>contenedor de servlets y JSP</strong>, 
+      interpretando código Java del lado servidor y generando páginas web dinámicas.
+    </p>
+
+    <h3>💻 Ejercicio 2: Creación de un Proyecto Web Java Server Page (JSP)</h3>
+    <p><strong>Objetivo:</strong> Crear un proyecto web dinámico en <strong>IntelliJ IDEA</strong> utilizando JSP y configurarlo para ejecutarse en Tomcat.</p>
+
+    <h4>1. Creación y configuración del proyecto</h4>
+    <p>
+      En IntelliJ IDEA se eligió <em>New Project → Java Enterprise → Web Application</em>. 
+      Se configuró el SDK con <code>jdk-19.0.2</code> y el servidor de despliegue <strong>Apache Tomcat 10</strong>. 
+      La estructura generada fue estándar: <code>src/</code>, <code>web/WEB-INF/</code> y <code>index.jsp</code>.
+    </p>
+
+    <p>
+      En el archivo <code>index.jsp</code> se añadió un código básico de prueba:
+    </p>
+
+    <pre><code>&lt;html&gt;
+  &lt;body&gt;
+    &lt;h2&gt;Aplicación JSP en ejecución correctamente&lt;/h2&gt;
+    &lt;p&gt;Servidor configurado con Apache Tomcat 10 y JDK 19.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+    <p>
+      Luego se ejecutó el proyecto con <strong>Run → Tomcat Server</strong>, verificando que la página JSP se mostrara correctamente en el navegador.
+    </p>
+
+    <h4>2. Resultado de la práctica</h4>
+    <p>
+      El proyecto se ejecutó satisfactoriamente. La página “Aplicación JSP en ejecución correctamente” confirmó 
+      la integración exitosa entre Java, IntelliJ y Tomcat.
+    </p>
+
+    <p><strong>Aprendizaje:</strong> 
+      Comprendí el ciclo completo de despliegue de una aplicación web Java, 
+      la configuración de entornos <strong>Jakarta EE</strong> y el rol de JSP 
+      en la generación de contenido dinámico en el servidor.
+    </p>
+
+    <h3>🔐 Sistema Web: Autenticación basada en Tokens</h3>
+    <p>
+      El profesor explicó los fundamentos de la <strong>autenticación basada en tokens</strong>, 
+      utilizada en aplicaciones modernas para validar identidades sin enviar credenciales repetidamente. 
+      El proceso básico incluye:
+    </p>
+
+    <ol>
+      <li>Generación del token tras la validación de credenciales.</li>
+      <li>Envío del token en cada solicitud al servidor.</li>
+      <li>Validación del token antes de conceder acceso.</li>
+      <li>Expiración del token tras cierto tiempo.</li>
+      <li>Cifrado y firma digital del token para evitar alteraciones.</li>
+    </ol>
+
+    <p><strong>Tipos de token:</strong></p>
+    <ul>
+      <li><strong>JWT (JSON Web Token):</strong> estándar más común para autenticación en web y móviles.</li>
+      <li><strong>OAuth Tokens:</strong> autenticación delegada sin compartir credenciales.</li>
+      <li><strong>SAML Tokens:</strong> empleados en entornos empresariales para federación de identidades.</li>
+    </ul>
+
+    <p>
+      <strong>Resultado:</strong> Comprendí el funcionamiento de los sistemas de autenticación modernos y 
+      la importancia de los <strong>tokens cifrados</strong> para la seguridad de las APIs y el acceso distribuido.
+    </p>
+
+    <h3>💬 Conclusión general del laboratorio</h3>
+    <p class="conclusion">
+      La práctica de esta semana me permitió instalar y configurar un entorno de desarrollo backend completo con 
+      <strong>Java, Tomcat e IntelliJ IDEA</strong>, comprendiendo el flujo de ejecución del lado servidor. 
+      El ejercicio de JSP y la explicación sobre autenticación con tokens conectaron los conceptos técnicos de backend 
+      con la seguridad y la gestión de sesiones de usuario. 
+      Aprendí a integrar herramientas profesionales, desplegar aplicaciones JSP bajo un servidor local 
+      y entender la autenticación moderna basada en tokens. 
+      Este laboratorio consolidó los cimientos del <strong>desarrollo backend en Java</strong> 
+      y preparó el terreno para los próximos temas de servicios web y bases de datos.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">🧠 Reflexión Final (Metacognitiva)</button>
+  <div class="sub-content reflexion">
+
+    <p>
+      Durante la novena semana del curso <strong>Desarrollo de Aplicaciones Web</strong>, 
+      iniciamos formalmente el estudio del <strong>desarrollo backend</strong>, 
+      una etapa fundamental para comprender cómo funcionan las aplicaciones web en su totalidad. 
+      Hasta este punto, mi enfoque había estado centrado en el lado del cliente (<em>frontend</em>), 
+      pero esta semana logré visualizar cómo se ejecuta la lógica del lado del servidor, 
+      cómo se administran los recursos, y cómo los datos viajan entre el cliente y el servidor 
+      para formar un sistema completo.
+    </p>
+
+    <p>
+      La práctica de laboratorio fue clave para afianzar este nuevo enfoque. 
+      Aprendí a <strong>instalar y configurar el JDK (Java Development Kit)</strong>, 
+      el <strong>servidor web Apache Tomcat</strong> y el <strong>IDE IntelliJ IDEA</strong>, 
+      herramientas esenciales para el desarrollo en <strong>Jakarta EE (Java Enterprise Edition)</strong>. 
+      Al realizar cada paso —desde la configuración de las variables de entorno hasta el despliegue del primer archivo JSP—, 
+      pude comprender con mayor claridad cómo se organiza un entorno backend profesional. 
+      Comprobé que la correcta configuración del entorno no solo es un requisito técnico, 
+      sino también una habilidad práctica que demuestra dominio y autonomía en el desarrollo.
+    </p>
+
+    <p>
+      El ejercicio de <strong>creación de un proyecto web con Java Server Pages (JSP)</strong> 
+      me ayudó a visualizar cómo el servidor procesa el código del lado del backend y genera 
+      las respuestas que se envían al navegador del usuario. 
+      A diferencia del trabajo con React, donde el renderizado ocurre en el cliente, 
+      en JSP el contenido se genera directamente desde el servidor antes de llegar al navegador. 
+      Esta diferencia me permitió comprender las ventajas del 
+      <strong>renderizado del lado servidor (SSR)</strong>, especialmente en proyectos que requieren 
+      seguridad, control de acceso y procesamiento previo de datos.
+    </p>
+
+    <p>
+      Además, durante la parte final del laboratorio, el profesor explicó los principios de la 
+      <strong>autenticación basada en tokens</strong>, un tema que considero fundamental en el desarrollo web actual. 
+      Aprendí que los <strong>tokens de autenticación (como JWT)</strong> son la base de la seguridad en las aplicaciones modernas, 
+      ya que permiten validar usuarios sin necesidad de enviar las credenciales en cada solicitud. 
+      También entendí el rol que cumplen los <strong>métodos de cifrado y expiración</strong>, 
+      los cuales garantizan la integridad y la privacidad de la información transmitida. 
+      Esta explicación me permitió relacionar la teoría de seguridad con la práctica del backend 
+      y comprender cómo se gestiona la sesión de un usuario en una aplicación web real.
+    </p>
+
+    <p>
+      Desde una perspectiva metacognitiva, reconozco que esta semana mi aprendizaje fue principalmente 
+      <strong>procedimental y conceptual</strong>. 
+      Procedimental, porque instalé, configuré y ejecuté herramientas profesionales del entorno Java; 
+      y conceptual, porque logré asimilar la arquitectura del backend y su relación con el frontend. 
+      También desarrollé una mejor comprensión del flujo cliente-servidor y la importancia de los 
+      <strong>protocolos de comunicación (HTTP)</strong> en la interacción entre ambos lados del sistema.
+    </p>
+
+    <p class="conclusion">
+      En conclusión, esta semana marcó un nuevo punto de inflexión en mi formación como desarrollador web. 
+      Pasé de diseñar interfaces a entender el <strong>corazón de la aplicación</strong>, 
+      donde se procesan las reglas de negocio, se gestionan los usuarios y se controla la seguridad. 
+      Comprendí que un buen desarrollador no se limita a escribir código visible, 
+      sino que también debe dominar el funcionamiento interno del servidor, 
+      las configuraciones del entorno y los principios que garantizan el rendimiento y la seguridad de una aplicación. 
+      Gracias a este laboratorio, me siento preparado para continuar con las siguientes etapas del backend: 
+      el desarrollo de servicios web, la conexión con bases de datos y la implementación de APIs seguras y escalables.
+    </p>
+
+  </div>
+</div>
+
+<div class="sub-semana">
+  <button class="sub-header">📚 Bibliografía</button>
+  <div class="sub-content bibliografia">
+
+    <ul>
+      <li>
+        Oracle Corporation. (2024). 
+        <em>Java Platform, Standard Edition Documentation.</em> 
+        Recuperado de: 
+        <a href="https://docs.oracle.com/en/java/javase/" target="_blank">
+          https://docs.oracle.com/en/java/javase/
+        </a>
+      </li>
+
+      <li>
+        Apache Software Foundation. (2024). 
+        <em>Apache Tomcat Documentation – Version 10.</em> 
+        Recuperado de: 
+        <a href="https://tomcat.apache.org/tomcat-10.1-doc/" target="_blank">
+          https://tomcat.apache.org/tomcat-10.1-doc/
+        </a>
+      </li>
+
+      <li>
+        Eclipse Foundation. (2024). 
+        <em>Jakarta EE Documentation.</em> 
+        Recuperado de: 
+        <a href="https://jakarta.ee/specifications/" target="_blank">
+          https://jakarta.ee/specifications/
+        </a>
+      </li>
+
+      <li>
+        Apache Maven Project. (2024). 
+        <em>Maven – Project Management and Comprehension Tool.</em> 
+        Recuperado de: 
+        <a href="https://maven.apache.org/guides/" target="_blank">
+          https://maven.apache.org/guides/
+        </a>
+      </li>
+
+      <li>
+        Microsoft Azure Docs. (2024). 
+        <em>Introduction to Cloud Hosting and Web Application Architecture.</em> 
+        Recuperado de: 
+        <a href="https://learn.microsoft.com/en-us/azure/architecture/" target="_blank">
+          https://learn.microsoft.com/en-us/azure/architecture/
+        </a>
+      </li>
+
+      <li>
+        Red Hat. (2023). 
+        <em>Understanding the Java EE Architecture and Application Servers.</em> 
+        Recuperado de: 
+        <a href="https://access.redhat.com/documentation/" target="_blank">
+          https://access.redhat.com/documentation/
+        </a>
+      </li>
+
+      <li>
+        Google Cloud Platform. (2024). 
+        <em>Deploying Web Applications on Cloud Infrastructure.</em> 
+        Recuperado de: 
+        <a href="https://cloud.google.com/docs" target="_blank">
+          https://cloud.google.com/docs
+        </a>
+      </li>
+
+      <li>
+        Auth0 Documentation. (2024). 
+        <em>Introduction to Token-Based Authentication and JWT.</em> 
+        Recuperado de: 
+        <a href="https://auth0.com/docs/secure/tokens" target="_blank">
+          https://auth0.com/docs/secure/tokens
+        </a>
+      </li>
+
+      <li>
+        Mozilla Developer Network (MDN). (2024). 
+        <em>HTTP Overview and Client-Server Communication.</em> 
+        Recuperado de: 
+        <a href="https://developer.mozilla.org/es/docs/Web/HTTP/Overview" target="_blank">
+          https://developer.mozilla.org/es/docs/Web/HTTP/Overview
+        </a>
+      </li>
+
+      <li>
+        Sommerville, I. (2020). 
+        <em>Software Engineering (10th Edition).</em> 
+        Pearson Education.
+      </li>
+
+      <li>
+        Fowler, M. (2019). 
+        <em>Patterns of Enterprise Application Architecture.</em> 
+        Addison-Wesley.
+      </li>
+    </ul>
+
+  </div>
+</div>
+    
   </div>
 </section>
 
